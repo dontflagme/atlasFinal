@@ -1,0 +1,23 @@
+body{
+    background-color: #EAE0D7;
+}
+
+
+
+iframe{
+    margin: 0 auto;
+    padding: 0;
+    width:100%;
+    height: 450px;
+    border-radius: 15px;
+}
+
+#signup{
+    background: black;
+}
+
+#modalcontent{
+ 
+}
+
+
