@@ -1,0 +1,22 @@
+{
+    "name": "bsaylor/atlasFinal",
+    "authors":
+    [
+                {
+                    "name": "Kevin Nguyen",
+                    "email": "knguyen31@mail.greenriver.edu"
+                },
+                {
+                    "name": "Brian Saylor",
+                    "email": "bsaylor3@mail.greenriver.edu"
+                }
+    ],
+    "require":
+        {
+            "bcosca/fatfree-core": "dev-master"
+        },
+        
+        "autoload": {
+            "classmap": ["model/", "classes/"]
+        }
+} 
