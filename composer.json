@@ -1,22 +1,15 @@
 {
-    "name": "bsaylor/atlasFinal",
-    "authors":
-    [
-                {
-                    "name": "Kevin Nguyen",
-                    "email": "knguyen31@mail.greenriver.edu"
-                },
-                {
-                    "name": "Brian Saylor",
-                    "email": "bsaylor3@mail.greenriver.edu"
-                }
-    ],
-    "require":
+    "name": "Kevin/atlasFinal",
+    "authors": [
         {
-            "bcosca/fatfree-core": "dev-master"
-        },
-        
-        "autoload": {
-            "classmap": ["model/", "classes/"]
+            "name": "Kevin Nguyen",
+            "email": "Kevin.Nguyen0509@gmail.com"
         }
-} 
+    ],
+    "require": {
+        "bcosca/fatfree-core": "dev-master"
+    },
+    "autoload": {	
+        "classmap": ["model/", "classes/"]    
+    }
+}

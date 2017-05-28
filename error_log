@@ -20,3 +20,43 @@
 [23-Mar-2017 00:47:11 America/Chicago] PHP Warning:  include(inc/deatails_button.php): failed to open stream: No such file or directory in /home/knguyen/public_html/atlas/rate.php on line 27
 [23-Mar-2017 00:47:11 America/Chicago] PHP Warning:  include(inc/deatails_button.php): failed to open stream: No such file or directory in /home/knguyen/public_html/atlas/rate.php on line 27
 [23-Mar-2017 00:47:11 America/Chicago] PHP Warning:  include(): Failed opening 'inc/deatails_button.php' for inclusion (include_path='.:/opt/php54/lib/php') in /home/knguyen/public_html/atlas/rate.php on line 27
+[28-May-2017 01:51:53 America/Chicago] PHP Warning:  include(/home/knguyen/public_html/328/atlasFinal/vendor/bcosca/fatfree-core/base.php): failed to open stream: No such file or directory in /home/knguyen/public_html/328/atlasFinal/vendor/composer/ClassLoader.php on line 444
+[28-May-2017 01:51:53 America/Chicago] PHP Warning:  include(): Failed opening '/home/knguyen/public_html/328/atlasFinal/vendor/bcosca/fatfree-core/base.php' for inclusion (include_path='.:/opt/php54/lib/php') in /home/knguyen/public_html/328/atlasFinal/vendor/composer/ClassLoader.php on line 444
+[28-May-2017 01:51:53 America/Chicago] PHP Fatal error:  Class 'Base' not found in /home/knguyen/public_html/328/atlasFinal/index.php on line 13
+[28-May-2017 01:54:06 America/Chicago] PHP Fatal error:  Class 'Base' not found in /home/knguyen/public_html/328/atlasFinal/index.php on line 13
+[28-May-2017 01:54:17 America/Chicago] PHP Fatal error:  Call to a member function set() on a non-object in /home/knguyen/public_html/328/atlasFinal/index.php on line 14
+[28-May-2017 01:55:07 America/Chicago] PHP Fatal error:  Class 'Base' not found in /home/knguyen/public_html/328/atlasFinal/index.php on line 13
+[28-May-2017 01:56:24 America/Chicago] PHP Fatal error:  Call to a member function route() on a non-object in /home/knguyen/public_html/328/atlasFinal/index.php on line 19
+[28-May-2017 01:58:00 America/Chicago] PHP Fatal error:  Call to a member function route() on a non-object in /home/knguyen/public_html/328/atlasFinal/index.php on line 19
+[28-May-2017 01:58:33 America/Chicago] PHP Fatal error:  Class 'Base' not found in /home/knguyen/public_html/328/atlasFinal/index.php on line 13
+[28-May-2017 01:59:18 America/Chicago] PHP Fatal error:  Class 'Base' not found in /home/knguyen/public_html/328/atlasFinal/index.php on line 13
+[28-May-2017 02:00:28 America/Chicago] PHP Fatal error:  Class 'Base' not found in /home/knguyen/public_html/328/atlasFinal/index.php on line 13
+[28-May-2017 02:00:31 America/Chicago] PHP Fatal error:  Class 'Base' not found in /home/knguyen/public_html/328/atlasFinal/index.php on line 13
+[28-May-2017 02:00:32 America/Chicago] PHP Fatal error:  Class 'Base' not found in /home/knguyen/public_html/328/atlasFinal/index.php on line 13
+[28-May-2017 02:00:35 America/Chicago] PHP Fatal error:  Class 'Base' not found in /home/knguyen/public_html/328/atlasFinal/index.php on line 13
+[28-May-2017 02:02:59 America/Chicago] PHP Fatal error:  Class 'Base' not found in /home/knguyen/public_html/328/atlasFinal/index.php on line 13
+[28-May-2017 02:03:00 America/Chicago] PHP Fatal error:  Class 'Base' not found in /home/knguyen/public_html/328/atlasFinal/index.php on line 13
+[28-May-2017 02:03:48 America/Chicago] PHP Fatal error:  Class 'Base' not found in /home/knguyen/public_html/328/atlasFinal/index.php on line 13
+[28-May-2017 02:03:56 America/Chicago] PHP Fatal error:  Class 'Base' not found in /home/knguyen/public_html/328/atlasFinal/index.php on line 13
+[28-May-2017 02:03:58 America/Chicago] PHP Fatal error:  Class 'Base' not found in /home/knguyen/public_html/328/atlasFinal/index.php on line 13
+[28-May-2017 02:03:59 America/Chicago] PHP Fatal error:  Class 'Base' not found in /home/knguyen/public_html/328/atlasFinal/index.php on line 13
+[28-May-2017 02:13:12 America/Chicago] PHP Fatal error:  Class 'Base' not found in /home/knguyen/public_html/328/atlasFinal/index.php on line 13
+[28-May-2017 02:13:44 America/Chicago] PHP Fatal error:  Class 'Base' not found in /home/knguyen/public_html/328/atlasFinal/index.php on line 13
+[28-May-2017 02:41:28 America/Chicago] PHP Fatal error:  Class 'Base' not found in /home/knguyen/public_html/328/atlasFinal/index.php on line 13
+[28-May-2017 02:43:03 America/Chicago] PHP Fatal error:  Class 'Base' not found in /home/knguyen/public_html/328/atlasFinal/index.php on line 13
+[28-May-2017 02:43:24 America/Chicago] PHP Fatal error:  Class 'Base' not found in /home/knguyen/public_html/328/atlasFinal/index.php on line 13
+[28-May-2017 02:45:43 America/Chicago] PHP Fatal error:  Class 'Base' not found in /home/knguyen/public_html/328/atlasFinal/index.php on line 13
+[28-May-2017 02:55:10 America/Chicago] Unable to open pages/explore.php
+[28-May-2017 02:55:10 America/Chicago] [328/atlasFinal/vendor/bcosca/fatfree-core/base.php:2178] Base->error()
+[28-May-2017 02:55:10 America/Chicago] [328/atlasFinal/vendor/bcosca/fatfree-core/base.php:2934] user_error()
+[28-May-2017 02:55:10 America/Chicago] [328/atlasFinal/index.php:21] Preview->render()
+[28-May-2017 02:55:10 America/Chicago] [328/atlasFinal/vendor/bcosca/fatfree-core/base.php:1791] call_user_func_array()
+[28-May-2017 02:55:10 America/Chicago] [328/atlasFinal/vendor/bcosca/fatfree-core/base.php:1612] Base->call()
+[28-May-2017 02:55:10 America/Chicago] [328/atlasFinal/index.php:25] Base->run()
+[28-May-2017 02:55:18 America/Chicago] Unable to open pages/explore.php
+[28-May-2017 02:55:18 America/Chicago] [328/atlasFinal/vendor/bcosca/fatfree-core/base.php:2178] Base->error()
+[28-May-2017 02:55:18 America/Chicago] [328/atlasFinal/vendor/bcosca/fatfree-core/base.php:2934] user_error()
+[28-May-2017 02:55:18 America/Chicago] [328/atlasFinal/index.php:21] Preview->render()
+[28-May-2017 02:55:18 America/Chicago] [328/atlasFinal/vendor/bcosca/fatfree-core/base.php:1791] call_user_func_array()
+[28-May-2017 02:55:18 America/Chicago] [328/atlasFinal/vendor/bcosca/fatfree-core/base.php:1612] Base->call()
+[28-May-2017 02:55:18 America/Chicago] [328/atlasFinal/index.php:25] Base->run()
