@@ -41,6 +41,10 @@ body{
 #poster_section{
         margin-top: 20px;
 }
+
+#poster_section h4{
+        color:#000;
+}
 .grid h4, h5{
     display: inline-block;
     margin: 0;
@@ -65,7 +69,7 @@ body{
 }
 
 #nav_option{
-        width: 16%;
+    width: 12%;
     height: auto;
     background: #fff;
     position: fixed;
@@ -148,7 +152,7 @@ th{
 
 
 
-#front_details h4{
+#front_details h4 , h1{
     margin: 0;
     display: inline-block;
     color: #000;
@@ -174,7 +178,7 @@ th{
         width: 100%;
     }
 .grid h4{
-    color: #000;
+    color: #fff;
 }
 #rating{
     float: right;

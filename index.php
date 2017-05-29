@@ -18,7 +18,13 @@ $f3->set('DEBUG', 3);
                   //Define a default route
                     $f3->route('GET /', function($f3) {
                       
-                      echo Template::instance()->render('pages/explore.html');
+                      echo Template::instance()->render('pages/Frontend/explore.html');
+                     });
+                    
+                                      //Define a default route
+                    $f3->route('GET /homelogin', function($f3) {
+                      
+                      echo Template::instance()->render('pages/backend/home_backend.html');
                      });
                     
            
