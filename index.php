@@ -27,6 +27,11 @@ $f3->set('DEBUG', 3);
                       echo Template::instance()->render('pages/backend/home_backend.html');
                      });
                     
+                    $f3->route('GET /viewevents', function($f3) {
+                      
+                      echo Template::instance()->render('pages/backend/viewEvents.html');
+                     });
+                    
            
 $f3->run();        
 ?>
