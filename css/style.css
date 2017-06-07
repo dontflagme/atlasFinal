@@ -1,4 +1,11 @@
 #navbar
 {
+    background-color: #303030;
+	border-radius: 0px;
+	color: white;
+    font-size: large;
+}
+#navbartext
+{
     float: right;
 }
