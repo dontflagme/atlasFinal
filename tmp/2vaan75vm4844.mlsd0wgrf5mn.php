@@ -27,10 +27,7 @@
 			</div>
  
                     <!--Search Bar-->
-                    <div class="col-md-8">
-                            
-                    </div>
-                    <div class="col-md-4">
+                    <div class="col-md-12">
                             <form action="" class="search-form" id="searchbar">
                                 <div class="form-group has-feedback">
                                     <label for="search" class="sr-only">Search</label>
@@ -44,6 +41,32 @@
 		 <div class="row">
 			<div class="col-md-3">
 			  <div class="thumbnail">
+				  <img src="https://photos.smugmug.com/All-Photographs/i-czphhSX/0/d46c8270/X3/DSC04821-HDR-X3.jpg" alt="Lights" style="width:100%">
+				  <div class="caption">
+					<p>Lorem ipsum...</p>
+					<button class="btn btn-primary" data-toggle="modal" data-target=".details3" id="details">Details</button>
+
+                        <div class="modal fade details3" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                          <div class="modal-dialog modal-lg">
+                            <div class="modal-content" id="modalcontent_details">
+                                  <img src="https://mjfimages.files.wordpress.com/2013/06/mount_rainier_8-26-12_5d_005.jpg?w=1000" />
+
+                                 <!--Title-->
+                                 <div id="modal_description">
+                                        <h1>Camp under the stars on Mt. Ranier</h1>
+                                 </div>
+                                <!--Add details-->
+                                 <h4>Done it, did it, nailed it.</h4>
+
+
+                            </div>
+                          </div>
+                        </div>
+				  </div>
+			  </div>
+			</div>
+			<div class="col-md-3">
+			  <div class="thumbnail">
 				<a href="https://photos.smugmug.com/All-Photographs/i-czphhSX/0/d46c8270/X3/DSC04821-HDR-X3.jpg">
 				  <img src="https://photos.smugmug.com/All-Photographs/i-czphhSX/0/d46c8270/X3/DSC04821-HDR-X3.jpg" alt="Lights" style="width:100%">
 				  <div class="caption">
@@ -55,17 +78,7 @@
 			<div class="col-md-3">
 			  <div class="thumbnail">
 				<a href="https://photos.smugmug.com/All-Photographs/i-czphhSX/0/d46c8270/X3/DSC04821-HDR-X3.jpg">
-				  <img src="https://photos.smugmug.com/All-Photographs/i-czphhSX/0/d46c8270/X3/DSC04821-HDR-X3.jpg" alt="Nature" style="width:100%">
-				  <div class="caption">
-					<p>Lorem ipsum...</p>
-				  </div>
-				</a>
-			  </div>
-			</div>
-			<div class="col-md-3">
-			  <div class="thumbnail">
-				<a href="https://photos.smugmug.com/All-Photographs/i-czphhSX/0/d46c8270/X3/DSC04821-HDR-X3.jpg">
-				  <img src="https://photos.smugmug.com/All-Photographs/i-czphhSX/0/d46c8270/X3/DSC04821-HDR-X3.jpg" alt="Fjords" style="width:100%">
+				  <img src="https://photos.smugmug.com/All-Photographs/i-czphhSX/0/d46c8270/X3/DSC04821-HDR-X3.jpg" alt="Lights" style="width:100%">
 				  <div class="caption">
 					<p>Lorem ipsum...</p>
 				  </div>
@@ -73,6 +86,21 @@
 			  </div>
 			</div>
 			<div class="container_fluid col-md-3 no-float">
+				<table class="table table-hover" id="side_nav">
+                    <tr>
+                        <th><a href="explore.php"><h1>Events Joined</h1></a></th>
+                    </tr>       
+                     <tr>
+                        <td>Group Paintball</td>
+                    </tr>    
+                    <tr>
+                        <td>Explore the Ape caves</td>
+                    </tr>
+                    <tr>
+                        <td>Escape Room!</td>
+                    </tr>                            
+                </table>
+
                 <table class="table table-hover" id="table_home">
                     <tr>
                         <th><a href="#"><h1>Options</h1></a></th>
@@ -89,37 +117,86 @@
                  </table>
             </div>
 		  </div>
-		
-        
-				<div class="container_fluid col-md-3 no-float">
-					   
-							<img class="img-responsive" src="http://www.oddcities.com/wp-content/uploads/2014/05/publicmarket1.jpg">
-							
-						   
-								<h4>Walk Around Pikes Place</h4>
-								<img class="img-responsive"src="img/star_three.png" id="rating"/>
-					   
-	
-							 <!-- signup modal -->
-						  <button class="btn btn-primary" data-toggle="modal" data-target=".details27" id="details">Details</button>
-						 
-							<div class="modal fade details27" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-							  <div class="modal-dialog modal-lg">
-								<div class="modal-content" id="modalcontent_details">
-									 <img src="http://www.oddcities.com/wp-content/uploads/2014/05/publicmarket1.jpg" />
-									 <div id="modal_description">
-											<h1>Walk Around Pikes Place</h1>
-									 </div>
-									 <img src="img/star_three.png" id="rating_modal"/>
-									 
-									 <h4>Let's take a walk around pike place. </h4>
-	
-									<!--Add context here-->
-								</div>
-							  </div>
-							</div>
+		 
+		 <div class="row">
+			<div class="col-md-3">
+				<div class="thumbnail">
+                        <img src="https://mjfimages.files.wordpress.com/2013/06/mount_rainier_8-26-12_5d_005.jpg?w=1000" />
+
+                            <h4>Anyone want to go camping?</h4>
+                         <!-- signup modal -->
+                      <button class="btn btn-primary" data-toggle="modal" data-target=".details3" id="details">Details</button>
+
+                        <div class="modal fade details3" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                          <div class="modal-dialog modal-lg">
+                            <div class="modal-content" id="modalcontent_details">
+                                  <img src="https://mjfimages.files.wordpress.com/2013/06/mount_rainier_8-26-12_5d_005.jpg?w=1000" />
+
+                                 <!--Title-->
+                                 <div id="modal_description">
+                                        <h1>Camp under the stars on Mt. Ranier</h1>
+                                 </div>
+                                <!--Add details-->
+                                 <h4>Done it, did it, nailed it.</h4>
+
+
+                            </div>
+                          </div>
+                        </div>
 				</div>
-            
+			</div>   <!--end of columns 3-->
+			<div class="col-md-3">
+			  <div class="thumbnail">
+				<a href="https://photos.smugmug.com/All-Photographs/i-czphhSX/0/d46c8270/X3/DSC04821-HDR-X3.jpg">
+				  <img src="https://photos.smugmug.com/All-Photographs/i-czphhSX/0/d46c8270/X3/DSC04821-HDR-X3.jpg" alt="Lights" style="width:100%">
+				  <div class="caption">
+					<p>Lorem ipsum...</p>
+				  </div>
+				</a>
+			  </div>
+			</div>
+			<div class="col-md-3">
+			  <div class="thumbnail">
+				<a href="https://photos.smugmug.com/All-Photographs/i-czphhSX/0/d46c8270/X3/DSC04821-HDR-X3.jpg">
+				  <img src="https://photos.smugmug.com/All-Photographs/i-czphhSX/0/d46c8270/X3/DSC04821-HDR-X3.jpg" alt="Lights" style="width:100%">
+				  <div class="caption">
+					<p>Lorem ipsum...</p>
+				  </div>
+				</a>
+			  </div>
+			</div>
+			<div class="container_fluid col-md-3 no-float">
+				<table class="table table-hover" id="side_nav">
+                    <tr>
+                        <th><a href="explore.php"><h1>Events Joined</h1></a></th>
+                    </tr>       
+                     <tr>
+                        <td>Group Paintball</td>
+                    </tr>    
+                    <tr>
+                        <td>Explore the Ape caves</td>
+                    </tr>
+                    <tr>
+                        <td>Escape Room!</td>
+                    </tr>                            
+                </table>
+
+                <table class="table table-hover" id="table_home">
+                    <tr>
+                        <th><a href="#"><h1>Options</h1></a></th>
+                    </tr>       
+                    <tr>
+                        <td>Add idea</td>
+                    </tr>    
+                    <tr>
+                        <td>Edit my atlas</td>
+                    </tr>
+                    <tr>
+                        <td>Edit profile</td>
+                    </tr>                            
+                 </table>
+            </div>
+		  </div>
 
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
