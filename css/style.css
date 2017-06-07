@@ -21,3 +21,12 @@ body{
 #{
     color: black;
 }
+
+#navbar{
+    background: #1DA1F2;
+    border: none;
+}
+
+ul li a{
+    color: #fff;
+}
