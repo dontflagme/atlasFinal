@@ -1,8 +1,10 @@
 body{
-    background-color: #E9EBEE;
+    background-color: #EAE0D7;
 }
 
-
+#sideNavLink{
+    color: black;
+}
 #poster{
     float: left;
     width: 7%;
@@ -29,15 +31,17 @@ body{
 #profile_picture{
 
     position: absolute;
-    z-index: 0;
-    top: 18%;
+    top: 30%;
     margin-left: 20px;
+    margin-top: 20px;
     border-radius: 10000px;
     border: solid 2px #fff;
     height: 18%;
    
 }
-
+#sidelink{
+    color: black;
+}
 #poster_section{
         margin-top: 20px;
 }
@@ -52,7 +56,7 @@ body{
 }
 
 #name_banner{
-    margin-left: 20%;
+     margin-left: 20%;
     margin-top: 20px;
 
 }
@@ -94,7 +98,6 @@ body{
 
 
 th{
-    background-color: #27BFF1;
     color: #fff;
 }
 
@@ -159,7 +162,7 @@ th{
 }
 .grid{
         display: inline-block;
-        background-color: #000;
+        background-color: #efefef;
         -webkit-column-break-inside: avoid;
         -moz-column-break-inside: avoid;
         -column-break-inside: avoid;
@@ -178,7 +181,7 @@ th{
         width: 100%;
     }
 .grid h4{
-    color: #fff;
+    color: #000;
 }
 #rating{
     float: right;

@@ -1,3 +1,7 @@
+body{
+    background: #EAE0D7;
+}
+
 #navbar
 {
     background-color: #303030;
@@ -13,4 +17,7 @@
 {
     float: right;
     width: 15%;
+}
+#{
+    color: black;
 }

@@ -6,7 +6,8 @@
         <link href= "css/navfooter.css" rel="stylesheet" type="text/css">
         <link href= "css/main.css" rel="stylesheet" type="text/css">
         <link href= "css/home.css" rel="stylesheet" type="text/css">
-        
+        <link href= "css/style.css" rel="stylesheet" type="text/css">
+        <link href= "css/homenav.css" rel="stylesheet" type="text/css">
 
     </head>
     
@@ -16,23 +17,21 @@
         <header>
             
   
-            <nav class="navbar navbar-inverse bg-inverse" id= "nav2">
-               <div id="wrapper">
-             
-                 
-                 <div id="nav_content">
-                     
-                     <img src="img/exploreicon.png" id ="icon"/>
-                     <ul>
-                       <li><a href="home.php"><h3>Home</h3></a></li>
-                       <li><h3>|</h3></li>
-                       <li><a href="rate.php"><h3>Things to do</h3></a></li>
-                       <li><h3>|</h3></li>
-                       <li><a href="rate.php"><h3>Log Out</h3></a></li>
-                    </ul>
+ 		<nav class="navbar navbar-inverse" id="navbar">
+			
+			<div class="container-fluid">
+				<img src="img/exploreicon.png" height="60" width="60" id ="icon"/>
+			  <ul class="nav navbar-nav" id="navbartext">
+				<li><a href="./homelogin">Home</a></li>
+				<li><h4>|</h4></li>
+				<li><a href="./explorebackend">Explore</a></li>
+				<li><h4>|</h4></li>
+				<li ><a href="rate.php">Log Out</a></li>
+			  </ul>
+			</div>
  
                     <!--Search Bar-->
-                    <div class="row">
+                    <div class="col-md-12">
                             <form action="" class="search-form" id="searchbar">
                                 <div class="form-group has-feedback">
                                     <label for="search" class="sr-only">Search</label>
@@ -41,50 +40,42 @@
                                 </div>
                             </form>
                     </div>
-                </div>
-                 </div>    
+		</nav>  
 
-               </div> 
-            </nav>  
-                <section id="navid">
-                    
-                    <section id="update_nav">
-                        <table class="table table-hover" id="table_home">
-                            <tr>
-                                <th><a href="explore.php"><h1>Events Joined</h1></a></th>
-                            </tr>       
-                            <tr>
-                                <td>Group Paintball</td>
-                            </tr>    
-                            <tr>
-                                <td>Explore the Ape caves</td>
-                            </tr>
-                            <tr>
-                                <td>Escape Room!</td>
-                            </tr>                            
-                        </table>
-                    </section>
-            </section>
-                
-                <section id="nav_option">
-                    
-                    <section id="update_nav">
-                        <table class="table table-hover" id="table_home">
-                            <tr>
-                                <th><a href="#"><h1>Options</h1></a></th>
-                            </tr>       
-                            <tr>
-                                <td>Add idea</td>
-                            </tr>    
-                            <tr>
-                                <td>Edit my atlas</td>
-                            </tr>
-                            <tr>
-                                <td>Edit profile</td>
-                            </tr>                            
-                        </table>
-                    </section>
-            </section>
+ 	<div class="container_fluid col-md-3" id="sidenav">
+        
+        
+				<table class="table table-hover" id="side_nav">
+                    <tr>
+                        <th><a href="explore.php"><h1>Events Joined</h1></a></th>
+                    </tr>       
+                     <tr>
+                        <td>Group Paintball</td>
+                    </tr>    
+                    <tr>
+                        <td>Explore the Ape caves</td>
+                    </tr>
+                    <tr>
+                        <td>Escape Room!</td>
+                    </tr>                            
+                </table>
+
+                <table class="table table-hover" id="table_home">
+                    <tr>
+                        <th><a href="#"><h1>Options</h1></a></th>
+                    </tr>       
+                    <tr>
+                        <td>Add idea</td>
+                    </tr>    
+                    <tr>
+                        <td><a href="./viewevents" id="sideNavLink">Edit my atlas</a></td>
+                    </tr>
+                    <tr>
+                        <td>Edit profile</td>
+                    </tr>                            
+                 </table>
+            </div>
+		  </div>
                 
                 
            
