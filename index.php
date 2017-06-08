@@ -38,6 +38,11 @@ $f3->set('DEBUG', 3);
                       echo Template::instance()->render('pages/backend/explore.html');
                      });
                     
+                    $f3->route('GET /addidea', function($f3) {
+                      
+                      echo Template::instance()->render('pages/backend/addIdea.html');
+                     });
+                    
            
 $f3->run();        
 ?>

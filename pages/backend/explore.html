@@ -23,11 +23,11 @@
 			<div class="container-fluid">
 				<img src="img/exploreicon.png" height="60" width="60" id ="icon"/>
 			  <ul class="nav navbar-nav" id="navbartext">
-				<li><a href="./homelogin">Home</a></li>
+				<li><a href="./homelogin" id="navLink">Home</a></li>
 				<li><h4>|</h4></li>
-				<li><a href="./explorebackend">Explore</a></li>
+				<li><a href="./explorebackend" id="navLink">Explore</a></li>
 				<li><h4>|</h4></li>
-				<li ><a href="rate.php">Log Out</a></li>
+				<li ><a href="rate.php" id="navLink">Log Out</a></li>
 			  </ul>
 			</div>
  
