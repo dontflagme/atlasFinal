@@ -18,15 +18,16 @@ body{
     float: right;
     width: 15%;
 }
-#{
-    color: black;
-}
+
 
 #navbar{
     background: #1DA1F2;
     border: none;
 }
+a:{
+    color: #fff;
+}
 
-ul li a{
+#navLink{
     color: #fff;
 }
