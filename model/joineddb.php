@@ -6,18 +6,15 @@
      *
 
         
-        CREATE TABLE blogs
+        CREATE TABLE joined
         (  
-        blog_id int NOT NULL AUTO_INCREMENT PRIMARY KEY,
-        member_id int NOT NULL,
-        title varchar(255),
-        blog_entry varchar(1000),
-        date_added TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+        event_id int NOT NULL,
+        member_id int NOT NULL
         );
      */
     
     //CONNECT
-    class BlogDB
+    class JoinedDB
     {
         private $_pdo;
         
@@ -54,14 +51,13 @@
          *
          * @return true if the insert was successful, otherwise false
          */
-        function addBlog($member_id, $title, $blog_entry)
+        function addJoined($member_id, $event_id)
         {
-            $insert = 'INSERT INTO blogs (member_id, title, blog_entry) VALUES (:member_id, :title, :blog_entry)';
+            $insert = 'INSERT INTO joined (member_id, event_id) VALUES (:member_id, :event_id)';
              
             $statement = $this->_pdo->prepare($insert);
             $statement->bindValue(':member_id', $member_id, PDO::PARAM_STR);
-            $statement->bindValue(':title', $title, PDO::PARAM_STR);
-            $statement->bindValue(':blog_entry', $blog_entry, PDO::PARAM_STR);
+            $statement->bindValue(':event_id', $event_id, PDO::PARAM_STR);
             
             $statement->execute();
             
@@ -78,9 +74,9 @@
          * @return an associative array of member attributes, or false if
          * the member was not found
          */
-        function blogsByMemberId($id)
+        function joinedByEventsId($id)
         {
-            $select = 'SELECT blog_id, member_id, title, blog_entry, date_added FROM blogs WHERE member_id=:id ORDER BY blog_id';
+            $select = 'SELECT event_id, member_id FROM joined WHERE event_id=:id';
             
             $results = $this->_pdo->prepare($select);
             $results->bindValue(':id', $id, PDO::PARAM_INT);
@@ -90,116 +86,9 @@
              
             //map each pet id to a row of data for that pet
             while ($row = $results->fetch(PDO::FETCH_ASSOC)) {
-                $resultsArray[$row['blog_id']] = $row;
+                $resultsArray[$row['event_id']] = $row;
             }
              
             return $resultsArray;
-        }
-        
-        /**
-         * Returns blogs that has the given blog_id.
-         *
-         * @access public
-         * @param int $id the id of the blog
-         *
-         * @return an associative array of member attributes, or false if
-         * the member was not found
-         */
-        function blogsByBlogId($id)
-        {
-            $select = 'SELECT blog_id, member_id, title, blog_entry, date_added FROM blogs WHERE blog_id=:id';
-            
-            $statement = $this->_pdo->prepare($select);
-            $statement->bindValue(':id', $id, PDO::PARAM_INT);
-            $statement->execute();
-             
-            return $statement->fetch(PDO::FETCH_ASSOC);
-        }
-        
-        /**
-         * Returns the most recent blog that has the given id.
-         *
-         * @access public
-         * @param int $id the id of the blog
-         *
-         * @return an associative array of member attributes, or false if
-         * the member was not found
-         */
-        function mostRecentBlog($id)
-        {
-            $select = 'SELECT blog_id, member_id, title, blog_entry, date_added FROM blogs WHERE member_id=:id ORDER BY blog_id DESC LIMIT 1';
-             
-            $statement = $this->_pdo->prepare($select);
-            $statement->bindValue(':id', $id, PDO::PARAM_INT);
-            $statement->execute();
-             
-            return $statement->fetch(PDO::FETCH_ASSOC);
-        }
-        
-        /**
-         * Returns the most recent blog that has the given id.
-         *
-         * @access public
-         * @param int $id the id of the blog
-         *
-         * @return an associative array of member attributes, or false if
-         * the member was not found
-         */
-        function mostRecentBlogAll()
-        {
-            $select = 'SELECT blogs.blog_id, blogs.title, blogs.blog_entry, members.username, members.member_id, members.bio FROM blogs INNER JOIN members ON blogs.member_id=members.member_id ORDER BY blogs.blog_id';
-             
-            $results = $this->_pdo->query($select);
-             
-            $resultsArray = array();
-             
-            //map each member id to a row of data for that pet
-            while ($row = $results->fetch(PDO::FETCH_ASSOC)) {
-                $resultsArray[$row['member_id']] = $row;
-            }
-             
-            return $resultsArray;
-        }
-        
-        /**
-         * updates blog that has the given id.
-         *
-         * @access public
-         * @param int $id the id of the blog
-         *
-         * @return an associative array of member attributes, or false if
-         * the member was not found
-         */
-        function updateBlog($id, $title, $blog_entry)
-        {
-            $select = 'UPDATE blogs SET title=:title, blog_entry=:blog_entry WHERE blog_id=:id';
-             
-            $statement = $this->_pdo->prepare($select);
-            $statement->bindValue(':id', $id, PDO::PARAM_INT);
-            $statement->bindValue(':title', $title, PDO::PARAM_STR);
-            $statement->bindValue(':blog_entry', $blog_entry, PDO::PARAM_STR);
-            $statement->execute();
-             
-            //return $this->_pdo->lastInsertId();
-        }
-        
-        /**
-         * updates blog that has the given id.
-         *
-         * @access public
-         * @param int $id the id of the blog
-         *
-         * @return an associative array of member attributes, or false if
-         * the member was not found
-         */
-        function removeBlog($id)
-        {
-            $select = 'DELETE FROM blogs WHERE blog_id=:id';
-             
-            $statement = $this->_pdo->prepare($select);
-            $statement->bindValue(':id', $id, PDO::PARAM_INT);
-            $statement->execute();
-             
-            //return $this->_pdo->lastInsertId();
         }
 }
