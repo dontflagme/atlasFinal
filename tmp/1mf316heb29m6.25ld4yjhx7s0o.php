@@ -27,7 +27,7 @@
 				<li><h4>|</h4></li>
 				<li><a href="./explorebackend" id="navLink">Explore</a></li>
 				<li><h4>|</h4></li>
-				<li ><a href="rate.php" id="navLink">Log Out</a></li>
+				<li ><a href=" ./logout" id="navLink">Log Out</a></li>
 			  </ul>
 			</div>
  

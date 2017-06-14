@@ -26,7 +26,7 @@
 				<li><h4>|</h4></li>
 				<li><a href="./explorebackend" id="navLink">Explore</a></li>
 				<li><h4>|</h4></li>
-				<li ><a href="rate.php" id="navLink">Log Out</a></li>
+				<li ><a href=" ./logout" id="navLink">Log Out</a></li>
 			  </ul>
 			</div>
  
@@ -70,9 +70,7 @@
                     <tr>
                         <td><a href="./viewevents" id="sideNavLink">Edit my atlas</a></td>
                     </tr>
-                    <tr>
-                        <td>Edit profile</td>
-                    </tr>                            
+                           
                  </table>
             </div>
 		  </div>
@@ -970,8 +968,8 @@
                 </div><!--End of Grid div-->                   
             </div>
         </div>
-
-
+ 
+ <script src="validate.js"></script>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->

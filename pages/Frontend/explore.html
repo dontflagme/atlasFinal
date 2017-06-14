@@ -8,12 +8,28 @@
         <link href= "css/main.css" rel="stylesheet" type="text/css">
         <link href= "css/navfooter.css" rel="stylesheet" type="text/css">
         
+        <script src="https://code.jquery.com/jquery-3.1.1.min.js"
+            integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+            crossorigin="anonymous"></script>
+        
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+              rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+                integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        
+        <script src="js/validate.js"></script>
+        
+        <!--[if lt IE 9]>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+        <link rel="shortcut icon" href="">
+        
     </head>
     
-
-     
-    
     <body>
+
+    
 
      <header>
         </nav>                   
@@ -28,7 +44,7 @@
                 <div class="modal fade login" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
                   <div class="modal-dialog modal-lg">
                     <div class="modal-content" id="modalcontent">
-                      <!--Login module-->
+                      <!--Enter context-->
                       <p><a href="./homelogin" color="black" id="test1">Click this to head to the backend</a></p>
                     </div>
                   </div>
@@ -41,26 +57,28 @@
                   <div class="modal-dialog modal-lg">
                     <div class="modal-content" id="modalcontent">
                      
-                     <form action="#" method="post">
+                            
+                     
+                     <form action="./registerDB" method="post">
                          <fieldset>
                           <legend>
                              <h2 id="signup_label">Sign Up</h2> <br> <br>
-                             <h4>Be Bold!</h4>
+                             <h4>Be Bold</h4>
                           </legend>
                          </fieldset>
                          
-                         <p><label><input type= "text" name="firstname" size="40" maxlength="40" placeholder="First Name" required="true" > *</label></p>
+                         <p><label><input type= "text" name="firstname" size="40" maxlength="40" placeholder="First Name" required="true" id="firstname" > *</label></p>
+                        <div class="alert alert-danger">
+                           <strong>Error: </strong><span id="firstNameError"></span>
+                       </div>
                          <p><label><input type= "text" name="lastname" size="20" maxlength="40" placeholder="Last Name" required="true" > *</label></p>
                          <p><label><input type= "email" name="email" size="20" maxlength="40" placeholder="Email:" required="true" > *</label></p>
                          <p><label><input type= "password" name="password" size="20" maxlength="40" placeholder="Password" required="true" > *</label></p>
                        
-                         <div id="question">
-                             <h4>Are you interested in Core Java *  </h4>
-                             <input type="radio" name="qone" value="yes" required> Yes
-                             <input type="radio" name="qone" value="no"> No
-                         </div>
+                        <legend>Add a photo(*)</legend><input type="file" name="eventFile" id="eventFile">
                     
                          <input type="submit" name="submit" value="Submit My Information" id="submit">
+                          <script src="js/validate.js"></script>
                      </form>
                 
 
@@ -85,14 +103,15 @@
             </nav>             
      </header>
 
-        
-       
           <div id="wrapper">  
             <div id="columns">
                 <div class="grid">
                     
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Seattlenighttimequeenanne.jpg/449px-Seattlenighttimequeenanne.jpg" />
-                    <h2>Visit Kerry Park</h2>
+                    <a href="#signup" role="button" data-toggle="modal" data-target=".signup">
+
+                     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Seattlenighttimequeenanne.jpg/449px-Seattlenighttimequeenanne.jpg" /></a>
+                   
+                    <h2>Visit Kerry Park!!!!!</h2>
                 
                     <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
                     Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
@@ -215,11 +234,18 @@
                 </div>
             </div>
         </div>
+
+        <script src="http://code.jquery.com/jquery.js"></script>
+        <script>
+               //alert("Ouch");
+            
+        </script>
         
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="validate.js"></script>
+        
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/bootstrap.min.js"></script>
-    
+    <script src="js/bootstrap.min.js"></script>  
     </body>
 </html>

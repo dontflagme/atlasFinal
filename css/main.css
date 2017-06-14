@@ -2,7 +2,15 @@ body{
     background-color: #EAE0D7;
 }
 
+div.alert {
+    margin-top: 4px;
+    margin-bottom: 0px;
+    display: none;
+}
 
+div.form-group {
+    margin-bottom: 4px;
+}
 
 iframe{
     margin: 0 auto;

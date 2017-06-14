@@ -22,7 +22,7 @@
 				<li><h4>|</h4></li>
 				<li><a href="./explorebackend" id="navLink">Explore</a></li>
 				<li><h4>|</h4></li>
-				<li ><a href="rate.php" id="navLink">Log Out</a></li>
+				<li ><a href=" ./logout" id="navLink">Log Out</a></li>
 			  </ul>
 			</div>
  
@@ -119,6 +119,8 @@
 		  </div>
 		 
 		 <div class="row">
+			
+
 			<div class="col-md-3">
 				<div class="thumbnail">
                         <img src="https://mjfimages.files.wordpress.com/2013/06/mount_rainier_8-26-12_5d_005.jpg?w=1000" />

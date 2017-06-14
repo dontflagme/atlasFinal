@@ -24,7 +24,7 @@
 				<li><h4>|</h4></li>
 				<li><a href="./explorebackend" id="navLink">Explore</a></li>
 				<li><h4>|</h4></li>
-				<li ><a href="rate.php" id="navLink">Log Out</a></li>
+				<li ><a href=" ./logout" id="navLink">Log Out</a></li>
 			  </ul>
 			</div>
  
@@ -43,7 +43,7 @@
 		 <div class="row">
             
             <div class="col-md-8" id="contentSection">			
-					<center><h1>Add an Idea:</h1></center>
+					<center><h1>Add an Ideas:</h1></center>
                     
             <form action="./addIdeaDB" method="post">
                 <div class="col-md-4" id="contentSection">			
@@ -62,6 +62,7 @@
                 <div class="col-md-4" id="contentSection">			
 
                             <legend>Add a photo(*)</legend><input type="file" name="eventFile" id="eventFile">
+							
                         
                 </div>
             </form>
@@ -97,10 +98,7 @@
                     </tr>    
                     <tr>
                         <td><a href="./viewevents" id="sideNavLink">Edit my atlas</a></td>
-                    </tr>
-                    <tr>
-                        <td>Edit profile</td>
-                    </tr>                            
+                    </tr>                          
                  </table>
             </div>
 		  </div>
