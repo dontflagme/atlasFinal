@@ -13,7 +13,8 @@
         title varchar(255),
         event_details varchar(500),
         date DATE,
-        time TIME
+        time TIME,
+        image varchar(255)
         );
      */
     
@@ -48,6 +49,12 @@
         /**
          * Adds a event to the collection of event in the db.
          *
+         * test entries
+         * INSERT INTO events (member_id, title, event_details, date, time, image) VALUES (1, "Paintball", "lets go paintball", 12/15/2017, "12:00:00", "test paintball")
+         * INSERT INTO events (member_id, title, event_details, date, time, image) VALUES (2, "Vance Joy Concert", "10/10 Riptide is the best", 12/05/2017, "2:00", "test concert")
+         * INSERT INTO events (member_id, title, event_details, date, time, image) VALUES (3, "Makeup Session", "I love youtube makeup tutorials", 12/25/2017, "1:00", "test makeup")
+         * 
+         *
          * @access public
          * @param string $member_id the id of the blog
          * @param string $title the of the blog
@@ -55,9 +62,9 @@
          *
          * @return true if the insert was successful, otherwise false
          */
-        function addEvent($member_id, $title, $event_details, $date, $time)
+        function addEvent($member_id, $title, $event_details, $date, $time, $image)
         {
-            $insert = 'INSERT INTO events (member_id, title, event_details, date, time) VALUES (:member_id, :title, :event_details, :date, :time)';
+            $insert = 'INSERT INTO events (member_id, title, event_details, date, time, image VALUES (:member_id, :title, :event_details, :date, :time, :image)';
              
             $statement = $this->_pdo->prepare($insert);
             $statement->bindValue(':member_id', $member_id, PDO::PARAM_STR);
@@ -65,11 +72,35 @@
             $statement->bindValue(':event_details', $event_details, PDO::PARAM_STR);
             $statement->bindValue(':date', $date, PDO::PARAM_STR);
             $statement->bindValue(':time', $time, PDO::PARAM_STR);
+            $statement->bindValue(':image', $image, PDO::PARAM_STR);
             
             $statement->execute();
             
             //Return ID of inserted row
             return $this->_pdo->lastInsertId();
+        }
+        
+        //READ
+        /**
+         * Returns all members in the database collection.
+         *
+         * @access public
+         *
+         * @return an associative array of members indexed by id
+         */
+        function allEvents()
+        {
+            $select = 'SELECT event_id, member_id, title, event_details, date, time, image FROM events ORDER BY event_id';
+            $results = $this->_pdo->query($select);
+             
+            $resultsArray = array();
+             
+            //map each pet id to a row of data for that pet
+            while ($row = $results->fetch(PDO::FETCH_ASSOC)) {
+                $resultsArray[$row['member_id']] = $row;
+            }
+             
+            return $resultsArray;
         }
          
         /**
@@ -83,7 +114,7 @@
          */
         function eventsByMemberId($id)
         {
-            $select = 'SELECT event_id, member_id, title, event_details, date, time FROM events WHERE member_id=:id ORDER BY event_id';
+            $select = 'SELECT event_id, member_id, title, event_details, date, time, image FROM events WHERE member_id=:id ORDER BY event_id';
             
             $results = $this->_pdo->prepare($select);
             $results->bindValue(':id', $id, PDO::PARAM_INT);
@@ -110,7 +141,7 @@
          */
         function eventsByEventId($id)
         {
-            $select = 'SELECT event_id, member_id, title, , event_details, date, time FROM events WHERE event_id=:id';
+            $select = 'SELECT event_id, member_id, title, , event_details, date, time, image FROM events WHERE event_id=:id';
             
             $statement = $this->_pdo->prepare($select);
             $statement->bindValue(':id', $id, PDO::PARAM_INT);
@@ -138,6 +169,7 @@
             $statement->bindValue(':event_details', $event_details, PDO::PARAM_STR);
             $statement->bindValue(':date', $date, PDO::PARAM_INT);
             $statement->bindValue(':time', $time, PDO::PARAM_STR);
+            $statement->bindValue(':image', $image, PDO::PARAM_STR);
             $statement->execute();
              
             //return $this->_pdo->lastInsertId();

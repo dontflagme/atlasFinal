@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title>Home</title>
+        <title>View my Events</title>
         <link rel="icon" type="image/ico" href="img/exploreicon.png" />
         <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
         <link href= "css/style.css" rel="stylesheet" type="text/css">
@@ -18,11 +18,11 @@
 			<div class="container-fluid">
 				<img src="img/exploreicon.png" height="60" width="60" id ="icon"/>
 			  <ul class="nav navbar-nav" id="navbartext">
-				<li><a href="home.php">Home</a></li>
+				<li><a href="./homelogin" id="navLink">Home</a></li>
 				<li><h4>|</h4></li>
-				<li><a href="rate.php">Things to Do</a></li>
+				<li><a href="./explorebackend" id="navLink">Explore</a></li>
 				<li><h4>|</h4></li>
-				<li ><a href="rate.php">Log Out</a></li>
+				<li ><a href="rate.php" id="navLink">Log Out</a></li>
 			  </ul>
 			</div>
  
@@ -106,10 +106,10 @@
                         <th><a href="#"><h1>Options</h1></a></th>
                     </tr>       
                     <tr>
-                        <td>Add idea</td>
+                        <td><a href="./addidea" id="sideNavLink">Add idea</a></td>
                     </tr>    
                     <tr>
-                        <td>Edit my atlas</td>
+                       <td><a href="./viewevents" id="sideNavLink">Edit my atlas</a></td>
                     </tr>
                     <tr>
                         <td>Edit profile</td>
@@ -119,6 +119,8 @@
 		  </div>
 		 
 		 <div class="row">
+			
+
 			<div class="col-md-3">
 				<div class="thumbnail">
                         <img src="https://mjfimages.files.wordpress.com/2013/06/mount_rainier_8-26-12_5d_005.jpg?w=1000" />
@@ -165,37 +167,7 @@
 				</a>
 			  </div>
 			</div>
-			<div class="container_fluid col-md-3 no-float">
-				<table class="table table-hover" id="side_nav">
-                    <tr>
-                        <th><a href="explore.php"><h1>Events Joined</h1></a></th>
-                    </tr>       
-                     <tr>
-                        <td>Group Paintball</td>
-                    </tr>    
-                    <tr>
-                        <td>Explore the Ape caves</td>
-                    </tr>
-                    <tr>
-                        <td>Escape Room!</td>
-                    </tr>                            
-                </table>
-
-                <table class="table table-hover" id="table_home">
-                    <tr>
-                        <th><a href="#"><h1>Options</h1></a></th>
-                    </tr>       
-                    <tr>
-                        <td>Add idea</td>
-                    </tr>    
-                    <tr>
-                        <td>Edit my atlas</td>
-                    </tr>
-                    <tr>
-                        <td>Edit profile</td>
-                    </tr>                            
-                 </table>
-            </div>
+		
 		  </div>
 
 

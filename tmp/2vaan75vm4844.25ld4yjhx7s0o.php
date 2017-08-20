@@ -7,106 +7,32 @@
         <link href= "css/grid.css" rel="stylesheet" type="text/css">
         <link href= "css/main.css" rel="stylesheet" type="text/css">
         <link href= "css/navfooter.css" rel="stylesheet" type="text/css">
-        
+        <link href= "css/style.css" rel="stylesheet" type="text/css">
     </head>
+    
+
+     
     
     <body>
 
      <header>
         </nav>                   
-            <nav class="navbar navbar-inverse bg-inverse" id= "nav">
-               <div id="wrapper">
-             
-                 <h2>&quot We travel not to escape life, but for life not to escape us.&quot &mdash; Anonymous</h2>
-    
-                      <!-- login modal -->
-                <button class="btn btn-primary" data-toggle="modal" data-target=".login" id="login">Login</button>
-                
-                <div class="modal fade login" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-                  <div class="modal-dialog modal-lg">
-                    <div class="modal-content" id="modalcontent">
-                        
-
-                        
-                        <form>
-                          
-                            <div class="form-group">
-                                <hr>
-                                <label for="inputEmail">Email</label>
-                                <div class="col-xs-10">
-                                    <input type="email" class="form-control" id="inputEmail" placeholder="Email">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="inputPassword">Password</label>
-                                <div class="col-xs-10">
-                                    <input type="password" class="form-control" id="inputPassword" placeholder="Password">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="col-xs-offset-2 col-xs-10 text-center">
-                                    <button type="submit" class="btn btn-primary">Login</button>
-                                </div>
-                            </div>
-                        </form>
-                        
-                      <!--Login module-->
-                      <p><a href="./homelogin" color="black" id="test1">Click this to head to the backend</a></p>
-                    </div>
-                  </div>
-                </div>
-                
-                 <!-- signup modal -->
-                <button class="btn btn-primary" data-toggle="modal" data-target=".signup" id="signup">Sign Up</button>
-                
-                <div class="modal fade signup" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-                  <div class="modal-dialog modal-lg">
-                    <div class="modal-content" id="modalcontent">
-                     
-                     <form action="#" method="post">
-                         <fieldset>
-                          <legend>
-                             <h2 id="signup_label">Sign Up</h2> <br> <br>
-                             <h4>Be Bold!</h4>
-                          </legend>
-                         </fieldset>
-                         
-                         <p><label><input type= "text" name="firstname" size="40" maxlength="40" placeholder="First Name" required="true" > *</label></p>
-                         <p><label><input type= "text" name="lastname" size="20" maxlength="40" placeholder="Last Name" required="true" > *</label></p>
-                         <p><label><input type= "email" name="email" size="20" maxlength="40" placeholder="Email:" required="true" > *</label></p>
-                         <p><label><input type= "password" name="password" size="20" maxlength="40" placeholder="Password" required="true" > *</label></p>
-                       
-                         <div id="question">
-                             <h4>Are you interested in Core Java *  </h4>
-                             <input type="radio" name="qone" value="yes" required> Yes
-                             <input type="radio" name="qone" value="no"> No
-                         </div>
-                    
-                         <input type="submit" name="submit" value="Submit My Information" id="submit">
-                     </form>
-                
-
-                        
-                    </div>
-
-                  </div>
-                </div>
-                
-                <!-- view event modal -->
-                <div class="modal fade viewEvent" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-                  <div class="modal-dialog modal-lg">
-                    <div class="modal-content" id="modalcontent">
-                     
-                    <p>This totally works</p>
-
-                        
-                    </div>
-
-                  </div>
-                </div>
+                   
+		<nav class="navbar navbar-inverse" id="navbar">
+			
+			<div class="container-fluid">
+				<img src="img/exploreicon.png" height="60" width="60" id ="icon"/>
+			  <ul class="nav navbar-nav" id="navbartext">
+				<li><a href="./homelogin" id="navLink">Home</a></li>
+				<li><h4>|</h4></li>
+				<li><a href="./explorebackend" id="navLink">Explore</a></li>
+				<li><h4>|</h4></li>
+				<li ><a href="rate.php" id="navLink">Log Out</a></li>
+			  </ul>
+			</div>
  
                     <!--Search Bar-->
-                    <div class="row">
+                    <div class="col-md-12">
                             <form action="" class="search-form" id="searchbar">
                                 <div class="form-group has-feedback">
                                     <label for="search" class="sr-only">Search</label>
@@ -115,30 +41,26 @@
                                 </div>
                             </form>
                     </div>
-                </div>
-               </div> 
-            </nav>             
+		</nav>  
      </header>
 
         
-        
+       
           <div id="wrapper">  
             <div id="columns">
-                    <div class="grid">
-                        <a href="#signup" role="button" data-toggle="modal" data-target=".viewEvent">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Seattlenighttimequeenanne.jpg/449px-Seattlenighttimequeenanne.jpg" />
-                        </a>
-                        <h2>Visit Kerry Park</h2>
-                        <h3>07/26/2017 at 1:00 P.M.</h3>
+                <div class="grid">
                     
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-                        when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-                        It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
-                        It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
-                        and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-    
-                    </div>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Seattlenighttimequeenanne.jpg/449px-Seattlenighttimequeenanne.jpg" />
+                    <h2>Visit Kerry Park</h2>
+                
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                    when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                    It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+                    It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
+                    and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+
+                </div>
                  
                  <div class="grid">
                     <img src="https://static1.squarespace.com/static/51e6e466e4b018cade39e9d0/t/536cf91de4b0af8b32206b15/1399650594187/Colorado-White-Water-Rafting.jpg?format=1500w" />
@@ -253,10 +175,6 @@
             </div>
         </div>
         
-            <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-            <!-- Include all compiled plugins (below), or include individual files as needed -->
-            <script src="js/bootstrap.min.js"></script>
-    
+
     </body>
 </html>
