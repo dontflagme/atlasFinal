@@ -22,7 +22,7 @@ require("../../../atlas_config.php");
 //Create an instance of the Base class
 $f3 = Base::instance();
 $f3->set('DEBUG', 3);
-<<<<<<< HEAD
+
 
 
 
@@ -37,12 +37,11 @@ $f3->set('DEBUG', 3);
     //$memberDB = new MemberDB();
     //$joinedDB = new JoinedDB();
 
-=======
 
     //$eventDB = new EventsDB();
     //$memberDB = new MemberDB();
     //$joinedDB = new JoinedDB();
->>>>>>> ae9be31cef1eafe153049eaac77a2cc7815c395a
+
 
                   //Define a default route
                     $f3->route('GET /', function($f3) {
