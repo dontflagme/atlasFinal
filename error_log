@@ -663,3 +663,14 @@
 [13-Jun-2017 02:46:35 America/Chicago] Fatal error: Call to a member function allEvents() on a non-object
 [13-Jun-2017 02:46:35 America/Chicago] [328/atlasFinal/index.php:32] 
 >>>>>>> fbe9d1fddc2a516aa924b444538ca5f92e57c9b6
+[11-Sep-2017 01:34:12 America/Chicago] PHP Parse error:  syntax error, unexpected '<<' (T_SL) in /home/knguyen/public_html/328/atlasFinal/index.php on line 25
+[11-Sep-2017 01:35:23 America/Chicago] PHP Parse error:  syntax error, unexpected '<<' (T_SL) in /home/knguyen/public_html/328/atlasFinal/index.php on line 25
+[11-Sep-2017 01:35:25 America/Chicago] PHP Parse error:  syntax error, unexpected '<<' (T_SL) in /home/knguyen/public_html/328/atlasFinal/index.php on line 25
+[11-Sep-2017 01:38:17 America/Chicago] PHP Parse error:  syntax error, unexpected '<<' (T_SL) in /home/knguyen/public_html/328/atlasFinal/index.php on line 25
+[11-Sep-2017 01:39:56 America/Chicago] PHP Parse error:  syntax error, unexpected '<<' (T_SL) in /home/knguyen/public_html/328/atlasFinal/index.php on line 25
+[11-Sep-2017 01:41:32 America/Chicago] PHP Fatal error:  Call to a member function allEvents() on a non-object in /home/knguyen/public_html/328/atlasFinal/index.php on line 42
+[11-Sep-2017 01:41:32 America/Chicago] Fatal error: Call to a member function allEvents() on a non-object
+[11-Sep-2017 01:41:32 America/Chicago] [328/atlasFinal/index.php:42] 
+[11-Sep-2017 01:42:02 America/Chicago] PHP Fatal error:  Call to a member function allEvents() on a non-object in /home/knguyen/public_html/328/atlasFinal/index.php on line 42
+[11-Sep-2017 01:42:02 America/Chicago] Fatal error: Call to a member function allEvents() on a non-object
+[11-Sep-2017 01:42:02 America/Chicago] [328/atlasFinal/index.php:42] 
