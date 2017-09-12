@@ -27,25 +27,14 @@ $f3->set('DEBUG', 3);
 
 
 //calling the DB classes
-//$eventsDB = new EventDB();
-//$memberDB = new MemberDB();
-//$joinedDB = new JoinedDB();
-
-
-  
-    //$eventDB = new EventsDB();
-    //$memberDB = new MemberDB();
-    //$joinedDB = new JoinedDB();
-
-
-    //$eventDB = new EventsDB();
-    //$memberDB = new MemberDB();
-    //$joinedDB = new JoinedDB();
+$eventsDB = new EventsDB();
+$memberDB = new MemberDB();
+$joinedDB = new JoinedDB();
 
 
                   //Define a default route
                     $f3->route('GET /', function($f3) {
-                        $events =  $GLOBALS['$eventDB']->allEvents();
+                        $events =  $GLOBALS['eventsDB']->allEvents();
                         $f3->set('events', $events);
                       echo Template::instance()->render('pages/Frontend/explore.html');
                      });

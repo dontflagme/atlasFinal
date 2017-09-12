@@ -72,15 +72,11 @@
          *
          * @return true if the insert was successful, otherwise false
          */
-<<<<<<< HEAD
-        function addEvent($member_id, $title, $event_details, $date, $time)
-        {
-            $insert = 'INSERT INTO events (member_id, title, event_details, date, time) VALUES (:member_id, :title, :event_details, :date, :time)';
-=======
+
         function addEvent($member_id, $title, $event_details, $date, $time, $image)
         {
             $insert = 'INSERT INTO events (member_id, title, event_details, date, time, image VALUES (:member_id, :title, :event_details, :date, :time, :image)';
->>>>>>> fbe9d1fddc2a516aa924b444538ca5f92e57c9b6
+
              
             $statement = $this->_pdo->prepare($insert);
             $statement->bindValue(':member_id', $member_id, PDO::PARAM_STR);
@@ -88,10 +84,10 @@
             $statement->bindValue(':event_details', $event_details, PDO::PARAM_STR);
             $statement->bindValue(':date', $date, PDO::PARAM_STR);
             $statement->bindValue(':time', $time, PDO::PARAM_STR);
-<<<<<<< HEAD
-=======
+
+
             $statement->bindValue(':image', $image, PDO::PARAM_STR);
->>>>>>> fbe9d1fddc2a516aa924b444538ca5f92e57c9b6
+
             
             $statement->execute();
             
@@ -109,11 +105,11 @@
          */
         function allEvents()
         {
-<<<<<<< HEAD
+
             $select = 'SELECT event_id, member_id, title, event_details, date, time FROM events ORDER BY event_id';
-=======
+
             $select = 'SELECT event_id, member_id, title, event_details, date, time, image FROM events ORDER BY event_id';
->>>>>>> fbe9d1fddc2a516aa924b444538ca5f92e57c9b6
+
             $results = $this->_pdo->query($select);
              
             $resultsArray = array();
@@ -137,11 +133,11 @@
          */
         function eventsByMemberId($id)
         {
-<<<<<<< HEAD
+
             $select = 'SELECT event_id, member_id, title, event_details, date, time FROM events WHERE member_id=:id ORDER BY event_id';
-=======
+
             $select = 'SELECT event_id, member_id, title, event_details, date, time, image FROM events WHERE member_id=:id ORDER BY event_id';
->>>>>>> fbe9d1fddc2a516aa924b444538ca5f92e57c9b6
+
             
             $results = $this->_pdo->prepare($select);
             $results->bindValue(':id', $id, PDO::PARAM_INT);
@@ -168,11 +164,11 @@
          */
         function eventsByEventId($id)
         {
-<<<<<<< HEAD
+
             $select = 'SELECT event_id, member_id, title, , event_details, date, time FROM events WHERE event_id=:id';
-=======
+
             $select = 'SELECT event_id, member_id, title, , event_details, date, time, image FROM events WHERE event_id=:id';
->>>>>>> fbe9d1fddc2a516aa924b444538ca5f92e57c9b6
+
             
             $statement = $this->_pdo->prepare($select);
             $statement->bindValue(':id', $id, PDO::PARAM_INT);
@@ -200,10 +196,10 @@
             $statement->bindValue(':event_details', $event_details, PDO::PARAM_STR);
             $statement->bindValue(':date', $date, PDO::PARAM_INT);
             $statement->bindValue(':time', $time, PDO::PARAM_STR);
-<<<<<<< HEAD
-=======
+
+
             $statement->bindValue(':image', $image, PDO::PARAM_STR);
->>>>>>> fbe9d1fddc2a516aa924b444538ca5f92e57c9b6
+
             $statement->execute();
              
             //return $this->_pdo->lastInsertId();

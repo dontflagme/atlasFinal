@@ -9,12 +9,9 @@
         CREATE TABLE atlas_members
         (
         member_id int NOT NULL AUTO_INCREMENT PRIMARY KEY,
-<<<<<<< HEAD
         username varchar(255),
-=======
         firstname varchar(255),
         lastname varchar(255),
->>>>>>> fbe9d1fddc2a516aa924b444538ca5f92e57c9b6
         email varchar(255),
         password varchar(255),
         image varchar(255)
@@ -52,28 +49,23 @@
          * adds a members to the database collection.
          *
          * test entries
-<<<<<<< HEAD
+
          * INSERT INTO atlas_members (username, email, password, image) VALUES ("Zimja", "zimjajenkins@gmail.com", "1234", "test")
          * INSERT INTO atlas_members (username, email, password, image) VALUES ("Anitawhoo", "yahoo@gmail.com", "1234", "anita image test")
          * INSERT INTO atlas_members (username, email, password, image) VALUES ("Danceman", "thisisaemail@gmail.com", "1234", "kevin image test")
-=======
+
          * INSERT INTO atlas_members (firstname, lastname, email, password, image) VALUES ("Brian", "Saylor", "zimjajenkins@gmail.com", "1234", "test")
          * INSERT INTO atlas_members (firstname, lastname, email, password, image) VALUES ("Kevin", "Nguyen", "yahoo@gmail.com", "1234", "kevin image test")
          * INSERT INTO atlas_members (firstname, lastname, email, password, image) VALUES ("Anita", "Hu","thisisaemail@gmail.com", "1234", "anita image test")
->>>>>>> fbe9d1fddc2a516aa924b444538ca5f92e57c9b6
+
          *
          * @access public
          *
          * @return the last members id
          */
-<<<<<<< HEAD
-        function addMember($username, $email, $password, $image)
-        {
-            $insert = 'INSERT INTO atlas_members (username, email, password, image) VALUES (:username, :email, :password, :image)';
-             
-            $statement = $this->_pdo->prepare($insert);
-            $statement->bindValue(':username', $username, PDO::PARAM_STR);
-=======
+
+
+
         function addMember($firstname, $lastname, $email, $password, $image)
         {
             $insert = 'INSERT INTO atlas_members (firstname, lastname, email, password, image) VALUES (:firstname, :lastname, :email, :password, :image)';
@@ -81,7 +73,7 @@
             $statement = $this->_pdo->prepare($insert);
             $statement->bindValue(':firstname', $firstname, PDO::PARAM_STR);
             $statement->bindValue(':lastname', $lastname, PDO::PARAM_STR);
->>>>>>> fbe9d1fddc2a516aa924b444538ca5f92e57c9b6
+
             $statement->bindValue(':email', $email, PDO::PARAM_STR);
             $statement->bindValue(':password', $password, PDO::PARAM_STR);
             $statement->bindValue(':image', $image, PDO::PARAM_STR);
@@ -102,11 +94,11 @@
          */
         function allMembers()
         {
-<<<<<<< HEAD
+
             $select = 'SELECT member_id, username, email, password, image FROM atlas_members ORDER BY member_id';
-=======
+
             $select = 'SELECT member_id, firstname, lastname, email, password, image FROM atlas_members ORDER BY member_id';
->>>>>>> fbe9d1fddc2a516aa924b444538ca5f92e57c9b6
+
             $results = $this->_pdo->query($select);
              
             $resultsArray = array();
@@ -130,11 +122,11 @@
          */
         function memberById($id)
         {
-<<<<<<< HEAD
+
             $select = 'SELECT member_id, username, email, password, image FROM atlas_members WHERE member_id=:id';
-=======
+
             $select = 'SELECT member_id, firstname, lastname, email, password, image FROM atlas_members WHERE member_id=:id';
->>>>>>> fbe9d1fddc2a516aa924b444538ca5f92e57c9b6
+
              
             $statement = $this->_pdo->prepare($select);
             $statement->bindValue(':id', $id, PDO::PARAM_INT);
@@ -152,28 +144,22 @@
          * @return an associative array of member attributes, or false if
          * the member was not found
          */
-<<<<<<< HEAD
+
         function memberByUsername($username)
         {
             $select = 'SELECT member_id, username, email, password, image FROM atlas_members WHERE username=:username';
              
             $statement = $this->_pdo->prepare($select);
             $statement->bindValue(':username', $username, PDO::PARAM_INT);
-=======
-        function memberByEmail($email)
-        {
-            $select = 'SELECT member_id, firstname, lastname, email, password, image FROM atlas_members WHERE email=:email';
-             
-            $statement = $this->_pdo->prepare($select);
-            $statement->bindValue(':email', $email, PDO::PARAM_INT);
->>>>>>> fbe9d1fddc2a516aa924b444538ca5f92e57c9b6
+            
+            
             $statement->execute();
              
             return $statement->fetch(PDO::FETCH_ASSOC);
         }
         
         /**
-<<<<<<< HEAD
+
          * Returns a member that has the given email.
          *
          * @access public
@@ -201,7 +187,7 @@
          *
          * @return true if the name already exists, otherwise false
          */   
-        function memberExists($username, $password)
+        function memberUserExists($username, $password)
         {            
             $select = 'SELECT member_id, username, email, password, image FROM atlas_members WHERE username=:username && password=:password';
              
@@ -212,15 +198,15 @@
              
             $row = $statement->fetch(PDO::FETCH_ASSOC);
              
-=======
-         * Returns true if the name is used by a member in the database.
+        }
+         /** Returns true if the name is used by a member in the database.
          *
          * @access public
          * @param string $name the name of the member to look for
          *
          * @return true if the name already exists, otherwise false
          */   
-        function memberExists($email, $password)
+        function memberEmailExists($email, $password)
         {            
             $select = 'SELECT member_id, firstname, lastname, email, password, image FROM atlas_members WHERE email=:email && password=:password';
              
@@ -230,8 +216,7 @@
             $statement->execute();
              
             $row = $statement->fetch(PDO::FETCH_ASSOC);
-             
->>>>>>> fbe9d1fddc2a516aa924b444538ca5f92e57c9b6
+
             return !empty($row);
         }
     }

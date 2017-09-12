@@ -25,10 +25,12 @@ class ComposerStaticInit1c665c3d68c2a3d1efa2b3299a1456c6
         'DB\\SQL' => __DIR__ . '/..' . '/bcosca/fatfree-core/db/sql.php',
         'DB\\SQL\\Mapper' => __DIR__ . '/..' . '/bcosca/fatfree-core/db/sql/mapper.php',
         'DB\\SQL\\Session' => __DIR__ . '/..' . '/bcosca/fatfree-core/db/sql/session.php',
+        'Events' => __DIR__ . '/../..' . '/classes/events.php',
         'EventsDB' => __DIR__ . '/../..' . '/model/eventsdb.php',
         'F3' => __DIR__ . '/..' . '/bcosca/fatfree-core/f3.php',
         'ISO' => __DIR__ . '/..' . '/bcosca/fatfree-core/base.php',
         'Image' => __DIR__ . '/..' . '/bcosca/fatfree-core/image.php',
+        'Joined' => __DIR__ . '/../..' . '/classes/joined.php',
         'JoinedDB' => __DIR__ . '/../..' . '/model/joineddb.php',
         'Log' => __DIR__ . '/..' . '/bcosca/fatfree-core/log.php',
         'Magic' => __DIR__ . '/..' . '/bcosca/fatfree-core/magic.php',
@@ -52,6 +54,8 @@ class ComposerStaticInit1c665c3d68c2a3d1efa2b3299a1456c6
         'Web\\OAuth2' => __DIR__ . '/..' . '/bcosca/fatfree-core/web/oauth2.php',
         'Web\\OpenID' => __DIR__ . '/..' . '/bcosca/fatfree-core/web/openid.php',
         'Web\\Pingback' => __DIR__ . '/..' . '/bcosca/fatfree-core/web/pingback.php',
+        'has' => __DIR__ . '/../..' . '/classes/member.php',
+        'represents' => __DIR__ . '/../..' . '/classes/member.php',
     );
 
     public static function getInitializer(ClassLoader $loader)

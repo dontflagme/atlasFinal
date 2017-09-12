@@ -43,7 +43,7 @@
 		 <div class="row">
             
             <div class="col-md-8" id="contentSection">			
-					<center><h1>Add an Ideas:</h1></center>
+					<center><h1>Add an Idea:</h1></center>
                     
             <form action="./addIdeaDB" method="post">
                 <div class="col-md-4" id="contentSection">			
