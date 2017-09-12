@@ -677,3 +677,9 @@
 [11-Sep-2017 01:49:02 America/Chicago] PHP Parse error:  syntax error, unexpected '<<' (T_SL) in /home/knguyen/public_html/328/atlasFinal/index.php on line 25
 [11-Sep-2017 01:50:00 America/Chicago] PHP Parse error:  syntax error, unexpected '<<' (T_SL) in /home/knguyen/public_html/328/atlasFinal/index.php on line 25
 [11-Sep-2017 01:50:04 America/Chicago] PHP Parse error:  syntax error, unexpected '<<' (T_SL) in /home/knguyen/public_html/328/atlasFinal/index.php on line 25
+[11-Sep-2017 02:13:40 America/Chicago] PHP Fatal error:  Call to a member function allEvents() on a non-object in /home/bsaylor/public_html/328/atlasFinal/index.php on line 45
+[11-Sep-2017 02:13:40 America/Chicago] Fatal error: Call to a member function allEvents() on a non-object
+[11-Sep-2017 02:13:40 America/Chicago] [328/atlasFinal/index.php:45] 
+[11-Sep-2017 02:13:46 America/Chicago] HTTP 404 (GET /validate.js)
+[11-Sep-2017 02:13:46 America/Chicago] [328/atlasFinal/vendor/bcosca/fatfree-core/base.php:1645] Base->error()
+[11-Sep-2017 02:13:46 America/Chicago] [328/atlasFinal/index.php:73] Base->run()
