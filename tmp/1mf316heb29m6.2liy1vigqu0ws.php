@@ -28,11 +28,7 @@
     </head>
     
     <body>
-<<<<<<< HEAD
 
-    
-=======
->>>>>>> fbe9d1fddc2a516aa924b444538ca5f92e57c9b6
 
      <header>
         </nav>                   
@@ -47,9 +43,9 @@
                 <div class="modal fade login" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
                   <div class="modal-dialog modal-lg">
                     <div class="modal-content" id="modalcontent">
-<<<<<<< HEAD
+
                       <!--Enter context-->
-=======
+
                         
 
                         
@@ -76,7 +72,6 @@
                         </form>
                         
                       <!--Login module-->
->>>>>>> fbe9d1fddc2a516aa924b444538ca5f92e57c9b6
                       <p><a href="./homelogin" color="black" id="test1">Click this to head to the backend</a></p>
                     </div>
                   </div>
@@ -135,25 +130,27 @@
             </nav>             
      </header>
 
-<<<<<<< HEAD
-=======
-        
-        
->>>>>>> fbe9d1fddc2a516aa924b444538ca5f92e57c9b6
           <div id="wrapper">  
             <div id="columns">
                 <?php foreach (($events?:[]) as $event): ?>
                     <div class="grid">
-                        <a href="#signup" role="button" data-toggle="modal" data-target=".viewEvent">
+                        <a href="#signup" role="button" data-toggle="modal" data-target=".viewEvent<?= ($event['event_id']) ?>" >
                             <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Seattlenighttimequeenanne.jpg/449px-Seattlenighttimequeenanne.jpg" />
                         </a>
                         
                         <!-- view event modal -->
-                        <div class="modal fade viewEvent" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                        <div class="modal fade viewEvent<?= ($event['event_id']) ?>" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
                           <div class="modal-dialog modal-lg">
                             <div class="modal-content" id="modalcontent">
                              
-                            <p>This totally works</p>
+
+                    <a href="#signup" role="button" data-toggle="modal" data-target=".viewEvent">
+
+                     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Seattlenighttimequeenanne.jpg/449px-Seattlenighttimequeenanne.jpg" /></a>
+                   
+                    <h2><?= ($event['title']) ?></h2>
+                        
+                    <p><?= ($event['event_details']) ?></p>
         
                                 
                             </div>
@@ -161,36 +158,15 @@
                           </div>
                         </div>
                         
-                        <h2>Visit Kerry Park</h2>
-                        <h3>07/26/2017 at 1:00 P.M.</h3>
-                    
-<<<<<<< HEAD
-                    <a href="#signup" role="button" data-toggle="modal" data-target=".signup">
-
-                     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Seattlenighttimequeenanne.jpg/449px-Seattlenighttimequeenanne.jpg" /></a>
-                   
-                    <h2>Visit Kerry Park!!!!!</h2>
-                
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-                    when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-                    It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
-                    It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
-                    and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-
+                        <h2><?= ($event['title']) ?></h2>
+                        
+                        <p><?= ($event['event_details']) ?></p>
                 </div>
-=======
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-                        when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-                        It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
-                        It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
-                        and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+
     
-                    </div>
-                <?php endforeach; ?>    
->>>>>>> fbe9d1fddc2a516aa924b444538ca5f92e57c9b6
-                 
+                    
+                <?php endforeach; ?>
+                
                  <div class="grid">
                     <img src="https://static1.squarespace.com/static/51e6e466e4b018cade39e9d0/t/536cf91de4b0af8b32206b15/1399650594187/Colorado-White-Water-Rafting.jpg?format=1500w" />
                     <h2>Go White River Rafting</h2>
@@ -311,18 +287,15 @@
         </script>
         
         <script src="validate.js"></script>
-        
-<<<<<<< HEAD
+
         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>  
-=======
+
             <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
             <!-- Include all compiled plugins (below), or include individual files as needed -->
             <script src="js/bootstrap.min.js"></script>
-    
->>>>>>> fbe9d1fddc2a516aa924b444538ca5f92e57c9b6
     </body>
 </html>

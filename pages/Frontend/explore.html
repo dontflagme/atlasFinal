@@ -134,16 +134,23 @@
             <div id="columns">
                 <repeat group="{{ @events }}" value="{{ @event }}">
                     <div class="grid">
-                        <a href="#signup" role="button" data-toggle="modal" data-target=".viewEvent">
+                        <a href="#signup" role="button" data-toggle="modal" data-target=".viewEvent{{ @event.event_id }}" >
                             <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Seattlenighttimequeenanne.jpg/449px-Seattlenighttimequeenanne.jpg" />
                         </a>
                         
                         <!-- view event modal -->
-                        <div class="modal fade viewEvent" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                        <div class="modal fade viewEvent{{ @event.event_id }}" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
                           <div class="modal-dialog modal-lg">
                             <div class="modal-content" id="modalcontent">
                              
-                            <p>This totally works</p>
+
+                    <a href="#signup" role="button" data-toggle="modal" data-target=".viewEvent">
+
+                     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Seattlenighttimequeenanne.jpg/449px-Seattlenighttimequeenanne.jpg" /></a>
+                   
+                    <h2>{{ @event.title }}</h2>
+                        
+                    <p>{{ @event.event_details }}</p>
         
                                 
                             </div>
@@ -151,32 +158,13 @@
                           </div>
                         </div>
                         
-                        <h2>Visit Kerry Park</h2>
-                        <h3>07/26/2017 at 1:00 P.M.</h3>
-
-                    <a href="#signup" role="button" data-toggle="modal" data-target=".signup">
-
-                     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Seattlenighttimequeenanne.jpg/449px-Seattlenighttimequeenanne.jpg" /></a>
-                   
-                    <h2>Visit Kerry Park!!!!!</h2>
-                
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-                    when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-                    It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
-                    It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
-                    and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-
+                        <h2>{{ @event.title }}</h2>
+                        
+                        <p>{{ @event.event_details }}</p>
                 </div>
 
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-                        when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-                        It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
-                        It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
-                        and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
     
-                    </div>
+                    
                 </repeat>
                 
                  <div class="grid">
