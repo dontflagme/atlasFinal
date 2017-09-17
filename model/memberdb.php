@@ -49,15 +49,11 @@
          * adds a members to the database collection.
          *
          * test entries
-
-         * INSERT INTO atlas_members (username, email, password, image) VALUES ("Zimja", "zimjajenkins@gmail.com", "1234", "test")
-         * INSERT INTO atlas_members (username, email, password, image) VALUES ("Anitawhoo", "yahoo@gmail.com", "1234", "anita image test")
-         * INSERT INTO atlas_members (username, email, password, image) VALUES ("Danceman", "thisisaemail@gmail.com", "1234", "kevin image test")
-
-         * INSERT INTO atlas_members (firstname, lastname, email, password, image) VALUES ("Brian", "Saylor", "zimjajenkins@gmail.com", "1234", "test")
-         * INSERT INTO atlas_members (firstname, lastname, email, password, image) VALUES ("Kevin", "Nguyen", "yahoo@gmail.com", "1234", "kevin image test")
-         * INSERT INTO atlas_members (firstname, lastname, email, password, image) VALUES ("Anita", "Hu","thisisaemail@gmail.com", "1234", "anita image test")
-
+         * 
+         * INSERT INTO atlas_members (username, firstname, lastname, email, password, image) VALUES ("Zimja", "Brian", "Saylor", "zimjajenkins@gmail.com", "1234", "test")
+         * INSERT INTO atlas_members (username, firstname, lastname, email, password, image) VALUES ("Danceman", "Kevin", "Nguyen", "yahoo@gmail.com", "1234", "kevin image test")
+         * INSERT INTO atlas_members (username, firstname, lastname, email, password, image) VALUES ("Anitawhoo", "Anita", "Hu","thisisaemail@gmail.com", "1234", "anita image test")
+         * 
          *
          * @access public
          *

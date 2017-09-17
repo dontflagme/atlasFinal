@@ -13,12 +13,8 @@
         title varchar(255),
         event_details varchar(500),
         date DATE,
-<<<<<<< HEAD
-        time TIME
-=======
         time TIME,
         image varchar(255)
->>>>>>> fbe9d1fddc2a516aa924b444538ca5f92e57c9b6
         );
      */
     
@@ -54,16 +50,14 @@
          * Adds a event to the collection of event in the db.
          *
          * test entries
-<<<<<<< HEAD
          * INSERT INTO events (member_id, title, event_details, date, time) VALUES (1, "Paintball", "lets go paintball", 12/15/2017, "12:00:00")
          * INSERT INTO events (member_id, title, event_details, date, time) VALUES (2, "Makeup Session", "I love youtube makeup tutorials", 12/25/2017, "1:00")
          * INSERT INTO events (member_id, title, event_details, date, time) VALUES (3, "Vance Joy Concert", "10/10 Riptide is the best", 12/05/2017, "2:00")
-=======
+         * 
          * INSERT INTO events (member_id, title, event_details, date, time, image) VALUES (1, "Paintball", "lets go paintball", 12/15/2017, "12:00:00", "test paintball")
          * INSERT INTO events (member_id, title, event_details, date, time, image) VALUES (2, "Vance Joy Concert", "10/10 Riptide is the best", 12/05/2017, "2:00", "test concert")
          * INSERT INTO events (member_id, title, event_details, date, time, image) VALUES (3, "Makeup Session", "I love youtube makeup tutorials", 12/25/2017, "1:00", "test makeup")
          * 
->>>>>>> fbe9d1fddc2a516aa924b444538ca5f92e57c9b6
          *
          * @access public
          * @param string $member_id the id of the blog
