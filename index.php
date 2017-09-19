@@ -39,10 +39,33 @@ $joinedDB = new JoinedDB();
                       echo Template::instance()->render('pages/Frontend/explore.html');
                      });
                     
+                    
+                    
                                       //Define a default route
                     $f3->route('GET /homelogin', function($f3) {
                       
                       echo Template::instance()->render('pages/backend/home_backend.html');
+                     });
+                    
+                    //This is used to create a new user.
+                    //Takes the information and adds to members database
+                    $f3->route('GET /registerDB', function($f3) {
+                      $_SESSION['firstName'] = $_POST['firstname'];
+                      $_SESSION['lastName'] = $_POST['lastName'];
+                      $_SESSION['email'] = $_POST['email'];
+                      $_SESSION['password'] = $_POST['password'];
+                      $_SESSION['profilePicture'] = $_POST['profilePicture'];
+                      $_SESSION['username'] = $_POST['username'];
+                      
+                      $firstName = $_SESSION['firstName'];
+                      $lastname = $_SESSION['lastName'];
+                      $email = $_SESSION['email'];
+                      $username = $_SESSION['username'];
+                      $password = $_SESSION['password'];
+                      $profilePicture = $_SESSION['profilePicture'];
+                      
+                      
+                     
                      });
                     
                     $f3->route('GET /viewevents', function($f3) {
