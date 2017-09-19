@@ -49,7 +49,7 @@ $joinedDB = new JoinedDB();
                     
                     //This is used to create a new user.
                     //Takes the information and adds to members database
-                    $f3->route('GET /registerDB', function($f3) {
+                    $f3->route('POST /registerDB', function($f3) {
                       $_SESSION['firstName'] = $_POST['firstname'];
                       $_SESSION['lastName'] = $_POST['lastName'];
                       $_SESSION['email'] = $_POST['email'];
@@ -58,12 +58,19 @@ $joinedDB = new JoinedDB();
                       $_SESSION['username'] = $_POST['username'];
                       
                       $firstName = $_SESSION['firstName'];
-                      $lastname = $_SESSION['lastName'];
+                      $lastName = $_SESSION['lastName'];
                       $email = $_SESSION['email'];
                       $username = $_SESSION['username'];
                       $password = $_SESSION['password'];
                       $profilePicture = $_SESSION['profilePicture'];
                       
+                      $member = new Member($username, $firstName, $lastName, $email, $password, $profilePicture);
+                      
+                      $_SESSION['member'] = $member;
+                      
+                      $GLOBALS['memberDB']->addMember($username, $firstName, $lastName, $email, $password, $profilePicture);
+                      
+                      $f3->reroute('/homelogin');
                       
                      
                      });
