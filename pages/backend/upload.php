@@ -5,7 +5,7 @@
  *  This is code that I am currently testing, the php code at the bottom is the one you made from grav.
  *
  */
-$target_dir = "uploads/";
+$target_dir = "img/";
 $target_file = $target_dir . basename($_FILES["profilePicture"]["name"]);
 $uploadOk = 1;
 $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);

@@ -86,7 +86,7 @@
                      
                             
                      
-                     <form action="./registerDB" method="post">
+                     <form action="./registerDB" method="post" enctype="multipart/form-data">
                          <fieldset>
                           <legend>
                              <h2 id="signup_label">Sign Up</h2> <br> <br>
@@ -105,7 +105,7 @@
                        
                         <legend>Add a photo(*)</legend><input type="file" name="profilePicture" id="profilePicture">
                     
-                        <button type="submit">Get it done!</button>
+                        <button type="submit" name="submit">Get it done!</button>
                           <!--<script src="js/validate.js"></script>-->
                      </form>
                 
