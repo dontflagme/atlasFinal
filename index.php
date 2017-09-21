@@ -71,9 +71,10 @@ $joinedDB = new JoinedDB();
                       
                       
                                                 
-                                                /**
+                         /**
                            *
-                           *  This is code that I am currently testing, the php code at the bottom is the one you made from grav.
+                           *  This code uploads the image from the member to the
+                           *  cpanel img directory and puts the name of the image in sql
                            *
                            */
                           $target_dir = "img/";
@@ -121,9 +122,7 @@ $joinedDB = new JoinedDB();
                           $profilePicture = basename( $_FILES["profilePicture"]["name"]);
                           $GLOBALS['memberDB']->addMember($username, $firstName, $lastName, $email, $password, $profilePicture);
                           
-                     // $f3->reroute('/homelogin');
-                      
-                     
+                     //$f3->reroute('/homelogin');
                      });
                     
                     $f3->route('GET /viewevents', function($f3) {
@@ -141,6 +140,16 @@ $joinedDB = new JoinedDB();
                       
                       echo Template::instance()->render('pages/backend/addIdea.html');
                      });
+                    
+                    $f3->route('POST /updateblog/@id', function($f3, $params){
+                    $_SESSION['memberID'] = $params['id'];
+                    $_SESSION['eventTitle'] = $_POST['eventTitle'];
+                    $_SESSION['eventDetails'] = $_POST['eventDetails'];
+                    $_SESSION['eventPicture'] = $_POST['eventPicture'];
+                    $event =  $GLOBALS['eventDB']->addEvent($_SESSION['memberID'], $_SESSION['eventTitle'], $_SESSION['eventDetails'], $_SESSION['eventPicture']);
+                    
+                    $f3->reroute('/homelogin');
+                    });
                     
            
 $f3->run();        
