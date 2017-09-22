@@ -39,9 +39,26 @@ $joinedDB = new JoinedDB();
                       echo Template::instance()->render('pages/Frontend/explore.html');
                      });
                     
-                    
-                    
-                                      //Define a default route
+                    //-----------------------Varifies login to see if user exists--------------------------------
+                    $f3->route('POST /loginCheck', function($f3) {
+                        $memberDB = new MemberDB();
+                        
+                        $currentMember = new Member("", "", "", "", "", "");
+                        
+                        $emailAttempt = $_POST['email'];
+                        $passwordAttempt = $_POST['password'];
+                        $memberExistsCheck = $GLOBALS['memberDB']->memberUserExists($emailAttempt, $passwordAttempt);
+                        if($memberExistsCheck){
+                            echo "It worked!";
+                        }
+                        else{
+                            echo "Member does not exist.";
+                        }
+                        
+                      //$f3->reroute('/homelogin');
+                     });
+                    //----------------------- Define a default route--------------------------
+                                    
                     $f3->route('GET /homelogin', function($f3) {
                       
                       echo Template::instance()->render('pages/backend/home_backend.html');
@@ -68,12 +85,10 @@ $joinedDB = new JoinedDB();
                       
                       $_SESSION['member'] = $member;
                       echo "This is the name of the file: ". $profilePicture;
-                      
-                      
-                                                
-                                                /**
+                           
+                            /**
                            *
-                           *  This is code that I am currently testing, the php code at the bottom is the one you made from grav.
+                           *  This code uploads user information for the signup including picture.
                            *
                            */
                           $target_dir = "img/";
@@ -122,8 +137,6 @@ $joinedDB = new JoinedDB();
                           $GLOBALS['memberDB']->addMember($username, $firstName, $lastName, $email, $password, $profilePicture);
                           
                      // $f3->reroute('/homelogin');
-                      
-                     
                      });
                     
                     $f3->route('GET /viewevents', function($f3) {

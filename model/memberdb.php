@@ -178,16 +178,18 @@
          *
          * @return true if the name already exists, otherwise false
          */   
-        function memberUserExists($username, $password)
+        function memberUserExists($email, $password)
         {            
-            $select = 'SELECT member_id, username, firstname, lastname, email, password, image FROM atlas_members WHERE username=:username && password=:password';
+            $select = 'SELECT member_id, username, firstname, lastname, email, password, image FROM atlas_members WHERE email=:email && password=:password';
              
             $statement = $this->_pdo->prepare($select);
-            $statement->bindValue(':username', $username, PDO::PARAM_STR);
+            $statement->bindValue(':email', $email, PDO::PARAM_STR);
             $statement->bindValue(':password', $password, PDO::PARAM_STR);
             $statement->execute();
              
             $row = $statement->fetch(PDO::FETCH_ASSOC);
+            
+            return !empty($row);
              
         }
          /** Returns true if the name is used by a member in the database.

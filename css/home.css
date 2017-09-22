@@ -14,7 +14,7 @@ body{
 
     height: 200px;
     width: 100%;
-    margin-top: 10%;
+    
     z-index: -2;
 }
 
@@ -31,7 +31,7 @@ body{
 #profile_picture{
 
     position: absolute;
-    top: 30%;
+    top: 20%;
     margin-left: 20px;
     margin-top: 20px;
     border-radius: 10000px;
@@ -176,7 +176,11 @@ th{
     
     }
  
-
+h4#title{
+    width: 100%;
+    margin-left: 1%;
+    color: grey;
+}
 .grid img{
         width: 100%;
     }

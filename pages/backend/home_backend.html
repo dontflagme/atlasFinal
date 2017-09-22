@@ -91,14 +91,10 @@
                     <section id="poster_section">
                         <h4>Kevin McKickAss</h4><br>
                         <h5>posted an hour ago</h5><br>
+						<h4 id="title">Kerry Park Often called Lower Kerry Park, this part of the park is below the famous viewpoint.</h4>
                         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Seattlenighttimequeenanne.jpg/449px-Seattlenighttimequeenanne.jpg" />   
                     </section>
 
-                            <h4>Kerry Park</h4><br>
-                              <h5>Kerry Park
-                                    Often called Lower Kerry Park, this part of the park is below the famous viewpoint.
-                                    A fun place to frolic, it offers a large lawn area, landscaping, paths, neighborhood
-                                    gathering area and children's play equipment. Franklin Place, across the street from Bayview-Kinnear to the </h5><br>
                    
 
                          <!-- signup modal -->

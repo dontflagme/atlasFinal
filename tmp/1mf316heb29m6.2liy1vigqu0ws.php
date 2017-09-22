@@ -49,19 +49,19 @@
                         
 
                         
-                        <form>
+                        <form action="./loginCheck" method="post">
                           
                             <div class="form-group">
                                 <hr>
                                 <label for="inputEmail">Email</label>
                                 <div class="col-xs-10">
-                                    <input type="email" class="form-control" id="inputEmail" placeholder="Email">
+                                    <input type="email" name="email" class="form-control" id="inputEmail" placeholder="Email">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="inputPassword">Password</label>
                                 <div class="col-xs-10">
-                                    <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+                                    <input type="password" name="password" class="form-control" id="inputPassword" placeholder="Password">
                                 </div>
                             </div>
                             <div class="form-group">
