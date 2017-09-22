@@ -42,21 +42,25 @@ $joinedDB = new JoinedDB();
                     //-----------------------Varifies login to see if user exists--------------------------------
                     $f3->route('POST /loginCheck', function($f3) {
                         $memberDB = new MemberDB();
+
+                        $emailAttempt = $_POST['email'];//This is the POST input from user for email
+                        $passwordAttempt = $_POST['password'];//This is the POST input from user for password
+                        $memberExistsCheck = $GLOBALS['memberDB']->memberUserExists($emailAttempt, $passwordAttempt);//Checking to see if the user email exists in database
                         
-                        
-                        
-                        $emailAttempt = $_POST['email'];
-                        $passwordAttempt = $_POST['password'];
-                        $memberExistsCheck = $GLOBALS['memberDB']->memberUserExists($emailAttempt, $passwordAttempt);
-                        if($memberExistsCheck){
-                           $currentMember = new Member("", "", "", "", "", "");//Createsss
-                           echo "It worked!";
+                        if($memberExistsCheck){//If it is true, log the user in with the matching password and email
+                           $foundMember = $GLOBALS['memberDB']->memberByEmail($emailAttempt);
+                           $currentMember = new Member($foundMember['username'], $foundMember['firstname'],$foundMember['lastname'],
+                                                       $foundMember['email'], $foundMember['password'], $foundMember['image']);//Createsss
+                      
+                           $_SESSION['currentMember'] = $currentMember;//Call $_SESSION['currentMember'] for the current member logged in.
+                           
+                           $f3->reroute('/homelogin');//When log in is successful the user will be redirected to the backend home screen of their profile
                         }
-                        else{
+                        else{//Display user does not exist if the email AND password does not match in the membersDB
                             echo "Member does not exist.";
                         }
                         
-                      //$f3->reroute('/homelogin');
+                      
                      });
                     //----------------------- Define a default route--------------------------
                                     

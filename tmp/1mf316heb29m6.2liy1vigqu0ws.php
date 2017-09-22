@@ -72,7 +72,6 @@
                         </form>
                         
                       <!--Login module-->
-                      <p><a href="./homelogin" color="black" id="test1">Click this to head to the backend</a></p>
                     </div>
                   </div>
                 </div>
