@@ -69,7 +69,7 @@
 
         function addEvent($member_id, $title, $event_details, $date, $time, $image)
         {
-            $insert = 'INSERT INTO events (member_id, title, event_details, date, time, image VALUES (:member_id, :title, :event_details, :date, :time, :image)';
+            $insert = 'INSERT INTO events (member_id, title, event_details, date, time, image) VALUES (:member_id, :title, :event_details, :date, :time, :image)';
 
              
             $statement = $this->_pdo->prepare($insert);

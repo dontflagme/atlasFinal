@@ -65,7 +65,17 @@ $joinedDB = new JoinedDB();
                     //----------------------- Define a default route--------------------------
                                     
                     $f3->route('GET /homelogin', function($f3) {
-                      
+                        
+                        
+                        $userLogin = $_SESSION['currentMember'];
+                        $userLogin = $_SESSION['currentMember']->getUsername();
+                            
+                        $member =  $GLOBALS['memberDB']->memberByUsername($userLogin);
+                              
+                        $loginMember = $_SESSION['member'];
+                        $f3->set('id',  $member['member_id']);
+                        
+                        
                       echo Template::instance()->render('pages/backend/home_backend.html');
                      });
                     
@@ -155,11 +165,38 @@ $joinedDB = new JoinedDB();
                       echo Template::instance()->render('pages/backend/explore.html');
                      });
                     
-                    $f3->route('GET /addidea', function($f3) {
-                      
-                      echo Template::instance()->render('pages/backend/addIdea.html');
-                     });
                     
+                    $f3->route('GET /addidea/@id', function($f3, $params) {
+
+                        $_SESSION['id'] = $params['id'];
+                      
+                     $f3->reroute('/addidea');
+                    });
+                    
+                        $f3->route('GET /addidea', function($f3) {
+                          
+                            $f3->set('id',  $_SESSION['id']);
+                          
+                         echo Template::instance()->render('pages/backend/addIdea.html');
+                        });
+                        
+                        $f3->route('POST /addidea', function($f3) {
+                            
+                            $events =  $GLOBALS['eventsDB']->addEvent($_SESSION['id'], $_POST['eventTitle'], $_POST['eventDetails'], "2017-09-23", "10:54:00", $_POST['eventPicture']);
+                          
+                          $f3->reroute('/homelogin');
+                        });
+                    
+                    
+                    /**
+                            $f3->set('id',  $_SESSION['id']);
+                            $_SESSION['title'] = $_POST['title'];
+                            $_SESSION['event_details'] = $_POST['event_details'];
+                            $_SESSION['image'] = $_POST['image'];
+                            $_SESSION['id'] = $params['id'];
+                            
+                            echo "id = " . $_SESSION['id'] . ",  image = " . $_SESSION['image'] . ", details = " . $_SESSION['event_details'] . ", title = " .$_SESSION['title'];
+                     */
            
 $f3->run();        
 ?>
