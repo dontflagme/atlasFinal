@@ -21,6 +21,7 @@
 			
 			<div class="container-fluid">
 				<img src="img/exploreicon.png" height="60" width="60" id ="icon"/>
+				<h1 id="loginUser">Welcome, <?= ($firstName) ?> <?= ($lastName) ?></h1>
 			  <ul class="nav navbar-nav" id="navbartext">
 				<li><a href="./homelogin" id="navLink">Home</a></li>
 				<li><h4>|</h4></li>
