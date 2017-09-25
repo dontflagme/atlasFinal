@@ -93,18 +93,23 @@
                         <h4><?= ($firstName) ?> <?= ($lastName) ?></h4><br>
                         <h5>posted an hour ago</h5><br>
 						<h4 id="title">Kerry Park Often called Lower Kerry Park, this part of the park is below the famous viewpoint.</h4>
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Seattlenighttimequeenanne.jpg/449px-Seattlenighttimequeenanne.jpg" />   
+					    
+						<a href="#signup" role="button" data-toggle="modal" data-target=".details" >
+                            <img src="http://www.twitrcovers.com/wp-content/uploads/2014/12/City-Bokeh-Lights-l.jpg" />
+                        </a>  
                     </section>
 
                    
 
                          <!-- signup modal -->
-                      <button class="btn btn-primary" data-toggle="modal" data-target=".details" id="details">View all comments</button>
+                     
+					  
+
                      
                         <div class="modal fade details" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
                           <div class="modal-dialog modal-lg">
                             <div class="modal-content" id="modalcontent_details">
-                                 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Seattlenighttimequeenanne.jpg/449px-Seattlenighttimequeenanne.jpg" />
+                                 <img src="http://www.twitrcovers.com/wp-content/uploads/2014/12/City-Bokeh-Lights-l.jpg" />
                                  
                                  <div id="modal_description">
                                         <h1>Kerry Park</h1>
