@@ -94,6 +94,15 @@ $joinedDB = new JoinedDB();
                       $f3->set('firstName', $firstName);
                       $f3->set('lastName', $lastName);
                       
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
+                      $firstName = $_SESSION['firstName'];
+                      $lastName = $_SESSION['lastName'];
+                      
+                      $f3->set('firstName', $firstName);
+                      $f3->set('lastName', $lastName);
+                      
 >>>>>>> Stashed changes
                       echo Template::instance()->render('pages/backend/home_backend.html');
                      });

@@ -1615,6 +1615,7 @@
 [22-Sep-2017 17:09:49 America/Chicago] [328/atlasFinal/vendor/bcosca/fatfree-core/base.php:1659] Base->error()
 [22-Sep-2017 17:09:49 America/Chicago] [328/atlasFinal/index.php:164] Base->run()
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 [23-Sep-2017 04:00:56 America/Chicago] HTTP 404 (GET /validate.js)
 [23-Sep-2017 04:00:56 America/Chicago] [328/atlasFinal/vendor/bcosca/fatfree-core/base.php:1659] Base->error()
 [23-Sep-2017 04:00:56 America/Chicago] [328/atlasFinal/index.php:164] Base->run()
@@ -1998,6 +1999,8 @@
 [25-Sep-2017 13:54:11 America/Chicago] [328/atlasFinal/vendor/bcosca/fatfree-core/base.php:1659] Base->error()
 [25-Sep-2017 13:54:11 America/Chicago] [328/atlasFinal/index.php:201] Base->run()
 =======
+=======
+>>>>>>> Stashed changes
 [23-Sep-2017 01:32:30 America/Chicago] HTTP 404 (GET /validate.js)
 [23-Sep-2017 01:32:30 America/Chicago] [328/atlasFinal/vendor/bcosca/fatfree-core/base.php:1659] Base->error()
 [23-Sep-2017 01:32:30 America/Chicago] [328/atlasFinal/index.php:164] Base->run()
@@ -2220,4 +2223,7 @@
 [24-Sep-2017 01:24:38 America/Chicago] HTTP 404 (GET /validate.js)
 [24-Sep-2017 01:24:38 America/Chicago] [328/atlasFinal/vendor/bcosca/fatfree-core/base.php:1659] Base->error()
 [24-Sep-2017 01:24:38 America/Chicago] [328/atlasFinal/index.php:200] Base->run()
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes

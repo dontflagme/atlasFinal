@@ -53,6 +53,9 @@
             <form action="./addIdeaDB" method="post">
                 <div class="col-md-4" id="contentSection">			
                         <legend>Enter in a title</legend><input type="text" name="eventTitle" id="eventTitle" placeholder="Enter in a title...">
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
                 </div>
                 
@@ -64,11 +67,14 @@
 					<legend>Add a photo(*)</legend><input type="file" name="eventPicture" id="eventPicture">
 				</div>
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 				
 				<div class="col-md-4" id="contentSection">
 					<button type="submit" name="submit">Add that Idea!</button>
 				</div>
 				
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
             </form>
