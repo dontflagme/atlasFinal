@@ -39,6 +39,11 @@ $joinedDB = new JoinedDB();
                       echo Template::instance()->render('pages/Frontend/explore.html');
                      });
                     
+                    $f3->route('GET /logout', function($f3) {
+                        session_destroy();
+                        $f3->reroute('/');
+                     });
+                    
                     //-----------------------Varifies login to see if user exists--------------------------------
                     $f3->route('POST /loginCheck', function($f3) {
                         $memberDB = new MemberDB();
@@ -53,8 +58,13 @@ $joinedDB = new JoinedDB();
                                                        $foundMember['email'], $foundMember['password'], $foundMember['image']);//Createsss
                       
                            $_SESSION['currentMember'] = $currentMember;//Call $_SESSION['currentMember'] for the current member logged in.
-                           
-                           $f3->reroute('/homelogin');//When log in is successful the user will be redirected to the backend home screen of their profile
+                            $_SESSION['firstName'] = $foundMember['firstname'];
+                            $_SESSION['lastName'] = $foundMember['lastname'];
+                            $_SESSION['email'] = $foundMember['email'];
+                            $_SESSION['password'] = $foundMember['password'];
+                            $_SESSION['profilePicture'] = $foundMember['image'];
+                            $_SESSION['username'] = $foundMember['username'];
+                            $f3->reroute('/homelogin');//When log in is successful the user will be redirected to the backend home screen of their profile
                         }
                         else{//Display user does not exist if the email AND password does not match in the membersDB
                             echo "Member does not exist.";
@@ -88,6 +98,9 @@ $joinedDB = new JoinedDB();
                     //This is used to create a new user.
                     //Takes the information and adds to members database
                     $f3->route('POST /registerDB', function($f3) {
+                        
+                        
+                    
                       $_SESSION['firstName'] = $_POST['firstname'];
                       $_SESSION['lastName'] = $_POST['lastName'];
                       $_SESSION['email'] = $_POST['email'];
@@ -102,7 +115,12 @@ $joinedDB = new JoinedDB();
                       $password = $_SESSION['password'];
                       $profilePicture = $_SESSION['profilePicture'];
                       
-                      $member = new Member($username, $firstName, $lastName, $email, $password, $profilePicture);
+                      if($GLOBALS['memberDB']->memberByEmail($email)){
+                        echo "That email is in use.";
+                      }
+                      
+                      else{
+                        $member = new Member($username, $firstName, $lastName, $email, $password, $profilePicture);
                       
                       $_SESSION['member'] = $member;
                       //echo "This is the name of the file: ". $profilePicture;
@@ -158,6 +176,8 @@ $joinedDB = new JoinedDB();
                           $GLOBALS['memberDB']->addMember($username, $firstName, $lastName, $email, $password, $profilePicture);
                           
                       $f3->reroute('/homelogin');
+                      }
+                      
                      });
                     
                     $f3->route('GET /viewevents', function($f3) {

@@ -56,7 +56,8 @@ body{
 }
 
 #name_banner{
-     margin-left: 20%;
+    position: absolute;
+     margin-left: 17%;
     margin-top: 20px;
 
 }
