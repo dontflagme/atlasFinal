@@ -47,19 +47,10 @@ $joinedDB = new JoinedDB();
                         $passwordAttempt = $_POST['password'];//This is the POST input from user for password
                         $memberExistsCheck = $GLOBALS['memberDB']->memberUserExists($emailAttempt, $passwordAttempt);//Checking to see if the user email exists in database
                         
-                       
                         if($memberExistsCheck){//If it is true, log the user in with the matching password and email
                            $foundMember = $GLOBALS['memberDB']->memberByEmail($emailAttempt);
                            $currentMember = new Member($foundMember['username'], $foundMember['firstname'],$foundMember['lastname'],
                                                        $foundMember['email'], $foundMember['password'], $foundMember['image']);//Createsss
-                           
-                                                   //Storing information into a session to use later
-                            $_SESSION['firstName'] = $foundMember['firstname'];//User's first name
-                            $_SESSION['lastName'] = $foundMember['lastname'];//User's last name
-                            $_SESSION['email'] = $foundMember['email'];//User's email
-                            $_SESSION['password'] = $foundMember['password'];//User's password
-                            $_SESSION['profilePicture'] = $foundMember['image'];//User's profile picture
-                            $_SESSION['username'] = $foundMember['username'];//User's username
                       
                            $_SESSION['currentMember'] = $currentMember;//Call $_SESSION['currentMember'] for the current member logged in.
                            
@@ -74,7 +65,6 @@ $joinedDB = new JoinedDB();
                     //----------------------- Define a default route--------------------------
                                     
                     $f3->route('GET /homelogin', function($f3) {
-<<<<<<< Updated upstream
                         
                         
                         $userLogin = $_SESSION['currentMember'];
@@ -83,42 +73,28 @@ $joinedDB = new JoinedDB();
                         $member =  $GLOBALS['memberDB']->memberByUsername($userLogin);
                               
                         $loginMember = $_SESSION['member'];
+                        
+                        //These are the f3 to use in the templates
                         $f3->set('id',  $member['member_id']);
+                        $f3->set('firstName', $_SESSION['firstName']);
+                        $f3->set('lastName',$_SESSION['lastName']);
+                        $f3->set('profilePicture', $_SESSION['profilePicture']);
                         
                         
-=======
-                      
-                      $firstName = $_SESSION['firstName'];
-                      $lastName = $_SESSION['lastName'];
-                      
-                      $f3->set('firstName', $firstName);
-                      $f3->set('lastName', $lastName);
-                      
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
-                      $firstName = $_SESSION['firstName'];
-                      $lastName = $_SESSION['lastName'];
-                      
-                      $f3->set('firstName', $firstName);
-                      $f3->set('lastName', $lastName);
-                      
->>>>>>> Stashed changes
                       echo Template::instance()->render('pages/backend/home_backend.html');
+                      echo var_dump($_SESSION['currentMember']);
                      });
-   
-                    //----------------------- Takes the information and adds to members database--------------------------
+                    
+                    //This is used to create a new user.
+                    //Takes the information and adds to members database
                     $f3->route('POST /registerDB', function($f3) {
-                        
-                        //Storing information into a session to use later
-                      $_SESSION['firstName'] = $_POST['firstname'];//User's first name
-                      $_SESSION['lastName'] = $_POST['lastName'];//User's last name
-                      $_SESSION['email'] = $_POST['email'];//User's email
-                      $_SESSION['password'] = $_POST['password'];//User's password
-                      $_SESSION['profilePicture'] = $_POST['profilePicture'];//User's profile picture
-                      $_SESSION['username'] = $_POST['username'];//User's username
+                      $_SESSION['firstName'] = $_POST['firstname'];
+                      $_SESSION['lastName'] = $_POST['lastName'];
+                      $_SESSION['email'] = $_POST['email'];
+                      $_SESSION['password'] = $_POST['password'];
+                      $_SESSION['profilePicture'] = $_POST['profilePicture'];
+                      $_SESSION['username'] = $_POST['username'];
                       
-                      //Pulling information out from session to insert into the variables
                       $firstName = $_SESSION['firstName'];
                       $lastName = $_SESSION['lastName'];
                       $email = $_SESSION['email'];
@@ -126,14 +102,7 @@ $joinedDB = new JoinedDB();
                       $password = $_SESSION['password'];
                       $profilePicture = $_SESSION['profilePicture'];
                       
-                      $doesMemberExist = $GLOBALS['memberDB']->memberByEmail($email);//Grabbing a row to see if the user exists in the memberDB
-                      
-                      if($doesMemberExist){//If the user exists then display that you can't create an account
-                        echo "Member already exists.";
-                      }
-                      
-                      else{
-                         $member = new Member($username, $firstName, $lastName, $email, $password, $profilePicture);
+                      $member = new Member($username, $firstName, $lastName, $email, $password, $profilePicture);
                       
                       $_SESSION['member'] = $member;
                       //echo "This is the name of the file: ". $profilePicture;
@@ -187,21 +156,9 @@ $joinedDB = new JoinedDB();
                           }
                           $profilePicture = basename( $_FILES["profilePicture"]["name"]);
                           $GLOBALS['memberDB']->addMember($username, $firstName, $lastName, $email, $password, $profilePicture);
-                      }
-                     
                           
                       $f3->reroute('/homelogin');
                      });
-                    
-                   $f3->route('GET /logOut',
-                   function($f3){
-
-                       session_destroy();
-                       $f3->reroute('/');
-                       //echo 'Hello Getting: '. $eachBlog['id'];
-                       //print_r($eachBlog);
-              
-                   });
                     
                     $f3->route('GET /viewevents', function($f3) {
                       

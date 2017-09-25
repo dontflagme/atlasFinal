@@ -21,7 +21,6 @@
 			
 			<div class="container-fluid">
 				<img src="img/exploreicon.png" height="60" width="60" id ="icon"/>
-				<h1 id="loginUser">Welcome, {{@firstName}} {{@lastName}}</h1>
 			  <ul class="nav navbar-nav" id="navbartext">
 				<li><a href="./homelogin" id="navLink">Home</a></li>
 				<li><h4>|</h4></li>
@@ -83,15 +82,15 @@
 
         <div id="wrapper">
             <section id="banner_section">
-                <img src="https://viewbug_com.s3.amazonaws.com/media/images/contests/contest7664_banner.jpg" id="banner"/>
-                <img src="img/default_pic.jpg"/ id="profile_picture">
-                <h3 id="name_banner">Kevin McKickAss</h3>
+                <img src="http://www.twitrcovers.com/wp-content/uploads/2014/12/City-Bokeh-Lights-l.jpg" id="banner"/>
+                <img src="img/{{@profilePicture}}" id="profile_picture">
+                <h3 id="name_banner">{{@firstName}} {{@lastName}}</h3>
             </section>
             <div id="columns">
                 <div class="grid">
-                    <img src="img/default_pic.jpg"/ id="poster"><br>
+                    <img src="img/{{@profilePicture}}" id="poster"><br>
                     <section id="poster_section">
-                        <h4>Kevin McKickAss</h4><br>
+                        <h4>{{@firstName}} {{@lastName}}</h4><br>
                         <h5>posted an hour ago</h5><br>
 						<h4 id="title">Kerry Park Often called Lower Kerry Park, this part of the park is below the famous viewpoint.</h4>
                         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Seattlenighttimequeenanne.jpg/449px-Seattlenighttimequeenanne.jpg" />   
