@@ -1,7 +1,17 @@
 #sidenav{
-    top: 48%;
+    top: 44%;
     margin-left: 63%;
     position: fixed;
+    background: #FFFFFF;
+    padding: 0px;
+    width: 17%;
+    border-radius: 15px;
+}
+
+th{
+    background: #EFEFEF;
    
 }
+
+
 
