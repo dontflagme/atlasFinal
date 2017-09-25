@@ -65,7 +65,8 @@
                         <th><a href="#"><h1>Options</h1></a></th>
                     </tr>       
                     <tr>
-                        <td><a href="./addidea" id="sideNavLink">Add idea</a></td>
+						<p>this is the id: <?= ($id) ?></p>
+                        <td><a href="./addidea/<?= ($id) ?>" id="sideNavLink">Add idea</a></td>
                     </tr>    
                     <tr>
                         <td><a href="./viewevents" id="sideNavLink">Edit my atlas</a></td>

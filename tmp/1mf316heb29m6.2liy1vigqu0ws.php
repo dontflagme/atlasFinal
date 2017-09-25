@@ -55,13 +55,13 @@
                                 <hr>
                                 <label for="inputEmail">Email</label>
                                 <div class="col-xs-10">
-                                    <input type="email" name="email" class="form-control" id="inputEmail" placeholder="Email">
+                                    <input type="email" name="email" class="form-control" id="email" placeholder="Email">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="inputPassword">Password</label>
                                 <div class="col-xs-10">
-                                    <input type="password" name="password" class="form-control" id="inputPassword" placeholder="Password">
+                                    <input type="password" name="password" class="form-control" id="password" placeholder="Password">
                                 </div>
                             </div>
                             <div class="form-group">
@@ -71,7 +71,7 @@
                             </div>
                         </form>
                         
-                      <!--Login module-->
+
                     </div>
                   </div>
                 </div>

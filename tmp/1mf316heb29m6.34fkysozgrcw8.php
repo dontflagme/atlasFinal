@@ -45,27 +45,26 @@
             <div class="col-md-8" id="contentSection">			
 					<center><h1>Add an Idea:</h1></center>
                     
-            <form action="./addIdeaDB" method="post">
-                <div class="col-md-4" id="contentSection">			
-                    <form action="./addIdeaDB" method="post">
-                        <legend>Enter in a title</legend><input type="text" name="eventFile" placeholder="Enter in a title..." id="eventFile">
-                    </form>
+            <form action="./addidea" method="post">
+                <div class="col-md-4" id="contentSection">
+                    <legend>Enter in a title</legend><input type="text" name="eventTitle" id="eventTitle" placeholder="Enter in a title...">
                 </div>
                 
                 <div class="col-md-4" id="contentSection">
-                    <legend>Add details</legend>
-                        <textarea rows="4" cols="50">
-                            
-                        </textarea>
+                    <legend>Add details</legend><textarea rows="4" cols="50" name="eventDetails" id="eventDetails"></textarea>
                 </div>
                     
-                <div class="col-md-4" id="contentSection">			
-
-                            <legend>Add a photo(*)</legend><input type="file" name="eventFile" id="eventFile">
-							
-                        
-                </div>
+                <div class="col-md-4" id="contentSection">
+					<legend>Add a photo(*)</legend><input type="file" name="eventPicture" id="eventPicture">
+				</div>
+				
+				<div class="col-md-4" id="contentSection">
+					<button type="submit" name="submit">Add that Idea!</button>
+				</div>
+				
             </form>
+			
+			
 			</div><!--End 8 col-->
             
 
