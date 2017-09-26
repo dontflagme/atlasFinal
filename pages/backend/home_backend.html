@@ -98,8 +98,8 @@
 				<div class="grid">
                     <img src="img/{{@profilePicture}}" id="poster"><br>
                     <section id="poster_section">
-                        <h4>{{@firstName}} {{@lastName}}</h4><br>
-                        <h5>posted an hour ago</h5><br>
+                        <h4>{{@event.firstname}} {{@event.lastname}}</h4><br>
+                        <h5>Posted: {{@event.date}} Time: {{@event.time}}</h5><br>
 						<h4 id="title">{{@event.event_details}}</h4>
 					    
 						<a href="#signup" role="button" data-toggle="modal" data-target=".details{{@event.event_id}}" >
@@ -114,14 +114,12 @@
                                  <img src="img/{{@event.image}}" />
                                  
                                  <div id="modal_description">
-                                        <h1>Kerry Park</h1>
+                                        <h1>{{@event.title}}</h1>
+										
                                  </div>
                                  <img src="img/star_three.png" id="rating_modal"/>
-                                 
-                                 <h4>Often called Lower Kerry Park, this part  of the park is below the famous viewpoint.
-                                 A fun place to frolic, it offers a large lawn area, landscaping, paths, neighborhood
-                                 gathering area and children's play equipment. Franklin Place, across the street from
-                                 Bayview-Kinnear to the southeast, is also part of Kerry Park property.</h4>
+                                 <br><br>
+                                 <h4>{{@event.event_details}}</h4>
 
                                 <!--Add context here-->
                             </div>
