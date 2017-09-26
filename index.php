@@ -94,15 +94,21 @@ $joinedDB = new JoinedDB();
                         $f3->set('events', $events);
                         
                       echo Template::instance()->render('pages/backend/home_backend.html');
-                      
+                      echo var_dump($_SESSION['profilePicture']);
                      });
                     
                     //This is used to create a new user.
                     //Takes the information and adds to members database
                     $f3->route('POST /registerDB', function($f3) {
+
+                      if($GLOBALS['memberDB']->memberByEmail($email)){
+                        echo "That email is in use.";
+                      }
+                      
+                      else{
                         
                         
-                    
+                                            
                       $_SESSION['firstName'] = $_POST['firstname'];
                       $_SESSION['lastName'] = $_POST['lastName'];
                       $_SESSION['email'] = $_POST['email'];
@@ -116,14 +122,9 @@ $joinedDB = new JoinedDB();
                       $username = $_SESSION['username'];
                       $password = $_SESSION['password'];
                       $profilePicture = $_SESSION['profilePicture'];
+                    $member = new Member($username, $firstName, $lastName, $email, $password, $profilePicture);
                       
-                      if($GLOBALS['memberDB']->memberByEmail($email)){
-                        echo "That email is in use.";
-                      }
-                      
-                      else{
-                        $member = new Member($username, $firstName, $lastName, $email, $password, $profilePicture);
-                      
+                      $_SESSION['currentMember'] =  $member;
                       $_SESSION['member'] = $member;
                       //echo "This is the name of the file: ". $profilePicture;
                            
@@ -159,7 +160,7 @@ $joinedDB = new JoinedDB();
                           }
                           // Allow certain file formats
                           if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
-                          && $imageFileType != "gif" ) {
+                          && $imageFileType != "gif"  && $imageFileType != "JPG" && $imageFileType != "JPEG" && $imageFileType != "GIF" && $imageFileType != "PNG") {
                               echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
                               $uploadOk = 0;
                           }
@@ -176,7 +177,7 @@ $joinedDB = new JoinedDB();
                           }
                           $profilePicture = basename( $_FILES["profilePicture"]["name"]);
                           $GLOBALS['memberDB']->addMember($username, $firstName, $lastName, $email, $password, $profilePicture);
-                          
+                          $_SESSION['profilePicture'] = $profilePicture;
                       $f3->reroute('/homelogin');
                       }
                       
