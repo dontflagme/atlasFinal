@@ -90,9 +90,11 @@ $joinedDB = new JoinedDB();
                         $f3->set('lastName',$_SESSION['lastName']);
                         $f3->set('profilePicture', $_SESSION['profilePicture']);
                         
+                        $events = $GLOBALS['eventsDB']->allEvents();
+                        $f3->set('events', $events);
                         
                       echo Template::instance()->render('pages/backend/home_backend.html');
-                      echo var_dump($_SESSION['currentMember']);
+                      
                      });
                     
                     //This is used to create a new user.

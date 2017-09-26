@@ -102,7 +102,7 @@
                          <p><label><input type= "email" name="email" size="20" maxlength="40" placeholder="Email:" required="true" id="email"> *</label></p>
                          <p><label><input type= "password" name="password" size="20" maxlength="40" placeholder="Password" required="true" id="password"> *</label></p>
                        
-                        <legend>Add a photo(*)</legend><input type="file" name="profilePicture" id="profilePicture">
+                        <legend>Add a photo(*)</legend><input type="file" name="profilePicture" required="true" id="profilePicture">
                     
                         <button type="submit" name="submit">Get it done!</button>
                           <!--<script src="js/validate.js"></script>-->

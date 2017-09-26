@@ -100,9 +100,9 @@
         function allEvents()
         {
 
-            $select = 'SELECT event_id, member_id, title, event_details, date, time FROM events ORDER BY event_id';
+            
 
-            $select = 'SELECT event_id, member_id, title, event_details, date, time, image FROM events ORDER BY event_id';
+            $select = 'SELECT event_id, member_id, title, event_details, date, time, image FROM events ORDER BY date DESC';
 
             $results = $this->_pdo->query($select);
              
@@ -110,7 +110,7 @@
              
             //map each pet id to a row of data for that pet
             while ($row = $results->fetch(PDO::FETCH_ASSOC)) {
-                $resultsArray[$row['member_id']] = $row;
+                $resultsArray[$row['event_id']] = $row;
             }
              
             return $resultsArray;
