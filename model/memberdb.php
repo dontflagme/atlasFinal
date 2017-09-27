@@ -135,6 +135,27 @@
          * @return an associative array of member attributes, or false if
          * the member was not found
          */
+        function memberNameAndPicture($id)
+        {
+
+            $select = 'SELECT firstname, lastname, image FROM atlas_members WHERE member_id=:id';
+             
+            $statement = $this->_pdo->prepare($select);
+            $statement->bindValue(':id', $id, PDO::PARAM_INT);
+            $statement->execute();
+             
+            return $statement->fetch(PDO::FETCH_ASSOC);
+        }
+        
+        /**
+         * Returns a member that has the given id.
+         *
+         * @access public
+         * @param int $id the id of the member
+         *
+         * @return an associative array of member attributes, or false if
+         * the member was not found
+         */
 
         function memberByUsername($username)
         {

@@ -54,7 +54,7 @@
          * INSERT INTO events (member_id, title, event_details, date, time) VALUES (2, "Makeup Session", "I love youtube makeup tutorials", 12/25/2017, "1:00")
          * INSERT INTO events (member_id, title, event_details, date, time) VALUES (3, "Vance Joy Concert", "10/10 Riptide is the best", 12/05/2017, "2:00")
          * 
-         * INSERT INTO events (member_id, title, event_details, date, time, image) VALUES (1, "Paintball", "lets go paintball", 12/15/2017, "12:00:00", "test paintball")
+         * INSERT INTO events (member_id, title, event_details, date, time, image) VALUES (1, "Paintball", "lets go paintball", 12/15/2017, "12:00:00", "test paintball", )
          * INSERT INTO events (member_id, title, event_details, date, time, image) VALUES (2, "Vance Joy Concert", "10/10 Riptide is the best", 12/05/2017, "2:00", "test concert")
          * INSERT INTO events (member_id, title, event_details, date, time, image) VALUES (3, "Makeup Session", "I love youtube makeup tutorials", 12/25/2017, "1:00", "test makeup")
          * 
@@ -67,9 +67,9 @@
          * @return true if the insert was successful, otherwise false
          */
 
-        function addEvent($member_id, $title, $event_details, $date, $time, $image)
+        function addEvent($member_id, $title, $event_details, $date, $time, $image, $firstname, $lastname, $postersProfilePicture)
         {
-            $insert = 'INSERT INTO events (member_id, title, event_details, date, time, image) VALUES (:member_id, :title, :event_details, :date, :time, :image)';
+            $insert = 'INSERT INTO events (member_id, title, event_details, date, time, image, firstname, lastname, postersProfilePicture) VALUES (:member_id, :title, :event_details, :date, :time, :image, :firstname, :lastname, :postersProfilePicture)';
 
              
             $statement = $this->_pdo->prepare($insert);
@@ -78,6 +78,9 @@
             $statement->bindValue(':event_details', $event_details, PDO::PARAM_STR);
             $statement->bindValue(':date', $date, PDO::PARAM_STR);
             $statement->bindValue(':time', $time, PDO::PARAM_STR);
+            $statement->bindValue(':firstname', $firstname, PDO::PARAM_STR);
+            $statement->bindValue(':lastname', $lastname, PDO::PARAM_STR);
+            $statement->bindValue(':postersProfilePicture', $postersProfilePicture, PDO::PARAM_STR);
 
 
             $statement->bindValue(':image', $image, PDO::PARAM_STR);
@@ -128,8 +131,6 @@
         function eventsByMemberId($id)
         {
 
-            $select = 'SELECT event_id, member_id, title, event_details, date, time FROM events WHERE member_id=:id ORDER BY event_id';
-
             $select = 'SELECT event_id, member_id, title, event_details, date, time, image FROM events WHERE member_id=:id ORDER BY event_id';
 
             
@@ -158,8 +159,6 @@
          */
         function eventsByEventId($id)
         {
-
-            $select = 'SELECT event_id, member_id, title, , event_details, date, time FROM events WHERE event_id=:id';
 
             $select = 'SELECT event_id, member_id, title, , event_details, date, time, image FROM events WHERE event_id=:id';
 
