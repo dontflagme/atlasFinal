@@ -261,7 +261,8 @@ $joinedDB = new JoinedDB();
                             
                           $events =  $GLOBALS['eventsDB']->addEvent($_SESSION['id'], $_POST['eventTitle'], $_POST['eventDetails'], "2017-09-23", "10:54:00", $_POST['eventPicture'], $_SESSION['firstName'], $_SESSION['lastName'], $_SESSION['profilePicture']);
                           
-                          $f3->reroute('/homelogin');
+                         echo var_dump($_POST['eventPicture']);
+                          //$f3->reroute('/homelogin');
                         });
                     
                     
