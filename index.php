@@ -258,8 +258,6 @@ $joinedDB = new JoinedDB();
                               }
                           }
                           $profilePicture = basename( $_FILES["profilePicture"]["name"]);
-                          $GLOBALS['memberDB']->addMember($username, $firstName, $lastName, $email, $password, $profilePicture);
-                          $_SESSION['profilePicture'] = $profilePicture;
                           
                           $member =  $GLOBALS['memberDB']->memberNameAndPicture($_SESSION['id']);
                             
