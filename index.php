@@ -210,6 +210,10 @@ $joinedDB = new JoinedDB();
                         });
                         
                         $f3->route('POST /addidea', function($f3) {
+                            echo "before";
+                            echo $_POST['eventTitle'];
+                            echo $_POST['eventDetails'];
+                            echo $_POST['eventPicture'];
                             /**
                            *
                            *  This code uploads user information for the signup including picture.
@@ -262,6 +266,10 @@ $joinedDB = new JoinedDB();
                           $events =  $GLOBALS['eventsDB']->addEvent($_SESSION['id'], $_POST['eventTitle'], $_POST['eventDetails'], "2017-09-23", "10:54:00", $_POST['eventPicture'], $_SESSION['firstName'], $_SESSION['lastName'], $_SESSION['profilePicture']);
                           
                          echo var_dump($_POST['eventPicture']);
+                         echo "after";
+                         echo $_POST['eventTitle'];
+                         echo $_POST['eventDetails'];
+                         echo $_POST['eventPicture'];
                           //$f3->reroute('/homelogin');
                         });
                     
