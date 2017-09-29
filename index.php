@@ -216,12 +216,12 @@ $joinedDB = new JoinedDB();
                            *
                            */
                           $target_dir = "img/";
-                          $target_file = $target_dir . basename($_FILES["profilePicture"]["name"]);
+                          $target_file = $target_dir . basename($_FILES["eventPicture"]["name"]);
                           $uploadOk = 1;
                           $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
                           // Check if image file is a actual image or fake image
-                          if(isset($_POST["submit"]) && isset($_FILES['profilePicture'])) {
-                              $check = getimagesize($_FILES["profilePicture"]["tmp_name"]);
+                          if(isset($_POST["submit"]) && isset($_FILES['eventPicture'])) {
+                              $check = getimagesize($_FILES["eventPicture"]["tmp_name"]);
                               if($check !== false) {
                                   echo "File is an image - " . $check["mime"] . ".";
                                   $uploadOk = 1;
@@ -251,15 +251,13 @@ $joinedDB = new JoinedDB();
                               echo "Sorry, your file was not uploaded.";
                           // if everything is ok, try to upload file
                           } else {
-                              if (move_uploaded_file($_FILES["profilePicture"]["tmp_name"], $target_file)) {
-                                  echo "The file ". basename( $_FILES["profilePicture"]["name"]). " has been uploaded.";
+                              if (move_uploaded_file($_FILES["eventPicture"]["tmp_name"], $target_file)) {
+                                  echo "The file ". basename( $_FILES["eventPicture"]["name"]). " has been uploaded.";
                               } else {
                                   echo "Sorry, there was an error uploading your file.";
                               }
                           }
-                          $profilePicture = basename( $_FILES["profilePicture"]["name"]);
-                          
-                          $member =  $GLOBALS['memberDB']->memberNameAndPicture($_SESSION['id']);
+                          $profilePicture = basename( $_FILES["eventPicture"]["name"]);
                             
                           $events =  $GLOBALS['eventsDB']->addEvent($_SESSION['id'], $_POST['eventTitle'], $_POST['eventDetails'], "2017-09-23", "10:54:00", $_POST['eventPicture'], $_SESSION['firstName'], $_SESSION['lastName'], $_SESSION['profilePicture']);
                           
