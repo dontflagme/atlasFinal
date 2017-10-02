@@ -105,7 +105,7 @@
 
             
 
-            $select = 'SELECT event_id, member_id, title, event_details, date, time, image, firstname, lastname FROM events ORDER BY event_id DESC';
+            $select = 'SELECT event_id, member_id, title, event_details, date, time, image, firstname, lastname, postersProfilePicture FROM events ORDER BY event_id DESC';
 
             $results = $this->_pdo->query($select);
              
