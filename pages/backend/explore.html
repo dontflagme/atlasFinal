@@ -35,7 +35,7 @@
  
                     <!--Search Bar-->
                     <div class="col-md-12">
-                            <form action="" class="search-form" id="searchbar">
+                            <form action="" class="search-form" id="searchbarBackend">
                                 <div class="form-group has-feedback">
                                     <label for="search" class="sr-only">Search</label>
                                     <input type="text" class="form-control" name="search" id="search" placeholder="search">
@@ -66,9 +66,9 @@
 
                      <img src="img/{{@event.image}}" /></a>
                    
-                    <h2>{{ @event.title }}</h2>
+                    <h2 id="modalH2">{{ @event.title }}</h2>
                     <img src="hardCodeImages/fourstar.png" id="rating_modal"/>    
-                    <p>{{ @event.event_details }}</p>
+                    <p id="modalP">{{ @event.event_details }}</p>
         
                                 
                             </div>
