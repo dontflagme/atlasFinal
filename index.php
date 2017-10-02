@@ -204,6 +204,8 @@ $joinedDB = new JoinedDB();
                     
                         $f3->route('GET /addidea', function($f3) {
                           
+                            $events =  $GLOBALS['eventsDB']->allEvents();
+                            $f3->set('events', $events);
                             $f3->set('id',  $_SESSION['id']);
                           
                          echo Template::instance()->render('pages/backend/addIdea.html');
