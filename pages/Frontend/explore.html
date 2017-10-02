@@ -7,6 +7,7 @@
         <link href= "css/grid.css" rel="stylesheet" type="text/css">
         <link href= "css/main.css" rel="stylesheet" type="text/css">
         <link href= "css/navfooter.css" rel="stylesheet" type="text/css">
+        <link href= "css/style.css" rel="stylesheet" type="text/css">
         
         <script src="https://code.jquery.com/jquery-3.1.1.min.js"
             integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
@@ -149,7 +150,7 @@
                      <img src="img/{{@event.image}}" /></a>
                    
                     <h2>{{ @event.title }}</h2>
-                        
+                    <img src="hardCodeImages/fourstar.png" id="rating_modal"/>                          
                     <p>{{ @event.event_details }}</p>
         
                                 
@@ -159,12 +160,15 @@
                         </div>
                         
                         <h2>{{ @event.title }}</h2>
-                        
+                    <img src="hardCodeImages/fourstar.png" id="rating_modal"/>                          
                         <p>{{ @event.event_details }}</p>
-                </div> 
+                </div>
+
+    
+                    
                 </repeat>
-                
-        
+            </div>
+        </div>
 
         <script src="http://code.jquery.com/jquery.js"></script>
         <script>

@@ -190,7 +190,8 @@ $joinedDB = new JoinedDB();
                     
                                       //Define a default route
                     $f3->route('GET /explorebackend', function($f3) {
-                      
+                      $events =  $GLOBALS['eventsDB']->allEvents();
+                      $f3->set('events', $events);
                       echo Template::instance()->render('pages/backend/explore.html');
                      });
                     
@@ -266,13 +267,7 @@ $joinedDB = new JoinedDB();
                           $f3->reroute('/homelogin');
                         });
                     
-                    $f3->route('GET /testing', function($f3) {
-                      
-                        $events =  $GLOBALS['eventsDB']->allEvents();
-                            $f3->set('events', $events);
-                      
-                      echo Template::instance()->render('pages/backend/addIdea.html');
-                     });
+                    
                     /**
                             $f3->set('id',  $_SESSION['id']);
                             $_SESSION['title'] = $_POST['title'];
