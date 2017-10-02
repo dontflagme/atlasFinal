@@ -47,7 +47,7 @@
         
 				<table class="table table-hover" id="side_nav">
                     <tr>
-                        <th><a href="explore.php"><h1>Events Joined</h1></a></th>
+                        <th><a href="explore.php"><h1>Events Joined WHY YOU DO DIS?!</h1></a></th>
                     </tr>       
                      <tr>
                         <td>Group Paintball</td>
@@ -96,7 +96,7 @@
 			<!---------------------This is where the content repeats------------------------>
 				<?php foreach (($events?:[]) as $event): ?>
 				<div class="grid">
-                    <img src="img/<?= ($profilePicture) ?>" id="poster"><br>
+                    <img src="img/<?= ($event['postersProfilePicture']) ?>" id="poster"><br>
                     <section id="poster_section">
                         <h4><?= ($event['firstname']) ?> <?= ($event['lastname']) ?></h4><br>
                         <h5>Posted: <?= ($event['date']) ?> Time: <?= ($event['time']) ?></h5><br>

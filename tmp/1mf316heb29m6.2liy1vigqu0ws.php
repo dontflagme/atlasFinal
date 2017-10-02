@@ -135,7 +135,7 @@
                 <?php foreach (($events?:[]) as $event): ?>
                     <div class="grid">
                         <a href="#signup" role="button" data-toggle="modal" data-target=".viewEvent<?= ($event['event_id']) ?>" >
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Seattlenighttimequeenanne.jpg/449px-Seattlenighttimequeenanne.jpg" />
+                            <img src="img/<?= ($event['image']) ?>" />
                         </a>
                         
                         <!-- view event modal -->
@@ -146,7 +146,7 @@
 
                     <a href="#signup" role="button" data-toggle="modal" data-target=".viewEvent">
 
-                     <img src="http://www.twitrcovers.com/wp-content/uploads/2014/12/City-Bokeh-Lights-l.jpg" /></a>
+                     <img src="img/<?= ($event['image']) ?>" /></a>
                    
                     <h2><?= ($event['title']) ?></h2>
                         

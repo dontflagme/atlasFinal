@@ -96,7 +96,7 @@
 			<!---------------------This is where the content repeats------------------------>
 				<repeat group="{{ @events }}" value="{{ @event }}">
 				<div class="grid">
-                    <img src="img/{{@profilePicture}}" id="poster"><br>
+                    <img src="img/{{@event.postersProfilePicture}}" id="poster"><br>
                     <section id="poster_section">
                         <h4>{{@event.firstname}} {{@event.lastname}}</h4><br>
                         <h5>Posted: {{@event.date}} Time: {{@event.time}}</h5><br>
