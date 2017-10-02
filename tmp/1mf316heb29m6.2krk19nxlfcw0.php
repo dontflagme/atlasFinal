@@ -47,7 +47,7 @@
         
 				<table class="table table-hover" id="side_nav">
                     <tr>
-                        <th><a href="explore.php"><h1>Events Joined WHY YOU DO DIS?!</h1></a></th>
+                        <th><a href="explore.php"><h1>Events Joined </h1></a></th>
                     </tr>       
                      <tr>
                         <td>Group Paintball</td>
@@ -98,7 +98,7 @@
 				<div class="grid">
                     <img src="img/<?= ($event['postersProfilePicture']) ?>" id="poster"><br>
                     <section id="poster_section">
-						<img src="img/star_three.png" id="rating_modal"/>
+						<img src="hardCodeImages/fourstar.png" id="rating_modal"/>
                         <h4><?= ($event['firstname']) ?> <?= ($event['lastname']) ?></h4><br>
                         <h5>Posted: <?= ($event['date']) ?> Time: <?= ($event['time']) ?></h5><br>
 						<h4 id="title"><?= ($event['event_details']) ?></h4>
@@ -118,7 +118,7 @@
                                         <h1><?= ($event['title']) ?></h1>
 										
                                  </div>
-                                 <img src="img/star_three.png" id="rating_modal"/>
+                                 <img src="hardCodeImages/fivestars.png" id="rating_modal"/>
                                  <br><br>
                                  <h4><?= ($event['event_details']) ?></h4>
 

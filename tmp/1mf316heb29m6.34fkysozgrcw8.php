@@ -54,6 +54,17 @@
                     <legend>Add details</legend><textarea rows="4" cols="50" name="eventDetails" id="eventDetails"></textarea>
                 </div>
                     
+				<div>
+				  <label>Rating:</label>
+				  <select name="rating" id="rating">
+				    <option>1</option>
+				    <option>2</option>
+				    <option>3</option>
+				    <option>4</option>
+					<option>5</option>
+				  </select>
+			    </div>
+					
                 <div class="col-md-4" id="contentSection">
 					<legend>Add a photo(*)</legend><input type="file" name="eventPicture" id="eventPicture">
 				</div>
@@ -66,12 +77,13 @@
 			
 			
 			</div><!--End 8 col-->
-            
+		 </div> 
+			<div class="row">
 
 				<?php foreach (($events?:[]) as $event): ?>
-                    <div class="grid">
+                    <div class="container col-md-2">
                         <a href="#signup" role="button" data-toggle="modal" data-target=".viewEvent<?= ($event['event_id']) ?>" >
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Seattlenighttimequeenanne.jpg/449px-Seattlenighttimequeenanne.jpg" />
+                            <img src="img/<?= ($event['image']) ?>" height="400" width="400">
                         </a>
                         
                         <!-- view event modal -->
@@ -82,7 +94,7 @@
 
                     <a href="#signup" role="button" data-toggle="modal" data-target=".viewEvent">
 
-                     <img src="http://www.twitrcovers.com/wp-content/uploads/2014/12/City-Bokeh-Lights-l.jpg" /></a>
+                     <img src="img/<?= ($event['image']) ?>" /></a>
                    
                     <h2><?= ($event['title']) ?></h2>
                         
@@ -93,48 +105,45 @@
         
                           </div>
                         </div>
-                        
-                        <h2><?= ($event['title']) ?></h2>
-                        
-                        <p><?= ($event['event_details']) ?></p>
+
                 </div>
 
     
                     
                 <?php endforeach; ?>
-            
-            
-            	<div class="container_fluid col-md-3" id="sidenav">
-        
-        
-				<table class="table table-hover" id="side_nav">
-                    <tr>
-                        <th><a href="explore.php"><h1>Events Joined</h1></a></th>
-                    </tr>       
-                     <tr>
-                        <td>Group Paintball</td>
-                    </tr>    
-                    <tr>
-                        <td>Explore the Ape caves</td>
-                    </tr>
-                    <tr>
-                        <td>Escape Room!</td>
-                    </tr>                            
-                </table>
-
-                <table class="table table-hover" id="table_home">
-                    <tr>
-                        <th><a href="#"><h1>Options</h1></a></th>
-                    </tr>       
-                    <tr>
-                        <td><a href="./addidea" id="sideNavLink">Add idea</a></td>
-                    </tr>    
-                    <tr>
-                        <td><a href="./viewevents" id="sideNavLink">Edit my atlas</a></td>
-                    </tr>                          
-                 </table>
             </div>
-		  </div>
+            
+            	<!--<div class="container_fluid col-md-3" id="sidenav">
+        
+        
+					<table class="table table-hover" id="side_nav">
+						<tr>
+							<th><a href="explore.php"><h1>Events Joined</h1></a></th>
+						</tr>       
+						 <tr>
+							<td>Group Paintball</td>
+						</tr>    
+						<tr>
+							<td>Explore the Ape caves</td>
+						</tr>
+						<tr>
+							<td>Escape Room!</td>
+						</tr>                            
+					</table>
+	
+					<table class="table table-hover" id="table_home">
+						<tr>
+							<th><a href="#"><h1>Options</h1></a></th>
+						</tr>       
+						<tr>
+							<td><a href="./addidea" id="sideNavLink">Add idea</a></td>
+						</tr>    
+						<tr>
+							<td><a href="./viewevents" id="sideNavLink">Edit my atlas</a></td>
+						</tr>                          
+					 </table>
+				</div>
+		  </div>-->
 			
 		
 		  </div><!--End of row-->

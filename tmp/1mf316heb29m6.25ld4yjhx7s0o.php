@@ -50,6 +50,41 @@
             <div id="columns">
                 <div class="grid">
                     
+					
+					      <?php foreach (($events?:[]) as $event): ?>
+                    <div class="grid">
+                        <a href="#signup" role="button" data-toggle="modal" data-target=".viewEvent<?= ($event['event_id']) ?>" >
+                            <img src="img/<?= ($event['image']) ?>" />
+                        </a>
+                        
+                        <!-- view event modal -->
+                        <div class="modal fade viewEvent<?= ($event['event_id']) ?>" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                          <div class="modal-dialog modal-lg">
+                            <div class="modal-content" id="modalcontent">
+                             
+
+                    <a href="#signup" role="button" data-toggle="modal" data-target=".viewEvent">
+
+                     <img src="img/<?= ($event['image']) ?>" /></a>
+                   
+                    <h2><?= ($event['title']) ?></h2>
+                        
+                    <p><?= ($event['event_details']) ?></p>
+        
+                                
+                            </div>
+        
+                          </div>
+                        </div>
+                        
+                        <h2><?= ($event['title']) ?></h2>
+                        
+                        <p><?= ($event['event_details']) ?></p>
+                </div>
+
+    
+                    
+                <?php endforeach; ?>
                     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Seattlenighttimequeenanne.jpg/449px-Seattlenighttimequeenanne.jpg" />
                     <h2>Visit Kerry Park</h2>
                 
