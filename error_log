@@ -1,0 +1,3 @@
+[03-Oct-2017 01:53:05 America/Chicago] HTTP 404 (GET /validate.js)
+[03-Oct-2017 01:53:05 America/Chicago] [328/atlasFinal/vendor/bcosca/fatfree-core/base.php:1659] Base->error()
+[03-Oct-2017 01:53:05 America/Chicago] [328/atlasFinal/index.php:286] Base->run()
