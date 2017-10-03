@@ -102,9 +102,9 @@
                     <img src="img/{{@event.postersProfilePicture}}" id="poster"><br>
                     <section id="poster_section">
 						<img src="hardCodeImages/fourstar.png" id="rating_modal"/>
-                        <h4>{{@event.firstname}} {{@event.lastname}}</h4><br>
+                        <h4 class="poster-username">{{@event.firstname}} {{@event.lastname}}</h4><br>
                         <h5>Posted: {{@event.date}} Time: {{@event.time}}</h5><br>
-						<h4 id="title">{{@event.event_details}}</h4>
+						<h4 id="title">{{@event.title}}: {{@event.event_details}}</h4>
 					    
 						<a href="#signup" role="button" data-toggle="modal" data-target=".details{{@event.event_id}}" >
                             <img src="img/{{@event.image}}" />
@@ -122,8 +122,43 @@
 								
 								<div class="comments-list">
 									<ul class="comments-holder-ul" id="comments-holder-ul">
-										<li class="comments-holder" ><img src="img/{{@event.postersProfilePicture}}" id="poster"><br></li>
-										<li class="comments-holder" >asdfsf</li>
+										<li class="comments-holder" id="_l">
+											
+										<div class="user-image">
+												<img src="img/{{@event.postersProfilePicture}}" id="poster">
+											</div>
+
+										<div class="comment-body">
+											
+											<h3 class="username-field">Kevin Nguyen</h3><br>
+											<div class="comment-text">
+												
+												<p class="commenting-field">The comments of the person will go here. </p>
+											</div>
+											
+										</div>
+											
+										</li>
+										
+										
+										<li class="comments-holder" id="_l">
+										
+											<div class="user-image">
+												<img src="img/{{@event.postersProfilePicture}}" id="poster">
+											</div>
+											
+											<div class="comment-body">
+												
+												<h3  class="username-field">Kevin Nguyen</h3><br>
+												
+												<div class="comment-text">
+													<p class="commenting-field">The comments of the person will go here. </p>
+												</div>	
+												
+											</div>
+
+										
+										</li>
 
 									</ul>
 								</div>

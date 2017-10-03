@@ -1,9 +1,10 @@
 .commentWrapperContent{
     background: #fff;
-    width: 770px;
+    width: 790px;
     border: 1px solid #a1a1a1;
     margin: 10px auto 10px auto;
     height: auto;
+
 }
 
 .page-data{
@@ -20,6 +21,7 @@
     height: auto;
     width: auto;
     color: #fff;
+    
 }
 
 h3.comment-title{
@@ -34,7 +36,7 @@ h3.comment-title{
 .comments-list{
     height: auto;
     font-size: 13px;
-    margin: 10px 5px 10px 5px;
+    margin: 10px 5px 5px 5px;
     color: #555;
 }
 
@@ -44,7 +46,7 @@ ul.comments-holder-ul{
     padding: 0px;
     width: auto;
     height: auto;
-    /*overflow: hidden;*/
+    overflow: hidden;
 }
 
 ul.comments-holder-ul{
@@ -52,13 +54,58 @@ ul.comments-holder-ul{
     height: auto;
     width: auto;
     margin: 5px 0px 5px 0px;
-    
+    overflow: hidden;
     
 }
 
 li.comments-holder{
-    height: 50px;
-     background: #fffff5;
-         margin: 5px 0px 5px 0px;
-     border: 1px solid #e1e1e1;
+    height: auto;
+     margin: 5px 0px 5px 0px;
+     margin-bottom: 45px;
+     
 }
+
+li.comments-holder:hover{
+
+}
+
+ #poster{
+    
+    float: left;
+    height: 60px;
+    width: auto;
+    background: #efefef;
+    
+}
+
+
+
+.username-field{
+
+    display: inline;
+    line-height: 22px;
+    color: #41BBED !important;
+    font-size: 11px;
+    margin: 0 auto 0 0px;
+}
+
+.commenting-text{
+    float: left;
+    width: auto;
+    font-size: 11px;
+}
+
+.comment-body{
+    width: auto;
+    
+}
+
+.poster-username{
+    color: #41BBED !important;
+}
+
+#title{
+    margin: 10px;
+}
+
+

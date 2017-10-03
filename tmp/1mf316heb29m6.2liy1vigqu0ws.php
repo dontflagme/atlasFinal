@@ -110,12 +110,12 @@
                         </div>
                         
                         <div class="input-group">
-                            <span class="input-group-addon">LastName</span>
+                            <span class="input-group-addon">Last Name</span>
                             <input type= "text" name="lastName" size="20" maxlength="40" placeholder="Last Name" required="true" id="lastName">
                          </div>
                        
                         <div class="input-group">
-                            <span class="input-group-addon">LastName</span>
+                            <span class="input-group-addon">Email</span>
                             <input type= "email" name="email" size="20" maxlength="40" placeholder="Email:" required="true" id="email">
                          </div>
                         
@@ -127,7 +127,6 @@
                        </div>
 
                         <legend>Add a Profile Picture(*)</legend><input  type="file" name="profilePicture" required="true" id="profilePicture">
-                    
                         <button class="btn btn-primary" type="submit" name="submit" id="createProfile">Get it done!</button>
                           <!--<script src="js/validate.js"></script>-->
                           
