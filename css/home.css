@@ -192,11 +192,13 @@ h4#title{
 #rating{
     float: right;
     width: 40%;
+
 }
 
 #rating_modal{
     width: 20%;
     float: right;
+    margin-right: 7px;
 }
 
 #modal_description{

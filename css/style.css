@@ -12,6 +12,7 @@ body{
 #navbartext
 {
     float: right;
+        margin-right: 5%;
 }
 #searchbar
 {
@@ -19,9 +20,18 @@ body{
     width: 15%;
 }
 
+#searchbarBackend
+{
+    float: right;
+    width: 15%;
+    margin-right: 5%;
+}
+#modalcontent{
+ background: #000000;
+}
 
 #navbar{
-    background: #1DA1F2;
+    background: #36BDEF;
     border: none;
 }
 a:{
@@ -30,4 +40,25 @@ a:{
 
 #navLink{
     color: #fff;
+}
+
+#rating_modal{
+    width: 15%;
+    float: right;
+    margin-right: 7px;
+}
+
+#quote{
+    float: left;
+    font-size: 1.5em;
+    margin-left: 1%;
+    margin-top: 2%;
+}
+#icon{
+    float:left;
+    margin-left: 5%;
+}
+
+#modalH2, #modalP{
+    color: #FFFFFF;
 }

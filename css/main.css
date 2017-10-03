@@ -1,5 +1,5 @@
 body{
-    background-color: #EAE0D7;
+    background-color: #E9DFD7;
 }
 
 div.alert {
@@ -24,12 +24,17 @@ iframe{
     background: black;
 }
 
-#modalcontent{
- 
-}
+
 .margin-right
 {
     margin-right: 15px;
+}
+
+#rating_modal{
+    width: 15%;
+    float: right;
+    margin-right: 7px;
+    
 }
 
 
