@@ -9,6 +9,9 @@
         <link href= "css/style.css" rel="stylesheet" type="text/css">
         <link href= "css/homenav.css" rel="stylesheet" type="text/css">
 
+		<link href= "css/commentLayout.css" rel="stylesheet" />
+		<script type="text/javascript" src="/js/jquery.js"></script>
+		<script type="text/javascript" src="/js/script.js"></script>
     </head>
     
     <body>
@@ -105,7 +108,27 @@
 					    
 						<a href="#signup" role="button" data-toggle="modal" data-target=".details<?= ($event['event_id']) ?>" >
                             <img src="img/<?= ($event['image']) ?>" />
-                        </a>
+						</a>	
+							
+							<!------------------This is where the comment section is------------------>
+							<div class="commentWrapperContent">
+								<div class="page-data">
+									<h1>Add | Join | Like</h1>
+								</div>
+								
+								<div class="comment-wrapper">
+									<h3 class="comment-title">Event Comments:</h4><br>
+								</div>
+								
+								<div class="comments-list">
+									<ul class="comments-holder-ul" id="comments-holder-ul">
+										<li class="comments-holder" ><img src="img/<?= ($event['postersProfilePicture']) ?>" id="poster"><br></li>
+										<li class="comments-holder" >asdfsf</li>
+
+									</ul>
+								</div>
+							</div>
+                        
 
                     </section>
                          <!-- event modal -->
@@ -123,6 +146,7 @@
                                  <h4><?= ($event['event_details']) ?></h4>
 
                                 <!--Add context here-->
+								
                             </div>
                           </div>
                         </div>

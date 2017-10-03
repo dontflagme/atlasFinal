@@ -43,7 +43,7 @@
                 
                 <div class="modal fade login" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
                   <div class="modal-dialog modal-lg">
-                    <div class="modal-content" id="modalcontent">
+                    <div class="modal-content" id="modalcontentFront">
 
                       <!--Enter context-->
 
@@ -82,7 +82,7 @@
                 
                 <div class="modal fade signup" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
                   <div class="modal-dialog modal-lg">
-                    <div class="modal-content" id="modalcontent">
+                    <div class="modal-content" id="modalcontentFront">
                      
                             
                      
@@ -90,23 +90,46 @@
                          <fieldset>
                           <legend>
                              <h2 id="signup_label">Sign Up</h2> <br> <br>
-                             <h4>Be Bold</h4>
+                             <img src="hardCodedImages/dsfa.png" />
                           </legend>
                          </fieldset>
                          
-                         <p><label><input type= "text" name="firstname" size="40" maxlength="40" placeholder="First Name" required="true" id="firstname" > *</label></p>
+
+                         
                        <!-- <div class="alert alert-danger">
                            <strong>Error: </strong><span id="firstNameError"></span>
                         </div> -->
-                        <p><label><input type= "text" name="username" size="40" maxlength="40" placeholder="Username, Homie." required="true" id="username" > *</label></p>
-                         <p><label><input type= "text" name="lastName" size="20" maxlength="40" placeholder="Last Name" required="true" id="lastName"> *</label></p>
-                         <p><label><input type= "email" name="email" size="20" maxlength="40" placeholder="Email:" required="true" id="email"> *</label></p>
-                         <p><label><input type= "password" name="password" size="20" maxlength="40" placeholder="Password" required="true" id="password"> *</label></p>
+                       <div id="signupContent">
+                        
+                        <div class="input-group">
+                            <span class="input-group-addon">First Name</span><input type= "text" name="firstname" size="40" maxlength="40" placeholder="First Name" required="true" id="firstname" >
+                         </div>
+                        
+                        <div class="input-group">
+                         <span class="input-group-addon">Username</span><input type= "text" name="username" size="40" maxlength="40" placeholder="Username, Homie." required="true" id="username" >
+                        </div>
+                        
+                        <div class="input-group">
+                            <span class="input-group-addon">LastName</span>
+                            <input type= "text" name="lastName" size="20" maxlength="40" placeholder="Last Name" required="true" id="lastName">
+                         </div>
                        
-                        <legend>Add a photo(*)</legend><input type="file" name="profilePicture" required="true" id="profilePicture">
-                    
-                        <button type="submit" name="submit">Get it done!</button>
+                        <div class="input-group">
+                            <span class="input-group-addon">LastName</span>
+                            <input type= "email" name="email" size="20" maxlength="40" placeholder="Email:" required="true" id="email">
+                         </div>
+                        
+                        <div class="input-group">
+                            <span class="input-group-addon">Password</span>
+                            <input type= "password" name="password" size="20" maxlength="40" placeholder="Password" required="true" id="password">
+                         </div>
+
+                       </div>
+
+                        <legend>Add a Profile Picture(*)</legend><input  type="file" name="profilePicture" required="true" id="profilePicture">
+                        <button class="btn btn-primary" type="submit" name="submit" id="createProfile">Get it done!</button>
                           <!--<script src="js/validate.js"></script>-->
+                          
                      </form>
                 
 
@@ -152,7 +175,7 @@
                     <h2>{{ @event.title }}</h2>
                     <img src="hardCodeImages/fourstar.png" id="rating_modal"/>                          
                     <p>{{ @event.event_details }}</p>
-        
+            
                                 
                             </div>
         
@@ -167,7 +190,7 @@
     
                     
                 </repeat>
-            </div>
+            </div>  
         </div>
 
         <script src="http://code.jquery.com/jquery.js"></script>
