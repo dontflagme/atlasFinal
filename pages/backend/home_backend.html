@@ -42,7 +42,6 @@
                                     <span class="glyphicon glyphicon-search form-control-feedback"></span>
                                 </div>
                             </form>
-                    </div>
 		</nav>  
 
  	<div class="container_fluid col-md-3" id="sidenav">
@@ -85,7 +84,7 @@
         <div id="wrapper">
 			
 
-			
+		
 			<!---------------This is the banner------------------------>
             <section id="banner_section">
                 <img src="http://www.twitrcovers.com/wp-content/uploads/2014/12/City-Bokeh-Lights-l.jpg" id="banner"/>
@@ -99,6 +98,7 @@
 			<!---------------------This is where the content repeats------------------------>
 				<repeat group="{{ @events }}" value="{{ @event }}">
 				<div class="grid">
+
                     <img src="img/{{@event.postersProfilePicture}}" id="poster"><br>
                     <section id="poster_section">
 						<img src="hardCodeImages/fourstar.png" id="rating_modal"/>
@@ -113,11 +113,23 @@
 							<!------------------This is where the comment section is------------------>
 							<div class="commentWrapperContent">
 								<div class="page-data">
-									<h1>Add | Join | Like</h1>
+									<h1>Add | Join | chocola</h1>
 								</div>
 								
+
+								<div class="comment-insert">
+
+									<div class="comment-insert-container">
+										
+
+										<textarea class="comment-insert-text" rows="4" cols="4">Tryp;lkdfj</textarea>
+										<input type= "text" name="firstname" size="40" maxlength="40" placeholder="First Name" required="true" id="firstname" >
+
+									
+									</div>
+								</div>
 								<div class="comment-wrapper">
-									<h3 class="comment-title">Event Comments:</h4><br>
+									<h3 class="comment-title">Add Comments:</h4><br>
 								</div>
 								
 								<div class="comments-list">
@@ -130,17 +142,21 @@
 
 										<div class="comment-body">
 											
-											<h3 class="username-field">Kevin Nguyen</h3><br>
-											<div class="comment-text">
-												
-												<p class="commenting-field">The comments of the person will go here. </p>
-											</div>
-											
+											<h5 class="username-field">Kevin Nguyen</h5><br>
+											<div class="comment-text">								
+												<p class="commenting-field">The comments of the person will go here.The comments of the person will go here.The comments of the person will go here.The comments oThe comments of the person will go here.The comments of the person will go here.The comments of the person will go here.The comments of the person will go here.The comments of the person will go here.f the person will go here.The comments of the person will go here.The comments of the person will go here.The comments of the person will go here.The comments of the person will go here.The comments of the person will go here. </p>
+											</div>										
 										</div>
-											
+										
+										<!--Delete Button for post -->
+										<div class="comment-buttons-holder">
+											<ul>
+												<li class="delete-btn">x</li>
+											</ul>
+										</div>
+										
 										</li>
-										
-										
+
 										<li class="comments-holder" id="_l">
 										
 											<div class="user-image">
@@ -149,21 +165,49 @@
 											
 											<div class="comment-body">
 												
-												<h3  class="username-field">Kevin Nguyen</h3><br>
+												<h5  class="username-field">Kevin Nguyen</h5><br>
 												
 												<div class="comment-text">
 													<p class="commenting-field">The comments of the person will go here. </p>
 												</div>	
 												
 											</div>
-
-										
+											
+											<!--Delete Button for post -->
+											<div class="comment-buttons-holder">
+												<ul>
+													<li class="delete-btn">x</li>
+												</ul>
+											</div>
+											
 										</li>
+										
+										<li class="comments-holder" id="_l">
+											<div class="user-image">
+													<img src="img/{{@event.postersProfilePicture}}" id="poster">
+												</div>
+											<div class="comment-body">
+												
+												<h5 class="username-field">Kevin Nguyen</h5><br>
+												<div class="comment-text">
+													
+													<p class="commenting-field">The comments of the person will go here.The comments of the person will go here.The comments of the person will go here.The comments oThe comments of the person will go here.The comments of the person will go here.The comments of the person will go here.The comments of the person will go here.The comments of the person will go here.f the person will go here.The comments of the person will go here.The comments of the person will go here.The comments of the person will go here.The comments of the person will go here.The comments of the person will go here. </p>
+													
+													
+												</div>
+												
+											</div>
+											<!--Delete Button for post -->
+											<div class="comment-buttons-holder">
+												<ul>
+													<li class="delete-btn">x</li>
+												</ul>
+											</div>											
+										</li>										
 
 									</ul>
 								</div>
 							</div>
-                        
 
                     </section>
                          <!-- event modal -->
@@ -185,9 +229,31 @@
                             </div>
                           </div>
                         </div>
+						
+						                         <!-- event modal -->
+                        <div class="modal fade comments{{@event.event_id}}" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                          <div class="modal-dialog modal-lg">
+                            <div class="modal-content" id="modalcontent_details">
+                                 <img src="img/{{@event.image}}" />
+                                 
+                                 <div id="modal_description">
+                                        <h1>{{@event.title}}</h1>
+										
+                                 </div>
+                                 <img src="hardCodeImages/fivestars.png" id="rating_modal"/>
+                                 <br><br>
+                                 <h4>{{@event.event_details}}</h4>
+
+                                <!--Add context here-->
+								
+                            </div>
+                          </div>
+                        </div>
                 </div><!--End of Grid div-->  
             </repeat>		
         </div>
+		
+		
  
  <script src="validate.js"></script>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
