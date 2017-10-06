@@ -208,6 +208,9 @@ $joinedDB = new JoinedDB();
                             $events =  $GLOBALS['eventsDB']->allEvents();
                             $f3->set('events', $events);
                             $f3->set('id',  $_SESSION['id']);
+                            $f3->set('firstName', $_SESSION['firstName']);
+                            $f3->set('lastName',$_SESSION['lastName']);
+                            $f3->set('profilePicture', $_SESSION['profilePicture']);
                           
                          echo Template::instance()->render('pages/backend/addIdea.html');
                         });

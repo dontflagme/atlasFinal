@@ -5,5 +5,31 @@
 }
 .pictureWrapper
 {
-    width: 100%;
+    width: 110%;
+}
+#banner_section{
+        z-index: -3;
+    background-color: #fff;
+    height: 30%;
+    width: 80%;
+
+
+}
+.wrapper
+{
+    margin-left: 17.5%;
+    width: 65%;
+}
+
+#search-container{
+    float: right;
+    margin-right: .2%;
+}
+
+#navbar-container{
+    margin-left: 15%;
+}
+
+#icon{
+
 }
