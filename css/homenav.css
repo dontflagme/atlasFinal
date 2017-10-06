@@ -1,4 +1,5 @@
 #sidenav{
+    float: right;
     top: 44%;
     margin-left: 63%;
     position: fixed;

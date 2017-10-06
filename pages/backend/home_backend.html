@@ -10,6 +10,7 @@
         <link href= "css/homenav.css" rel="stylesheet" type="text/css">
 
 		<link href= "css/commentLayout.css" rel="stylesheet" />
+		
 		<script type="text/javascript" src="/js/jquery.js"></script>
 		<script type="text/javascript" src="/js/script.js"></script>
     </head>
@@ -93,164 +94,141 @@
             </section>
 	
 
-			
-            <div id="columns">
 			<!---------------------This is where the content repeats------------------------>
-				<repeat group="{{ @events }}" value="{{ @event }}">
-				<div class="grid">
-
-                    <img src="img/{{@event.postersProfilePicture}}" id="poster"><br>
-                    <section id="poster_section">
-						<img src="hardCodeImages/fourstar.png" id="rating_modal"/>
-                        <h4 class="poster-username">{{@event.firstname}} {{@event.lastname}}</h4><br>
-                        <h5>Posted: {{@event.date}} Time: {{@event.time}}</h5><br>
-						<h4 id="title">{{@event.title}}: {{@event.event_details}}</h4>
-					    
-						<a href="#signup" role="button" data-toggle="modal" data-target=".details{{@event.event_id}}" >
-                            <img src="img/{{@event.image}}" />
-						</a>	
+<repeat group="{{ @events }}" value="{{ @event }}">
+					<div class="grid">
+						<img src="img/{{@event.postersProfilePicture}}" id="poster"><br>
+						<section id="poster_section">
+							<img src="hardCodeImages/fourstar.png" id="rating_modal"/>
+							<h4 class="poster-username">{{@event.firstname}} {{@event.lastname}}</h4><br>
+							<h5>Posted: {{@event.date}} Time: {{@event.time}}</h5><br>
+							<h4 id="title">{{@event.title}}: {{@event.event_details}}</h4>
 							
-							<!------------------This is where the comment section is------------------>
-							<div class="commentWrapperContent">
-								<div class="page-data">
-									<h1>Add | Join | chocola</h1>
-								</div>
+							<a href="#signup" role="button" data-toggle="modal" data-target=".details{{@event.event_id}}" >
+								<img src="img/{{@event.image}}" />
+							</a>	
 								
-
-								<div class="comment-insert">
-
-									<div class="comment-insert-container">
-										
-
-										<textarea class="comment-insert-text" rows="4" cols="4">Tryp;lkdfj</textarea>
-										<input type= "text" name="firstname" size="40" maxlength="40" placeholder="First Name" required="true" id="firstname" >
-
-									
+								<!------------------This is where the comment section is------------------>
+								<div class="commentWrapperContent">
+									<div class="page-data">
+										<h1>Add | Join | chocola</h1>
 									</div>
-								</div>
-								<div class="comment-wrapper">
-									<h3 class="comment-title">Add Comments:</h4><br>
-								</div>
-								
-								<div class="comments-list">
-									<ul class="comments-holder-ul" id="comments-holder-ul">
-										<li class="comments-holder" id="_l">
-											
-										<div class="user-image">
-												<img src="img/{{@event.postersProfilePicture}}" id="poster">
-											</div>
+									
+	
+									<div class="comment-insert">
+										<div class="comment-insert-container">
 
-										<div class="comment-body">
-											
-											<h5 class="username-field">Kevin Nguyen</h5><br>
-											<div class="comment-text">								
-												<p class="commenting-field">The comments of the person will go here.The comments of the person will go here.The comments of the person will go here.The comments oThe comments of the person will go here.The comments of the person will go here.The comments of the person will go here.The comments of the person will go here.The comments of the person will go here.f the person will go here.The comments of the person will go here.The comments of the person will go here.The comments of the person will go here.The comments of the person will go here.The comments of the person will go here. </p>
-											</div>										
+											<textarea class="comment-insert-text" rows="1" cols="95" placeholder="Write something..."></textarea>
+			
 										</div>
-										
-										<!--Delete Button for post -->
-										<div class="comment-buttons-holder">
-											<ul>
-												<li class="delete-btn">x</li>
-											</ul>
-										</div>
-										
-										</li>
-
-										<li class="comments-holder" id="_l">
-										
-											<div class="user-image">
-												<img src="img/{{@event.postersProfilePicture}}" id="poster">
-											</div>
-											
-											<div class="comment-body">
+									</div>
+									<div class="comment-wrapper">
+										<h3 class="comment-title">Add Comments:</h4><br>
+									</div>
+									
+									<div class="comments-list">
+										<ul class="comments-holder-ul" id="comments-holder-ul">
+											<li class="comments-holder" id="_l">
 												
-												<h5  class="username-field">Kevin Nguyen</h5><br>
-												
-												<div class="comment-text">
-													<p class="commenting-field">The comments of the person will go here. </p>
-												</div>	
-												
-											</div>
-											
-											<!--Delete Button for post -->
-											<div class="comment-buttons-holder">
-												<ul>
-													<li class="delete-btn">x</li>
-												</ul>
-											</div>
-											
-										</li>
-										
-										<li class="comments-holder" id="_l">
 											<div class="user-image">
 													<img src="img/{{@event.postersProfilePicture}}" id="poster">
 												</div>
+	
 											<div class="comment-body">
 												
 												<h5 class="username-field">Kevin Nguyen</h5><br>
-												<div class="comment-text">
-													
+												<div class="comment-text">								
 													<p class="commenting-field">The comments of the person will go here.The comments of the person will go here.The comments of the person will go here.The comments oThe comments of the person will go here.The comments of the person will go here.The comments of the person will go here.The comments of the person will go here.The comments of the person will go here.f the person will go here.The comments of the person will go here.The comments of the person will go here.The comments of the person will go here.The comments of the person will go here.The comments of the person will go here. </p>
-													
-													
-												</div>
-												
+												</div>										
 											</div>
+											
 											<!--Delete Button for post -->
 											<div class="comment-buttons-holder">
 												<ul>
 													<li class="delete-btn">x</li>
 												</ul>
-											</div>											
-										</li>										
-
-									</ul>
+											</div>
+											
+											</li>
+	
+											<li class="comments-holder" id="_l">
+											
+												<div class="user-image">
+													<img src="img/{{@event.postersProfilePicture}}" id="poster">
+												</div>
+												
+												<div class="comment-body">
+													
+													<h5  class="username-field">Kevin Nguyen</h5><br>
+													
+													<div class="comment-text">
+														<p class="commenting-field">The comments of the person will go here. </p>
+													</div>	
+													
+												</div>
+												
+												<!--Delete Button for post -->
+												<div class="comment-buttons-holder">
+													<ul>
+														<li class="delete-btn">x</li>
+													</ul>
+												</div>
+												
+											</li>
+											
+											<li class="comments-holder" id="_l">
+												<div class="user-image">
+														<img src="img/{{@event.postersProfilePicture}}" id="poster">
+													</div>
+												<div class="comment-body">
+													
+													<h5 class="username-field">Kevin Nguyen</h5><br>
+													<div class="comment-text">
+														
+														<p class="commenting-field">The comments of the person will go here.The comments of the person will go here.The comments of the person will go here.The comments oThe comments of the person will go here.The comments of the person will go here.The comments of the person will go here.The comments of the person will go here.The comments of the person will go here.f the person will go here.The comments of the person will go here.The comments of the person will go here.The comments of the person will go here.The comments of the person will go here.The comments of the person will go here. </p>
+														
+														
+													</div>
+													
+												</div>
+												<!--Delete Button for post -->
+												<div class="comment-buttons-holder">
+													<ul>
+														<li class="delete-btn">x</li>
+													</ul>
+												</div>											
+											</li>										
+	
+										</ul>
+									</div>
 								</div>
+	
+						</section>
+							 <!-- event modal -->
+							<div class="modal fade details{{@event.event_id}}" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+							  <div class="modal-dialog modal-lg">
+								<div class="modal-content" id="modalcontent_details">
+									 <img src="img/{{@event.image}}" />
+									 
+									 <div id="modal_description">
+											<h1>{{@event.title}}</h1>
+											
+									 </div>
+									 <img src="hardCodeImages/fivestars.png" id="rating_modal"/>
+									 <br><br>
+									 <h4>{{@event.event_details}}</h4>
+	
+									<!--Add context here-->
+									
+								</div>
+							  </div>
 							</div>
-
-                    </section>
-                         <!-- event modal -->
-                        <div class="modal fade details{{@event.event_id}}" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-                          <div class="modal-dialog modal-lg">
-                            <div class="modal-content" id="modalcontent_details">
-                                 <img src="img/{{@event.image}}" />
-                                 
-                                 <div id="modal_description">
-                                        <h1>{{@event.title}}</h1>
-										
-                                 </div>
-                                 <img src="hardCodeImages/fivestars.png" id="rating_modal"/>
-                                 <br><br>
-                                 <h4>{{@event.event_details}}</h4>
-
-                                <!--Add context here-->
-								
-                            </div>
-                          </div>
-                        </div>
-						
-						                         <!-- event modal -->
-                        <div class="modal fade comments{{@event.event_id}}" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-                          <div class="modal-dialog modal-lg">
-                            <div class="modal-content" id="modalcontent_details">
-                                 <img src="img/{{@event.image}}" />
-                                 
-                                 <div id="modal_description">
-                                        <h1>{{@event.title}}</h1>
-										
-                                 </div>
-                                 <img src="hardCodeImages/fivestars.png" id="rating_modal"/>
-                                 <br><br>
-                                 <h4>{{@event.event_details}}</h4>
-
-                                <!--Add context here-->
-								
-                            </div>
-                          </div>
-                        </div>
-                </div><!--End of Grid div-->  
-            </repeat>		
+							
+					</div><!--End of Grid div-->  
+				</repeat>
+		
+		
+		
         </div>
 		
 		
