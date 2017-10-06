@@ -9,9 +9,6 @@
         <link href= "css/style.css" rel="stylesheet" type="text/css">
         <link href= "css/homenav.css" rel="stylesheet" type="text/css">
 
-		<link href= "css/commentLayout.css" rel="stylesheet" />
-		<script type="text/javascript" src="/js/jquery.js"></script>
-		<script type="text/javascript" src="/js/script.js"></script>
     </head>
     
     <body>
@@ -102,12 +99,13 @@
                     <img src="img/<?= ($event['postersProfilePicture']) ?>" id="poster"><br>
                     <section id="poster_section">
 						<img src="hardCodeImages/fourstar.png" id="rating_modal"/>
-                        <h4 class="poster-username"><?= ($event['firstname']) ?> <?= ($event['lastname']) ?></h4><br>
+                        <h4><?= ($event['firstname']) ?> <?= ($event['lastname']) ?></h4><br>
                         <h5>Posted: <?= ($event['date']) ?> Time: <?= ($event['time']) ?></h5><br>
-						<h4 id="title"><?= ($event['title']) ?>: <?= ($event['event_details']) ?></h4>
+						<h4 id="title"><?= ($event['event_details']) ?></h4>
 					    
 						<a href="#signup" role="button" data-toggle="modal" data-target=".details<?= ($event['event_id']) ?>" >
                             <img src="img/<?= ($event['image']) ?>" />
+<<<<<<< HEAD
 						</a>	
 							
 							<!------------------This is where the comment section is------------------>
@@ -208,6 +206,9 @@
 									</ul>
 								</div>
 							</div>
+=======
+                        </a>
+>>>>>>> 37201bad30409816fe38e6cb28c13374ec6a9ad1
 
                     </section>
                          <!-- event modal -->
@@ -225,7 +226,6 @@
                                  <h4><?= ($event['event_details']) ?></h4>
 
                                 <!--Add context here-->
-								
                             </div>
                           </div>
                         </div>

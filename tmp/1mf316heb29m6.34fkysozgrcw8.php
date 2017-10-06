@@ -4,9 +4,8 @@
         <link rel="icon" type="image/ico" href="img/exploreicon.png" />
         <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
         <link href= "css/style.css" rel="stylesheet" type="text/css">
-        <link href= "css/homenav.css" rel="stylesheet" type="text/css">
+         <link href= "css/homenav.css" rel="stylesheet" type="text/css">
         <link href= "css/options.css" rel="stylesheet" type="text/css">
-		<link href= "css/addIdea.css" rel="stylesheet" type="text/css">
         <!--<link href= "css/main.css" rel="stylesheet" type="text/css">
         <link href= "css/home.css" rel="stylesheet" type="text/css">-->
         
@@ -42,101 +41,76 @@
 		</nav>  
         
 		 <div class="row">
-			
-			<div class="col-md-2">
-            </div>
-			
-            <div class="container_fluid panel panel-default rounded col-md-8">			
+            
+            <div class="col-md-8" id="contentSection">			
 					<center><h1>Add an Idea: </h1></center>
                     
             <form action="./addidea" method="post" enctype="multipart/form-data">
-				<div class="row form-group">
-					<div class="col-md-4">
-						<legend>Enter in a title</legend>
-						<input type="text" name="eventTitle" id="eventTitle" class="form-control" placeholder="Enter in a title...">
-					</div>
+                <div class="col-md-4" id="contentSection">
+                    <legend>Enter in a title</legend><input type="text" name="eventTitle" id="eventTitle" placeholder="Enter in a title...">
+                </div>
+                
+                <div class="col-md-4" id="contentSection">
+                    <legend>Add details</legend><textarea rows="4" cols="50" name="eventDetails" id="eventDetails"></textarea>
+                </div>
+                    
+				<div>
+				  <label>Rating:</label>
+				  <select name="rating" id="rating">
+				    <option>1</option>
+				    <option>2</option>
+				    <option>3</option>
+				    <option>4</option>
+					<option>5</option>
+				  </select>
+			    </div>
 					
-					<div class="col-md-4">
-						<legend>Add details</legend>
-						<textarea rows="4" cols="50" name="eventDetails" id="eventDetails" class="form-control"></textarea>
-					</div>
-						
-					<div class="col-md-4">
-						<legend>Add a photo(*)</legend>
-						<input type="file" name="eventPicture" id="eventPicture" class="form-control">
-					</div>
-					
-					<div class="col-md-4">
-						<label for="sel1">Rating:</label>
-						<select class="form-control" id="sel1">
-						  <option>1</option>
-						  <option>2</option>
-						  <option>3</option>
-						  <option>4</option>
-						  <option>5</option>
-						</select>
-					  </div>
+                <div class="col-md-4" id="contentSection">
+					<legend>Add a photo(*)</legend><input type="file" name="eventPicture" id="eventPicture">
 				</div>
-				<div class="col-md-12">
-					<p><br></p>
-				</div>
-				<div class="col-md-4">
-				</div>
-				<div class="col-md-4">
-					<button type="submit" name="submit" class="btn btn-info form-control">Add that Idea!</button>
-				</div>
-				<div class="col-md-4">
-				</div>
-				<div class="col-md-12">
-					<p><br></p>
+				
+				<div class="col-md-4" id="contentSection">
+					<button type="submit" name="submit">Add that Idea!</button>
 				</div>
 				
             </form>
 			
+			
 			</div><!--End 8 col-->
-			<div class="col-md-2">
-            </div>
-		 </div>
-		 
-			
-
+		 </div> 
 			<div class="row">
-				<div class="col-md-2">
-				</div>
-					<div class="col-md-8">
-						<?php foreach (($events?:[]) as $event): ?>
-							
-							<div class="container col-md-3">
-									<a href="#signup" role="button" data-toggle="modal" data-target=".viewEvent<?= ($event['event_id']) ?>" >
-										<img src="img/<?= ($event['image']) ?>" height="400" width="400" id="addIdeaImage">
-									</a>
-									
-									<!-- view event modal -->
-									<div class="modal fade viewEvent<?= ($event['event_id']) ?>" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-									  <div class="modal-dialog modal-lg">
-										<div class="modal-content" id="modalcontent">
-										 
-			
-								<a href="#signup" role="button" data-toggle="modal" data-target=".viewEvent">
-			
-								 <img src="img/<?= ($event['image']) ?>" id="addIdeaImage"></a>
-							   
-								<h2><?= ($event['title']) ?></h2>
-									
-								<p><?= ($event['event_details']) ?></p>
-					
-											
-										</div>
-					
-									  </div>
-									</div>
-		
-							</div>
-		
-						<?php endforeach; ?>
-					</div>
-				<div class="col-md-2">
-				</div>
+
+				<?php foreach (($events?:[]) as $event): ?>
+                    <div class="container col-md-2">
+                        <a href="#signup" role="button" data-toggle="modal" data-target=".viewEvent<?= ($event['event_id']) ?>" >
+                            <img src="img/<?= ($event['image']) ?>" height="400" width="400">
+                        </a>
+                        
+                        <!-- view event modal -->
+                        <div class="modal fade viewEvent<?= ($event['event_id']) ?>" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                          <div class="modal-dialog modal-lg">
+                            <div class="modal-content" id="modalcontent">
+                             
+
+                    <a href="#signup" role="button" data-toggle="modal" data-target=".viewEvent">
+
+                     <img src="img/<?= ($event['image']) ?>" /></a>
+                   
+                    <h2><?= ($event['title']) ?></h2>
+                        
+                    <p><?= ($event['event_details']) ?></p>
+        
+                                
+                            </div>
+        
+                          </div>
+                        </div>
+
+                </div>
+
+    
+                    
+                <?php endforeach; ?>
             </div>
             
             	<!--<div class="container_fluid col-md-3" id="sidenav">
