@@ -164,8 +164,8 @@
 												</ul>
 											</div>
 											
-											</li>
-	
+											</li><!--prepend here-->
+											
 											<li class="comments-holder" id="_l">
 											
 												<div class="user-image">
