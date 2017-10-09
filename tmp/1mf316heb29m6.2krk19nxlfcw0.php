@@ -97,12 +97,14 @@
 			<!---------------------This is where the content repeats------------------------>
 <?php foreach (($events?:[]) as $event): ?>
 					<div class="grid">
-						<img src="img/<?= ($event['postersProfilePicture']) ?>" id="poster"><br>
+						<img src="img/<?= ($event['postersProfilePicture']) ?>" id="poster">
 						<section id="poster_section">
 							<img src="hardCodeImages/fourstar.png" id="rating_modal"/>
 							<h4 class="poster-username"><?= ($event['firstname']) ?> <?= ($event['lastname']) ?></h4><br>
-							<h5>Posted: <?= ($event['date']) ?> Time: <?= ($event['time']) ?></h5><br>
-							<h4 id="title"><?= ($event['title']) ?>: <?= ($event['event_details']) ?></h4>
+							<h5>Posted: <?= ($event['date']) ?> Time:  <?= ($event['time']) ?></h5><br>
+							
+							<h4 id="title"><?= ($event['title']) ?>:</h4><br>
+							<h5 id="title"> <?= ($event['event_details']) ?></h5>
 							
 							<a href="#signup" role="button" data-toggle="modal" data-target=".details<?= ($event['event_id']) ?>" >
 								<img src="img/<?= ($event['image']) ?>" />
@@ -111,19 +113,27 @@
 								<!------------------This is where the comment section is------------------>
 								<div class="commentWrapperContent">
 									<div class="page-data">
-										<h1>Add | Join | chocola</h1>
+										<h1>Add | Join </h1>
+										
 									</div>
 									
-	
+									<h4 class="who-says" id="who-says">Says: Kevin Nguyen</h4>
+									
 									<div class="comment-insert">
-										<div class="comment-insert-container">
-
-											<textarea class="comment-insert-text" rows="1" cols="95" placeholder="Write something..."></textarea>
-			
+										
+										<div class="comment--post-btn-wrapper">
+											Post
 										</div>
+										
+										<div class="comment-insert-container">	
+											<textarea class="comment-insert-text" rows="1" cols="95" placeholder="Write something..."></textarea>
+										</div>
+										
+										
+
 									</div>
 									<div class="comment-wrapper">
-										<h3 class="comment-title">Add Comments:</h4><br>
+										<h3 class="comment-title">Comments:</h4><br>
 									</div>
 									
 									<div class="comments-list">

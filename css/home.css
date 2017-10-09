@@ -183,6 +183,10 @@ th{
 h4#title{
     width: 100%;
     margin-left: 1%;
+    color: #000;;
+}
+
+h5#title{
     color: grey;
 }
 .grid img{
