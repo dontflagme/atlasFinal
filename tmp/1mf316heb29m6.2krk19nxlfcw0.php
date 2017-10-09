@@ -10,9 +10,15 @@
         <link href= "css/homenav.css" rel="stylesheet" type="text/css">
 
 		<link href= "css/commentLayout.css" rel="stylesheet" />
-		
+
 		<script type="text/javascript" src="/js/jquery.js"></script>
 		<script type="text/javascript" src="/js/script.js"></script>
+
+		
+		<script src="https://code.jquery.com/jquery-3.1.1.min.js"
+        integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+        crossorigin="anonymous"></script>
+		
     </head>
     
     <body>
@@ -120,13 +126,12 @@
 									<h4 class="who-says" id="who-says">Says: Kevin Nguyen</h4>
 									
 									<div class="comment-insert">
-										
-										<div class="comment--post-btn-wrapper">
+										<div id="comment-post-btn" class="comment-post-btn-wrapper">
 											Post
 										</div>
 										
 										<div class="comment-insert-container">	
-											<textarea class="comment-insert-text" rows="1" cols="95" placeholder="Write something..."></textarea>
+											<textarea id="comment-post-text" class="comment-insert-text" rows="1" cols="95" placeholder="Write something..."></textarea>
 										</div>
 										
 										
@@ -234,15 +239,21 @@
 							  </div>
 							</div>
 							
-					</div><!--End of Grid div-->  
+					</div><!--End of Grid div-->
+					
+							<input type="hidden" id="userId" value="<?= ($event['member_id']) ?>" />
+							<input type="hidden" id="username" value="<?= ($event['firstname']) ?> <?= ($event['lastname']) ?> " />
 				<?php endforeach; ?>
 		
 		
 		
         </div>
+		<!--
+		<input type="hidden" id="user-id" value="1" />
+		<input type="hidden" id="user-name" value="Kevin Nguyen" />
+			   -->
 		
-		
- 
+<script type="text/javascript" src="js/comment_insert.js"></script>
  <script src="validate.js"></script>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>

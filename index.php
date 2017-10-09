@@ -94,7 +94,7 @@ $joinedDB = new JoinedDB();
                         $f3->set('events', $events);
                         
                       echo Template::instance()->render('pages/backend/home_backend.html');
-                      
+                      echo var_dump($events);
                      });
                     
                     //This is used to create a new user.

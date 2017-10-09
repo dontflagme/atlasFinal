@@ -189,7 +189,7 @@ textarea.comment-insert-text{
 
 }
 
-.comment--post-btn-wrapper{
+.comment-post-btn-wrapper{
     position: absolute;
     top: 73%;
     bottom: 50%;
@@ -206,7 +206,7 @@ textarea.comment-insert-text{
     cursor: pointer;
 }
 
-.comment--post-btn-wrapper:hover{
+.comment-post-btn-wrapper:hover{
      background: #41AFFF;
      border: 1px solid #e1e1e1;
 }
