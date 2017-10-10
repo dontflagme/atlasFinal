@@ -67,9 +67,9 @@
          * @return true if the insert was successful, otherwise false
          */
 
-        function addEvent($member_id, $title, $event_details, $date, $time, $image, $firstname, $lastname, $postersProfilePicture)
+        function addEvent($member_id, $title, $event_details, $date, $time, $image, $firstname, $lastname, $postersProfilePicture, $rating)
         {
-            $insert = 'INSERT INTO events (member_id, title, event_details, date, time, image, firstname, lastname, postersProfilePicture) VALUES (:member_id, :title, :event_details, :date, :time, :image, :firstname, :lastname, :postersProfilePicture)';
+            $insert = 'INSERT INTO events (member_id, title, event_details, date, time, image, firstname, lastname, postersProfilePicture, rating) VALUES (:member_id, :title, :event_details, :date, :time, :image, :firstname, :lastname, :postersProfilePicture, :rating)';
 
              
             $statement = $this->_pdo->prepare($insert);
@@ -81,8 +81,7 @@
             $statement->bindValue(':firstname', $firstname, PDO::PARAM_STR);
             $statement->bindValue(':lastname', $lastname, PDO::PARAM_STR);
             $statement->bindValue(':postersProfilePicture', $postersProfilePicture, PDO::PARAM_STR);
-
-
+            $statement->bindValue(':rating', $rating, PDO::PARAM_STR);
             $statement->bindValue(':image', $image, PDO::PARAM_STR);
 
             
@@ -105,7 +104,7 @@
 
             
 
-            $select = 'SELECT event_id, member_id, title, event_details, date, time, image, firstname, lastname, postersProfilePicture FROM events ORDER BY event_id DESC';
+            $select = 'SELECT event_id, member_id, title, event_details, date, time, image, firstname, lastname, postersProfilePicture, rating FROM events ORDER BY event_id DESC';
 
             $results = $this->_pdo->query($select);
              
@@ -131,7 +130,7 @@
         function eventsByMemberId($id)
         {
 
-            $select = 'SELECT event_id, member_id, title, event_details, date, time, image FROM events WHERE member_id=:id ORDER BY event_id';
+            $select = 'SELECT event_id, member_id, title, event_details, date, time, image, rating FROM events WHERE member_id=:id ORDER BY event_id';
 
             
             $results = $this->_pdo->prepare($select);
@@ -160,7 +159,7 @@
         function eventsByEventId($id)
         {
 
-            $select = 'SELECT event_id, member_id, title, , event_details, date, time, image FROM events WHERE event_id=:id';
+            $select = 'SELECT events.event_id, events.member_id, events.title, events.event_details, events.date, events.time, events.image FROM events, joined WHERE events.member_id=:id = joined.member_id=:id';
 
             
             $statement = $this->_pdo->prepare($select);

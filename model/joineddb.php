@@ -11,6 +11,8 @@
         event_id int NOT NULL,
         member_id int NOT NULL
         );
+        
+        INSERT INTO joined (event_id, member_id) VALUES (1, 2)
      */
     
     //CONNECT
