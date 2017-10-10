@@ -30,6 +30,7 @@ $f3->set('DEBUG', 3);
 $eventsDB = new EventsDB();
 $memberDB = new MemberDB();
 $joinedDB = new JoinedDB();
+$joinedDB = new JoinedDB();
 
 
                   //Define a default route
@@ -42,6 +43,41 @@ $joinedDB = new JoinedDB();
                     $f3->route('GET /logout', function($f3) {
                         session_destroy();
                         $f3->reroute('/');
+                     });
+                    
+                    
+                    $f3->route('POST /insertComment', function($f3) {
+     if(isset($_POST['task']) && $_POST['task'] == 'comment_insert')
+     {
+        $userId = (int)$_POST['userId'];
+        $username = $_POST['username'];
+        $profilePicture = $_POST['profileImage'];
+        $comment = addslashes(str_replace("\n", "<br>" , $_POST['comment']));
+        
+        $std = new stdClass();
+        $std->comment_id = 24;
+        $std->userId = $userId;
+        $std->comment = $comment;
+        $std->username = $username ;
+        $std->profile_img = "img/{{@event.postersProfilePicture}}" ;
+        
+        
+        if(class_exists('Comments'))
+        {
+            $commentInfo = Comments::insert($comment_txt, $userId);
+            
+            if($commentInfo != null)
+            {
+                
+            }
+        }
+        echo json_encode($std);
+     }
+                        
+                        else
+                        {
+                          $f3->reroute('/homelogin');
+                        }                        
                      });
                     
                     //-----------------------Varifies login to see if user exists--------------------------------

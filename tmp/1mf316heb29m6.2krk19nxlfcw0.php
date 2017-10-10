@@ -11,8 +11,7 @@
 
 		<link href= "css/commentLayout.css" rel="stylesheet" />
 
-		<script type="text/javascript" src="/js/jquery.js"></script>
-		<script type="text/javascript" src="/js/script.js"></script>
+
 
 		
 		<script src="https://code.jquery.com/jquery-3.1.1.min.js"
@@ -126,12 +125,14 @@
 									<h4 class="who-says" id="who-says">Says: Kevin Nguyen</h4>
 									
 									<div class="comment-insert">
-										<div id="comment-post-btn" class="comment-post-btn-wrapper">
+										<Button id="<?= ($event['event_id']) ?>" value="<?= ($event['event_id']) ?>" class="comment-post-btn-wrapper">
+										  <input type="hidden" id="<?= ($event['event_id']) ?>" value="<?= ($event['event_id']) ?>" class="numberClickedEvent"/>
 											Post
-										</div>
+										</Button>
 										
-										<div class="comment-insert-container">	
-											<textarea id="comment-post-text" class="comment-insert-text" rows="1" cols="95" placeholder="Write something..."></textarea>
+										<div id="<?= ($event['event_id']) ?>" class="comment-insert-container">
+											
+											<textarea id="comment-post-text<?= ($event['event_id']) ?>" class="comment-insert-text" rows="1" cols="95" placeholder="Write something..."></textarea>
 										</div>
 										
 										
@@ -142,7 +143,7 @@
 									</div>
 									
 									<div class="comments-list">
-										<ul class="comments-holder-ul" id="comments-holder-ul">
+										<ul class="comments-holder-ul<?= ($event['event_id']) ?>" id="comments-holder-ul<?= ($event['event_id']) ?>">
 											<li class="comments-holder" id="_l">
 												
 											<div class="user-image">
@@ -166,53 +167,8 @@
 											
 											</li><!--prepend here-->
 											
-											<li class="comments-holder" id="_l">
-											
-												<div class="user-image">
-													<img src="img/<?= ($event['postersProfilePicture']) ?>" id="poster">
-												</div>
-												
-												<div class="comment-body">
-													
-													<h5  class="username-field">Kevin Nguyen</h5><br>
-													
-													<div class="comment-text">
-														<p class="commenting-field">The comments of the person will go here. </p>
-													</div>	
-													
-												</div>
-												
-												<!--Delete Button for post -->
-												<div class="comment-buttons-holder">
-													<ul>
-														<li class="delete-btn">x</li>
-													</ul>
-												</div>
-												
-											</li>
-											
-											<li class="comments-holder" id="_l">
-												<div class="user-image">
-														<img src="img/<?= ($event['postersProfilePicture']) ?>" id="poster">
-													</div>
-												<div class="comment-body">
-													
-													<h5 class="username-field">Kevin Nguyen</h5><br>
-													<div class="comment-text">
-														
-														<p class="commenting-field">The comments of the person will go here.The comments of the person will go here.The comments of the person will go here.The comments oThe comments of the person will go here.The comments of the person will go here.The comments of the person will go here.The comments of the person will go here.The comments of the person will go here.f the person will go here.The comments of the person will go here.The comments of the person will go here.The comments of the person will go here.The comments of the person will go here.The comments of the person will go here. </p>
-														
-														
-													</div>
-													
-												</div>
-												<!--Delete Button for post -->
-												<div class="comment-buttons-holder">
-													<ul>
-														<li class="delete-btn">x</li>
-													</ul>
-												</div>											
-											</li>										
+										
+																					
 	
 										</ul>
 									</div>
@@ -241,8 +197,9 @@
 							
 					</div><!--End of Grid div-->
 					
-							<input type="hidden" id="userId" value="<?= ($event['member_id']) ?>" />
-							<input type="hidden" id="username" value="<?= ($event['firstname']) ?> <?= ($event['lastname']) ?> " />
+							<input type="hidden" id="userId" value="<?= ($id) ?>" />
+							<input type="hidden" id="profileImage" value="<?= ($profilePicture) ?>" />
+							<input type="hidden" id="username" value="<?= ($firstName) ?> <?= ($lastName) ?> " />
 				<?php endforeach; ?>
 		
 		
