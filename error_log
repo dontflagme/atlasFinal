@@ -12414,3 +12414,12 @@
 [10-Oct-2017 18:54:35 America/Chicago] PHP Fatal error:  Call to undefined method Comments::insert() in /home/bsaylor/public_html/328/atlasFinal/index.php on line 67
 [10-Oct-2017 18:54:35 America/Chicago] Fatal error: Call to undefined method Comments::insert()
 [10-Oct-2017 18:54:35 America/Chicago] [328/atlasFinal/index.php:67] 
+[10-Oct-2017 18:56:11 America/Chicago] HTTP 404 (GET /validate.js)
+[10-Oct-2017 18:56:11 America/Chicago] [328/atlasFinal/vendor/bcosca/fatfree-core/base.php:1659] Base->error()
+[10-Oct-2017 18:56:11 America/Chicago] [328/atlasFinal/index.php:322] Base->run()
+[10-Oct-2017 18:56:23 America/Chicago] HTTP 404 (GET /validate.js)
+[10-Oct-2017 18:56:23 America/Chicago] [328/atlasFinal/vendor/bcosca/fatfree-core/base.php:1659] Base->error()
+[10-Oct-2017 18:56:23 America/Chicago] [328/atlasFinal/index.php:322] Base->run()
+[10-Oct-2017 18:56:49 America/Chicago] HTTP 404 (GET /validate.js)
+[10-Oct-2017 18:56:49 America/Chicago] [328/atlasFinal/vendor/bcosca/fatfree-core/base.php:1659] Base->error()
+[10-Oct-2017 18:56:49 America/Chicago] [328/atlasFinal/index.php:322] Base->run()
