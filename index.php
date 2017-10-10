@@ -94,8 +94,10 @@ $joinedDB = new JoinedDB();
                         $f3->set('events', $events);
                         
                       echo Template::instance()->render('pages/backend/home_backend.html');
-                      
+                     
                      });
+                    
+                    
                     
                     //This is used to create a new user.
                     //Takes the information and adds to members database
@@ -270,8 +272,7 @@ $joinedDB = new JoinedDB();
                           
                           $f3->reroute('/homelogin');
                         });
-                    
-                    
+
                     /**
                             $f3->set('id',  $_SESSION['id']);
                             $_SESSION['title'] = $_POST['title'];
