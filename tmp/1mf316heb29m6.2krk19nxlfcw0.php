@@ -10,7 +10,6 @@
         <link href= "css/homenav.css" rel="stylesheet" type="text/css">
 
 		<link href= "css/commentLayout.css" rel="stylesheet" />
-<<<<<<< HEAD
 
 
 
@@ -19,11 +18,6 @@
         integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
         crossorigin="anonymous"></script>
 		
-=======
-		
-		<script type="text/javascript" src="/js/jquery.js"></script>
-		<script type="text/javascript" src="/js/script.js"></script>
->>>>>>> c06403995f5d42b387b60299887720c8ce431aac
     </head>
     
     <body>
@@ -108,12 +102,14 @@
 			<!---------------------This is where the content repeats------------------------>
 <?php foreach (($events?:[]) as $event): ?>
 					<div class="grid">
-						<img src="img/<?= ($event['postersProfilePicture']) ?>" id="poster"><br>
+						<img src="img/<?= ($event['postersProfilePicture']) ?>" id="poster">
 						<section id="poster_section">
 							<img src="hardCodeImages/fourstar.png" id="rating_modal"/>
 							<h4 class="poster-username"><?= ($event['firstname']) ?> <?= ($event['lastname']) ?></h4><br>
-							<h5>Posted: <?= ($event['date']) ?> Time: <?= ($event['time']) ?></h5><br>
-							<h4 id="title"><?= ($event['title']) ?>: <?= ($event['event_details']) ?></h4>
+							<h5>Posted: <?= ($event['date']) ?> Time:  <?= ($event['time']) ?></h5><br>
+							
+							<h4 id="title"><?= ($event['title']) ?>:</h4><br>
+							<h5 id="title"> <?= ($event['event_details']) ?></h5>
 							
 							<a href="#signup" role="button" data-toggle="modal" data-target=".details<?= ($event['event_id']) ?>" >
 								<img src="img/<?= ($event['image']) ?>" />
@@ -122,12 +118,13 @@
 								<!------------------This is where the comment section is------------------>
 								<div class="commentWrapperContent">
 									<div class="page-data">
-										<h1>Add | Join | chocola</h1>
+										<h1>Add | Join </h1>
+										
 									</div>
 									
-	
+									<h4 class="who-says" id="who-says">Says: Kevin Nguyen</h4>
+									
 									<div class="comment-insert">
-<<<<<<< HEAD
 										<Button id="<?= ($event['event_id']) ?>" value="<?= ($event['event_id']) ?>" class="comment-post-btn-wrapper">
 										  <input type="hidden" id="<?= ($event['event_id']) ?>" value="<?= ($event['event_id']) ?>" class="numberClickedEvent"/>
 											Post
@@ -139,16 +136,10 @@
 										</div>
 										
 										
-=======
-										<div class="comment-insert-container">
->>>>>>> c06403995f5d42b387b60299887720c8ce431aac
 
-											<textarea class="comment-insert-text" rows="1" cols="95" placeholder="Write something..."></textarea>
-			
-										</div>
 									</div>
 									<div class="comment-wrapper">
-										<h3 class="comment-title">Add Comments:</h4><br>
+										<h3 class="comment-title">Comments:</h4><br>
 									</div>
 									
 									<div class="comments-list">
@@ -174,62 +165,10 @@
 												</ul>
 											</div>
 											
-<<<<<<< HEAD
 											</li><!--prepend here-->
 											
 										
 																					
-=======
-											</li>
-	
-											<li class="comments-holder" id="_l">
-											
-												<div class="user-image">
-													<img src="img/<?= ($event['postersProfilePicture']) ?>" id="poster">
-												</div>
-												
-												<div class="comment-body">
-													
-													<h5  class="username-field">Kevin Nguyen</h5><br>
-													
-													<div class="comment-text">
-														<p class="commenting-field">The comments of the person will go here. </p>
-													</div>	
-													
-												</div>
-												
-												<!--Delete Button for post -->
-												<div class="comment-buttons-holder">
-													<ul>
-														<li class="delete-btn">x</li>
-													</ul>
-												</div>
-												
-											</li>
-											
-											<li class="comments-holder" id="_l">
-												<div class="user-image">
-														<img src="img/<?= ($event['postersProfilePicture']) ?>" id="poster">
-													</div>
-												<div class="comment-body">
-													
-													<h5 class="username-field">Kevin Nguyen</h5><br>
-													<div class="comment-text">
-														
-														<p class="commenting-field">The comments of the person will go here.The comments of the person will go here.The comments of the person will go here.The comments oThe comments of the person will go here.The comments of the person will go here.The comments of the person will go here.The comments of the person will go here.The comments of the person will go here.f the person will go here.The comments of the person will go here.The comments of the person will go here.The comments of the person will go here.The comments of the person will go here.The comments of the person will go here. </p>
-														
-														
-													</div>
-													
-												</div>
-												<!--Delete Button for post -->
-												<div class="comment-buttons-holder">
-													<ul>
-														<li class="delete-btn">x</li>
-													</ul>
-												</div>											
-											</li>										
->>>>>>> c06403995f5d42b387b60299887720c8ce431aac
 	
 										</ul>
 									</div>
@@ -256,23 +195,22 @@
 							  </div>
 							</div>
 							
-<<<<<<< HEAD
 					</div><!--End of Grid div-->
 					
 							<input type="hidden" id="userId" value="<?= ($id) ?>" />
 							<input type="hidden" id="profileImage" value="<?= ($profilePicture) ?>" />
 							<input type="hidden" id="username" value="<?= ($firstName) ?> <?= ($lastName) ?> " />
-=======
-					</div><!--End of Grid div-->  
->>>>>>> c06403995f5d42b387b60299887720c8ce431aac
 				<?php endforeach; ?>
 		
 		
 		
         </div>
+		<!--
+		<input type="hidden" id="user-id" value="1" />
+		<input type="hidden" id="user-name" value="Kevin Nguyen" />
+			   -->
 		
-		
- 
+<script type="text/javascript" src="js/comment_insert.js"></script>
  <script src="validate.js"></script>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>

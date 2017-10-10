@@ -130,7 +130,7 @@
         function eventsByMemberId($id)
         {
 
-            $select = 'SELECT event_id, member_id, title, event_details, date, time, image, rating FROM events WHERE member_id=:id ORDER BY event_id';
+            $select = 'SELECT event_id, member_id, title, event_details, date, time, image, firstname, lastname, postersProfilePicture, rating FROM events WHERE member_id=:id ORDER BY event_id';
 
             
             $results = $this->_pdo->prepare($select);

@@ -100,10 +100,10 @@ function comment_post_btn_click(GbuttonClicked, _buttonClicked)
         }
         else
         {
-            $( '#comment-post-text' + _buttonClicked).css('border', '1px solid #ff0000');
+            $( '#comment-post-text' + _GlobalButtonClick).css('border', '1px solid #ff0000');
             console.log("The text area was empty.");
         }
         
         //removes text from text area
-        $( '#comment-post-text' + _buttonClicked).val("");
+        $( '#comment-post-text' + _GlobalButtonClick).val("");
 }
