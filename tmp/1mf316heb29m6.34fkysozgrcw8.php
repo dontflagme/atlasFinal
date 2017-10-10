@@ -75,8 +75,8 @@
 						</div>
 						
 						<div class="col-md-3">
-							<legend for="sel1">Rating:</legend>
-							<select class="form-control" id="sel1">
+							<legend for="rating">Rating:</legend>
+							<select class="form-control" id="rating" name="rating">
 							  <option>None</option>
 							  <option>1</option>
 							  <option>2</option>
