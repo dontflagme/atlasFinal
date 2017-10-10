@@ -127,7 +127,7 @@ $commentDB = new CommentDB();
                         $f3->set('lastName',$_SESSION['lastName']);
                         $f3->set('profilePicture', $_SESSION['profilePicture']);
                         
-                        $events = $GLOBALS['eventsDB']->eventsByMemberId($member['member_id']);
+                        $events = $GLOBALS['eventsDB']->eventsByEventId($member['member_id']);
                         $f3->set('events', $events);
                         
                       echo Template::instance()->render('pages/backend/home_backend.html');

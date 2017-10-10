@@ -169,15 +169,15 @@ UNION
         {
 
             $select = '(SELECT events.event_id, events.member_id, events.title, events.event_details, events.date,
-            events.time, events.firstname, events.lastname, events.postersProfilePicture, events.rating FROM events, joined WHERE events.event_id = joined.event_id)
+            events.time, events.image,events.firstname, events.lastname, events.postersProfilePicture, events.rating FROM events, joined WHERE events.event_id = joined.event_id)
                         UNION
                         (SELECT events.event_id, events.member_id, events.title, events.event_details, events.date,
-            events.time, events.firstname, events.lastname, events.postersProfilePicture, events.rating FROM joined LEFT JOIN events ON events.member_id = joined.member_id)';
+            events.time, events.image, events.firstname, events.lastname, events.postersProfilePicture, events.rating FROM joined LEFT JOIN events ON events.member_id = joined.member_id)';
 
             
-            $statement = $this->_pdo->prepare($select);
-            $statement->bindValue(':id', $id, PDO::PARAM_INT);
-            $statement->execute();
+            $results = $this->_pdo->prepare($select);
+            $results->bindValue(':id', $id, PDO::PARAM_INT);
+            $results->execute();
              
             $resultsArray = array();
              

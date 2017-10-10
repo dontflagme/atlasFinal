@@ -12387,3 +12387,30 @@
 [10-Oct-2017 17:57:15 America/Chicago] HTTP 404 (GET /validate.js)
 [10-Oct-2017 17:57:15 America/Chicago] [328/atlasFinal/vendor/bcosca/fatfree-core/base.php:1659] Base->error()
 [10-Oct-2017 17:57:15 America/Chicago] [328/atlasFinal/index.php:322] Base->run()
+[10-Oct-2017 18:50:22 America/Chicago] HTTP 404 (GET /validate.js)
+[10-Oct-2017 18:50:22 America/Chicago] [328/atlasFinal/vendor/bcosca/fatfree-core/base.php:1659] Base->error()
+[10-Oct-2017 18:50:22 America/Chicago] [328/atlasFinal/index.php:322] Base->run()
+[10-Oct-2017 18:50:22 America/Chicago] HTTP 404 (GET /hardCodedImages/dsfa.png)
+[10-Oct-2017 18:50:22 America/Chicago] [328/atlasFinal/vendor/bcosca/fatfree-core/base.php:1659] Base->error()
+[10-Oct-2017 18:50:22 America/Chicago] [328/atlasFinal/index.php:322] Base->run()
+[10-Oct-2017 18:50:30 America/Chicago] PHP Fatal error:  Call to undefined method EventsDB::eventsByEventsId() in /home/bsaylor/public_html/328/atlasFinal/index.php on line 130
+[10-Oct-2017 18:50:30 America/Chicago] Fatal error: Call to undefined method EventsDB::eventsByEventsId()
+[10-Oct-2017 18:50:30 America/Chicago] [328/atlasFinal/index.php:130] 
+[10-Oct-2017 18:50:52 America/Chicago] PHP Fatal error:  Call to a member function fetch() on a non-object in /home/bsaylor/public_html/328/atlasFinal/model/eventsdb.php on line 185
+[10-Oct-2017 18:50:52 America/Chicago] Fatal error: Call to a member function fetch() on a non-object
+[10-Oct-2017 18:50:52 America/Chicago] [328/atlasFinal/model/eventsdb.php:185] 
+[10-Oct-2017 18:51:35 America/Chicago] HTTP 404 (GET /validate.js)
+[10-Oct-2017 18:51:35 America/Chicago] [328/atlasFinal/vendor/bcosca/fatfree-core/base.php:1659] Base->error()
+[10-Oct-2017 18:51:35 America/Chicago] [328/atlasFinal/index.php:322] Base->run()
+[10-Oct-2017 18:53:28 America/Chicago] HTTP 404 (GET /validate.js)
+[10-Oct-2017 18:53:28 America/Chicago] [328/atlasFinal/vendor/bcosca/fatfree-core/base.php:1659] Base->error()
+[10-Oct-2017 18:53:28 America/Chicago] [328/atlasFinal/index.php:322] Base->run()
+[10-Oct-2017 18:53:45 America/Chicago] PHP Fatal error:  Call to undefined method Comments::insert() in /home/bsaylor/public_html/328/atlasFinal/index.php on line 67
+[10-Oct-2017 18:53:45 America/Chicago] Fatal error: Call to undefined method Comments::insert()
+[10-Oct-2017 18:53:45 America/Chicago] [328/atlasFinal/index.php:67] 
+[10-Oct-2017 18:53:48 America/Chicago] PHP Fatal error:  Call to undefined method Comments::insert() in /home/bsaylor/public_html/328/atlasFinal/index.php on line 67
+[10-Oct-2017 18:53:48 America/Chicago] Fatal error: Call to undefined method Comments::insert()
+[10-Oct-2017 18:53:48 America/Chicago] [328/atlasFinal/index.php:67] 
+[10-Oct-2017 18:54:35 America/Chicago] PHP Fatal error:  Call to undefined method Comments::insert() in /home/bsaylor/public_html/328/atlasFinal/index.php on line 67
+[10-Oct-2017 18:54:35 America/Chicago] Fatal error: Call to undefined method Comments::insert()
+[10-Oct-2017 18:54:35 America/Chicago] [328/atlasFinal/index.php:67] 
