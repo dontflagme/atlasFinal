@@ -179,7 +179,14 @@ UNION
             $statement->bindValue(':id', $id, PDO::PARAM_INT);
             $statement->execute();
              
-            return $statement->fetch(PDO::FETCH_ASSOC);
+            $resultsArray = array();
+             
+            //map each pet id to a row of data for that pet
+            while ($row = $results->fetch(PDO::FETCH_ASSOC)) {
+                $resultsArray[$row['event_id']] = $row;
+            }
+             
+            return $resultsArray;
         }
         
         /**
