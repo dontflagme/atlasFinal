@@ -30,7 +30,7 @@ $f3->set('DEBUG', 3);
 $eventsDB = new EventsDB();
 $memberDB = new MemberDB();
 $joinedDB = new JoinedDB();
-$joinedDB = new JoinedDB();
+$commentDB = new CommentDB();
 
 
                   //Define a default route

@@ -12128,3 +12128,33 @@
 [10-Oct-2017 03:53:04 America/Chicago] HTTP 404 (GET /validate.js)
 [10-Oct-2017 03:53:04 America/Chicago] [328/atlasFinal/vendor/bcosca/fatfree-core/base.php:1659] Base->error()
 [10-Oct-2017 03:53:04 America/Chicago] [328/atlasFinal/index.php:322] Base->run()
+[10-Oct-2017 15:28:51 America/Chicago] PHP Fatal error:  Class 'CommentDB' not found in /home/bsaylor/public_html/328/atlasFinal/index.php on line 33
+[10-Oct-2017 15:28:51 America/Chicago] Fatal error: Class 'CommentDB' not found
+[10-Oct-2017 15:28:51 America/Chicago] [328/atlasFinal/index.php:33] 
+[10-Oct-2017 15:41:51 America/Chicago] PHP Fatal error:  Call to a member function getUsername() on a non-object in /home/bsaylor/public_html/328/atlasFinal/index.php on line 117
+[10-Oct-2017 15:41:51 America/Chicago] Fatal error: Call to a member function getUsername() on a non-object
+[10-Oct-2017 15:41:51 America/Chicago] [328/atlasFinal/index.php:117] 
+[10-Oct-2017 15:42:49 America/Chicago] HTTP 404 (GET /validate.js)
+[10-Oct-2017 15:42:49 America/Chicago] [328/atlasFinal/vendor/bcosca/fatfree-core/base.php:1659] Base->error()
+[10-Oct-2017 15:42:49 America/Chicago] [328/atlasFinal/index.php:322] Base->run()
+[10-Oct-2017 15:42:49 America/Chicago] HTTP 404 (GET /hardCodedImages/dsfa.png)
+[10-Oct-2017 15:42:49 America/Chicago] [328/atlasFinal/vendor/bcosca/fatfree-core/base.php:1659] Base->error()
+[10-Oct-2017 15:42:49 America/Chicago] [328/atlasFinal/index.php:322] Base->run()
+[10-Oct-2017 15:43:14 America/Chicago] HTTP 404 (GET /validate.js)
+[10-Oct-2017 15:43:14 America/Chicago] [328/atlasFinal/vendor/bcosca/fatfree-core/base.php:1659] Base->error()
+[10-Oct-2017 15:43:14 America/Chicago] [328/atlasFinal/index.php:322] Base->run()
+[10-Oct-2017 15:43:14 America/Chicago] HTTP 404 (GET /hardCodedImages/dsfa.png)
+[10-Oct-2017 15:43:14 America/Chicago] [328/atlasFinal/vendor/bcosca/fatfree-core/base.php:1659] Base->error()
+[10-Oct-2017 15:43:14 America/Chicago] [328/atlasFinal/index.php:322] Base->run()
+[10-Oct-2017 15:43:20 America/Chicago] HTTP 404 (GET /validate.js)
+[10-Oct-2017 15:43:20 America/Chicago] [328/atlasFinal/vendor/bcosca/fatfree-core/base.php:1659] Base->error()
+[10-Oct-2017 15:43:20 America/Chicago] [328/atlasFinal/index.php:322] Base->run()
+[10-Oct-2017 15:43:23 America/Chicago] PHP Fatal error:  Call to undefined method Comments::insert() in /home/bsaylor/public_html/328/atlasFinal/index.php on line 67
+[10-Oct-2017 15:43:23 America/Chicago] Fatal error: Call to undefined method Comments::insert()
+[10-Oct-2017 15:43:23 America/Chicago] [328/atlasFinal/index.php:67] 
+[10-Oct-2017 15:43:27 America/Chicago] PHP Fatal error:  Call to undefined method Comments::insert() in /home/bsaylor/public_html/328/atlasFinal/index.php on line 67
+[10-Oct-2017 15:43:27 America/Chicago] Fatal error: Call to undefined method Comments::insert()
+[10-Oct-2017 15:43:27 America/Chicago] [328/atlasFinal/index.php:67] 
+[10-Oct-2017 15:43:59 America/Chicago] PHP Fatal error:  Call to undefined method Comments::insert() in /home/bsaylor/public_html/328/atlasFinal/index.php on line 67
+[10-Oct-2017 15:43:59 America/Chicago] Fatal error: Call to undefined method Comments::insert()
+[10-Oct-2017 15:43:59 America/Chicago] [328/atlasFinal/index.php:67] 

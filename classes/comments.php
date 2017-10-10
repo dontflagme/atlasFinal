@@ -9,7 +9,7 @@
  * @author Brian Saylor <bsaylor3@mail.greenriver.edu
  * @copyright 2017
  */
-    Class Events
+    Class Comments
     {
         protected $member_id;
         protected $title;
