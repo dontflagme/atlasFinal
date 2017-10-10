@@ -10,20 +10,9 @@
         <link href= "css/homenav.css" rel="stylesheet" type="text/css">
 
 		<link href= "css/commentLayout.css" rel="stylesheet" />
-<<<<<<< HEAD
-
-
-
-		
-		<script src="https://code.jquery.com/jquery-3.1.1.min.js"
-        integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
-        crossorigin="anonymous"></script>
-		
-=======
 		
 		<script type="text/javascript" src="/js/jquery.js"></script>
 		<script type="text/javascript" src="/js/script.js"></script>
->>>>>>> c06403995f5d42b387b60299887720c8ce431aac
     </head>
     
     <body>
@@ -110,7 +99,10 @@
 					<div class="grid">
 						<img src="img/<?= ($event['postersProfilePicture']) ?>" id="poster"><br>
 						<section id="poster_section">
-							<img src="hardCodeImages/fourstar.png" id="rating_modal"/>
+							<!--<img src="hardCodeImages/fourstar.png" id="rating_modal"/>-->
+							
+
+							
 							<h4 class="poster-username"><?= ($event['firstname']) ?> <?= ($event['lastname']) ?></h4><br>
 							<h5>Posted: <?= ($event['date']) ?> Time: <?= ($event['time']) ?></h5><br>
 							<h4 id="title"><?= ($event['title']) ?>: <?= ($event['event_details']) ?></h4>
@@ -127,21 +119,7 @@
 									
 	
 									<div class="comment-insert">
-<<<<<<< HEAD
-										<Button id="<?= ($event['event_id']) ?>" value="<?= ($event['event_id']) ?>" class="comment-post-btn-wrapper">
-										  <input type="hidden" id="<?= ($event['event_id']) ?>" value="<?= ($event['event_id']) ?>" class="numberClickedEvent"/>
-											Post
-										</Button>
-										
-										<div id="<?= ($event['event_id']) ?>" class="comment-insert-container">
-											
-											<textarea id="comment-post-text<?= ($event['event_id']) ?>" class="comment-insert-text" rows="1" cols="95" placeholder="Write something..."></textarea>
-										</div>
-										
-										
-=======
 										<div class="comment-insert-container">
->>>>>>> c06403995f5d42b387b60299887720c8ce431aac
 
 											<textarea class="comment-insert-text" rows="1" cols="95" placeholder="Write something..."></textarea>
 			
@@ -152,7 +130,7 @@
 									</div>
 									
 									<div class="comments-list">
-										<ul class="comments-holder-ul<?= ($event['event_id']) ?>" id="comments-holder-ul<?= ($event['event_id']) ?>">
+										<ul class="comments-holder-ul" id="comments-holder-ul">
 											<li class="comments-holder" id="_l">
 												
 											<div class="user-image">
@@ -174,12 +152,6 @@
 												</ul>
 											</div>
 											
-<<<<<<< HEAD
-											</li><!--prepend here-->
-											
-										
-																					
-=======
 											</li>
 	
 											<li class="comments-holder" id="_l">
@@ -229,7 +201,6 @@
 													</ul>
 												</div>											
 											</li>										
->>>>>>> c06403995f5d42b387b60299887720c8ce431aac
 	
 										</ul>
 									</div>
@@ -256,15 +227,7 @@
 							  </div>
 							</div>
 							
-<<<<<<< HEAD
-					</div><!--End of Grid div-->
-					
-							<input type="hidden" id="userId" value="<?= ($id) ?>" />
-							<input type="hidden" id="profileImage" value="<?= ($profilePicture) ?>" />
-							<input type="hidden" id="username" value="<?= ($firstName) ?> <?= ($lastName) ?> " />
-=======
 					</div><!--End of Grid div-->  
->>>>>>> c06403995f5d42b387b60299887720c8ce431aac
 				<?php endforeach; ?>
 		
 		

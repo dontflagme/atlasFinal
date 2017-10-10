@@ -126,7 +126,7 @@ $joinedDB = new JoinedDB();
                         $f3->set('lastName',$_SESSION['lastName']);
                         $f3->set('profilePicture', $_SESSION['profilePicture']);
                         
-                        $events = $GLOBALS['eventsDB']->allEvents();
+                        $events = $GLOBALS['eventsDB']->eventsByMemberId($member['member_id']);
                         $f3->set('events', $events);
                         
                       echo Template::instance()->render('pages/backend/home_backend.html');
@@ -228,6 +228,7 @@ $joinedDB = new JoinedDB();
                     
                                       //Define a default route
                     $f3->route('GET /explorebackend', function($f3) {
+                        
                       $events =  $GLOBALS['eventsDB']->allEvents();
                       $f3->set('events', $events);
                       echo Template::instance()->render('pages/backend/explore.html');
@@ -303,7 +304,7 @@ $joinedDB = new JoinedDB();
                           }
                           $profilePicture = basename( $_FILES["eventPicture"]["name"]);
                             
-                          $events =  $GLOBALS['eventsDB']->addEvent($_SESSION['id'], $_POST['eventTitle'], $_POST['eventDetails'], "2017-09-23", "10:54:00", $profilePicture, $_SESSION['firstName'], $_SESSION['lastName'], $_SESSION['profilePicture']);
+                          $events =  $GLOBALS['eventsDB']->addEvent($_SESSION['id'], $_POST['eventTitle'], $_POST['eventDetails'], "2017-09-23", "10:54:00", $profilePicture, $_SESSION['firstName'], $_SESSION['lastName'], $_SESSION['profilePicture'], $_POST['rating']);
                           
                           $f3->reroute('/homelogin');
                         });
