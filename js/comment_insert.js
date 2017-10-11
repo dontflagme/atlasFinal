@@ -1,6 +1,8 @@
 var _GlobalButtonClick;
 var _GlobalNameClick;
 var _GlobalImageClick;
+var _GlobalUserClick;
+var _GlobalCommentClick;
 
 $( document ).ready( function(){
    //This will fire when page is fully loaded
@@ -26,17 +28,17 @@ $( document ).ready( function(){
    });
 });
 
-function comment_insert(data)
+function comment_insert()
 {
    										var t ='';
-											t += '<li class="comments-holder" id="_'+data.comment_id+'">';	
+											t += '<li class="comments-holder" id="_'+_GlobalUserClick+'">';	
 											t += '<div class="user-image">';
 											t += '<img src="img/'+_GlobalImageClick+'" id="poster">';
 											t += '</div>';
 											t += '<div class="comment-body">';
 											t += '<h5 class="username-field">'+_GlobalNameClick+'</h5><br>';
 											t += '<div class="comment-text">';							
-											t += '<p class="commenting-field">'+data.comment+' </p>';
+											t += '<p class="commenting-field">'+_GlobalCommentClick+' </p>';
 											t += '</div>'		;								
 											t += '</div>';
 											t += '<div class="comment-buttons-holder">';
@@ -61,6 +63,9 @@ function comment_post_btn_click(GbuttonClicked, _buttonClicked)
 
         _GlobalNameClick = _username;
         _GlobalImageClick = _profileImage;
+        _GlobalUserClick = _userId;
+        _GlobalCommentClick = _comments;
+        
         if(_comments.length > 0 && _userId !== null)
         {
             //changes the color of border back the the regular color if error was there
@@ -87,11 +92,11 @@ function comment_post_btn_click(GbuttonClicked, _buttonClicked)
                       )
             
             .success(
-                        function(data)
+                        function()
                          {
                            //success
-                           comment_insert(jQuery.parseJSON(data));
-                           console.log("Response: " + data);
+                           comment_insert();
+                           console.log("Response: ");
                          }
                       
                       );

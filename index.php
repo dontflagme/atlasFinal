@@ -30,7 +30,7 @@ $f3->set('DEBUG', 3);
 $eventsDB = new EventsDB();
 $memberDB = new MemberDB();
 $joinedDB = new JoinedDB();
-$commentDB = new CommentDB();
+$joinedDB = new JoinedDB();
 
 
                   //Define a default route
@@ -47,37 +47,29 @@ $commentDB = new CommentDB();
                     
                     
                     $f3->route('POST /insertComment', function($f3) {
-                        if(isset($_POST['task']) && $_POST['task'] == 'comment_insert')
-                        {
-                           $userId = (int)$_POST['userId'];
-                           $username = $_POST['username'];
-                           $profilePicture = $_POST['profileImage'];
-                           $comment = addslashes(str_replace("\n", "<br>" , $_POST['comment']));
-                           
-                           $std = new stdClass();
-                           $std->comment_id = 24;
-                           $std->userId = $userId;
-                           $std->comment = $comment;
-                           $std->username = $username ;
-                           $std->profile_img = "img/{{@event.postersProfilePicture}}" ;
-                           
-                           
-                           if(class_exists('Comments'))
-                           {
-                               $commentInfo = Comments::insert($comment_txt, $userId);
-                               
-                               if($commentInfo != null)
-                               {
-                                   
-                               }
-                           }
-                           echo json_encode($std);
-                        }
-                        
-                        else
-                        {
-                          $f3->reroute('/homelogin');
-                        }                        
+                    if(isset($_POST['task']) && $_POST['task'] == 'comment_insert')
+                    {
+                       $userId = (int)$_POST['userId'];
+                       $username = $_POST['username'];
+                       $profilePicture = $_POST['profileImage'];
+                       $comment = addslashes(str_replace("\n", "<br>" , $_POST['comment']));
+                       
+                       $std = new stdClass();
+                       $std->comment_id = 24;
+                       $std->userId = $userId;
+                       $std->comment = $comment;
+                       $std->username = $username ;
+                       $std->profile_img = "img/{{@event.postersProfilePicture}}" ;
+                       
+                       
+
+                       //echo json_encode($std);
+                    }
+                                       
+                                       else
+                                       {
+                                         $f3->reroute('/homelogin');
+                                       }                        
                      });
                     
                     //-----------------------Varifies login to see if user exists--------------------------------
@@ -94,7 +86,6 @@ $commentDB = new CommentDB();
                                                        $foundMember['email'], $foundMember['password'], $foundMember['image']);//Createsss
                       
                            $_SESSION['currentMember'] = $currentMember;//Call $_SESSION['currentMember'] for the current member logged in.
-                            $_SESSION['id'] = $foundMember['member_id'];
                             $_SESSION['firstName'] = $foundMember['firstname'];
                             $_SESSION['lastName'] = $foundMember['lastname'];
                             $_SESSION['email'] = $foundMember['email'];
@@ -127,7 +118,7 @@ $commentDB = new CommentDB();
                         $f3->set('lastName',$_SESSION['lastName']);
                         $f3->set('profilePicture', $_SESSION['profilePicture']);
                         
-                        $events = $GLOBALS['eventsDB']->eventsByEventId($member['member_id']);
+                        $events = $GLOBALS['eventsDB']->eventsByMemberId($member['member_id']);
                         $f3->set('events', $events);
                         
                       echo Template::instance()->render('pages/backend/home_backend.html');
@@ -310,14 +301,15 @@ $commentDB = new CommentDB();
                           $f3->reroute('/homelogin');
                         });
 
-                        $f3->route('GET /join/@id', function($f3, $params) {
-    
-                            $_SESSION['event_id'] = $params['id'];
-                            //echo "event_id,  " . $params['id'] . "member_id, " . $_SESSION['id'];
-                            $joinedDB =  $GLOBALS['joinedDB']->addJoined($_SESSION['id'], $params['id']);
-                          
-                         $f3->reroute('/explorebackend');
-                        });
+                    /**
+                            $f3->set('id',  $_SESSION['id']);
+                            $_SESSION['title'] = $_POST['title'];
+                            $_SESSION['event_details'] = $_POST['event_details'];
+                            $_SESSION['image'] = $_POST['image'];
+                            $_SESSION['id'] = $params['id'];
+                            
+                            echo "id = " . $_SESSION['id'] . ",  image = " . $_SESSION['image'] . ", details = " . $_SESSION['event_details'] . ", title = " .$_SESSION['title'];
+                     */
            
 $f3->run();        
 ?>

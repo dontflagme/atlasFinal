@@ -69,6 +69,7 @@
                     <h2 id="modalH2"><?= ($event['title']) ?></h2>
                     <img src="hardCodeImages/fourstar.png" id="rating_modal"/>    
                     <p id="modalP"><?= ($event['event_details']) ?></p>
+					<a href="./join/<?= ($event['event_id']) ?>"><button class="btn btn-primary">Join</button></a>
         
                                 
                             </div>
