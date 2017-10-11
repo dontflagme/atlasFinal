@@ -27,10 +27,11 @@ $f3->set('DEBUG', 3);
 
 
 //calling the DB classes
+$commentDB = new CommentDB();
 $eventsDB = new EventsDB();
 $memberDB = new MemberDB();
 $joinedDB = new JoinedDB();
-$joinedDB = new JoinedDB();
+
 
 
                   //Define a default route
@@ -47,12 +48,21 @@ $joinedDB = new JoinedDB();
                     
                     
                     $f3->route('POST /insertComment', function($f3) {
+
                     if(isset($_POST['task']) && $_POST['task'] == 'comment_insert')
                     {
+                        
+                    
+                       
                        $userId = (int)$_POST['userId'];
                        $username = $_POST['username'];
                        $profilePicture = $_POST['profileImage'];
                        $comment = addslashes(str_replace("\n", "<br>" , $_POST['comment']));
+                       $eventID = $_POST['eventId'];
+                       
+                        
+                       $comments =  $GLOBALS['commentDB']->addComment($comment, $userId, $profilePicture, $eventID);
+                       
                        
                        $std = new stdClass();
                        $std->comment_id = 24;
@@ -118,8 +128,11 @@ $joinedDB = new JoinedDB();
                         $f3->set('lastName',$_SESSION['lastName']);
                         $f3->set('profilePicture', $_SESSION['profilePicture']);
                         
-                        $events = $GLOBALS['eventsDB']->eventsByMemberId($member['member_id']);
+                        $events = $GLOBALS['eventsDB']->eventsByEventId($member['member_id']);
                         $f3->set('events', $events);
+                        
+                       /// $events = $GLOBALS['eventsDB']->commentsByEventId();
+                        //$f3->set('events', $events);
                         
                       echo Template::instance()->render('pages/backend/home_backend.html');
                      
@@ -301,6 +314,14 @@ $joinedDB = new JoinedDB();
                           $f3->reroute('/homelogin');
                         });
 
+                        
+                        $f3->route('GET /join/@id', function($f3, $params) {
+   
+                           $_SESSION['event_id'] = $params['id'];
+                           //echo "event_id,  " . $params['id'] . "member_id, " . $_SESSION['id'];
+                           $joinedDB =  $GLOBALS['joinedDB']->addJoined($_SESSION['id'], $params['id']);
+                        $f3->reroute('/explorebackend');
+                       });
                     /**
                             $f3->set('id',  $_SESSION['id']);
                             $_SESSION['title'] = $_POST['title'];

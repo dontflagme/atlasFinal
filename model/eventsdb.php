@@ -169,10 +169,10 @@ UNION
         {
 
             $select = '(SELECT events.event_id, events.member_id, events.title, events.event_details, events.date,
-            events.time, events.image,events.firstname, events.lastname, events.postersProfilePicture, events.rating FROM events, joined WHERE events.event_id = joined.event_id)
-                        UNION
-                        (SELECT events.event_id, events.member_id, events.title, events.event_details, events.date,
-            events.time, events.image, events.firstname, events.lastname, events.postersProfilePicture, events.rating FROM joined LEFT JOIN events ON events.member_id = joined.member_id)';
+           events.time, events.image,events.firstname, events.lastname, events.postersProfilePicture, events.rating FROM events, joined WHERE events.event_id = joined.event_id AND joined.member_id=:id)
+                          UNION
+(SELECT events.event_id, events.member_id, events.title, events.event_details, events.date,
+           events.time, events.image, events.firstname, events.lastname, events.postersProfilePicture, events.rating FROM joined LEFT JOIN events ON events.member_id = joined.member_id AND joined.member_id=:id)';
 
             
             $results = $this->_pdo->prepare($select);

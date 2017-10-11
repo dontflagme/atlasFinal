@@ -61,14 +61,14 @@ class CommentDB{
          *
          * @return true if the insert was successful, otherwise false
          */
-        function addComment($comment, $userID, $profilePicture, $eventID)
+        function addComment($comment, $userId, $profilePicture, $event_id)
         {
-            $insert = 'INSERT INTO comments (comment, userID, profilePicture, event_id) VALUES (:comment, :userID, :profilePicture, :event_id)';
+            $insert = 'INSERT INTO comments (comment, userId, profilePicture, event_id) VALUES (:comment, :userId, :profilePicture, :event_id)';
 
              
             $statement = $this->_pdo->prepare($insert);
             $statement->bindValue(':comment', $comment, PDO::PARAM_STR);
-            $statement->bindValue(':userID', $userID, PDO::PARAM_STR);
+            $statement->bindValue(':userId', $userId, PDO::PARAM_STR);
             $statement->bindValue(':profilePicture', $profilePicture, PDO::PARAM_STR);
             $statement->bindValue(':event_id', $event_id, PDO::PARAM_STR);
 
@@ -78,21 +78,29 @@ class CommentDB{
             //Return ID of inserted row
             return $this->_pdo->lastInsertId();
         }
-         
+        
         /**
-         * Returns comments that has the given event_id.
+         * Returns blogs that has the given blog_id.
          *
          * @access public
-         * @param int $id the id of the event
+         * @param int $id the id of the blog
          *
-         * @return an associative array of comment attributes, or false if
+         * @return an associative array of member attributes, or false if
          * the member was not found
+         *
+         *events sql statement SELECT events.event_id, events.member_id, events.title, events.event_details, events.date, events.time, events.firstname, events.lastname, events.postersProfilePicture, events.rating FROM joined LEFT JOIN events ON events.member_id = joined.member_id
+         *joined sql statement SELECT events.event_id, events.member_id, events.title, events.event_details, events.date, events.time, events.firstname, events.lastname, events.postersProfilePicture, events.rating FROM events, joined WHERE events.event_id = joined.event_id
+         *
+         *IT WORKS
+            (SELECT events.event_id, events.member_id, events.title, events.event_details, events.date, events.time, events.firstname, events.lastname, events.postersProfilePicture, events.rating FROM events, joined WHERE events.event_id = joined.event_id)
+            UNION
+            (SELECT events.event_id, events.member_id, events.title, events.event_details, events.date, events.time, events.firstname, events.lastname, events.postersProfilePicture, events.rating FROM joined LEFT JOIN events ON events.member_id = joined.member_id)
+         * 
          */
         function commentsByEventId($id)
         {
 
-            $select = 'SELECT comment_id, comment, userID, profilePicture, event_id FROM comments WHERE event_id=:id ORDER BY comment_id';
-
+            $select = 'SELECT comment, userId, profilePicture,event_id FROM comments WHERE event_id=:id';
             
             $results = $this->_pdo->prepare($select);
             $results->bindValue(':id', $id, PDO::PARAM_INT);
