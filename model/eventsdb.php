@@ -155,18 +155,38 @@
          *
          * @return an associative array of member attributes, or false if
          * the member was not found
+         *
+         *events sql statement SELECT events.event_id, events.member_id, events.title, events.event_details, events.date, events.time, events.firstname, events.lastname, events.postersProfilePicture, events.rating FROM joined LEFT JOIN events ON events.member_id = joined.member_id
+         *joined sql statement SELECT events.event_id, events.member_id, events.title, events.event_details, events.date, events.time, events.firstname, events.lastname, events.postersProfilePicture, events.rating FROM events, joined WHERE events.event_id = joined.event_id
+         *
+         *IT WORKS
+(SELECT events.event_id, events.member_id, events.title, events.event_details, events.date, events.time, events.firstname, events.lastname, events.postersProfilePicture, events.rating FROM events, joined WHERE events.event_id = joined.event_id)
+UNION
+(SELECT events.event_id, events.member_id, events.title, events.event_details, events.date, events.time, events.firstname, events.lastname, events.postersProfilePicture, events.rating FROM joined LEFT JOIN events ON events.member_id = joined.member_id)
+         * 
          */
         function eventsByEventId($id)
         {
 
-            $select = 'SELECT events.event_id, events.member_id, events.title, events.event_details, events.date, events.time, events.image FROM events, joined WHERE events.member_id=:id = joined.member_id=:id';
+            $select = '(SELECT events.event_id, events.member_id, events.title, events.event_details, events.date,
+            events.time, events.image,events.firstname, events.lastname, events.postersProfilePicture, events.rating FROM events, joined WHERE events.event_id = joined.event_id)
+                        UNION
+                        (SELECT events.event_id, events.member_id, events.title, events.event_details, events.date,
+            events.time, events.image, events.firstname, events.lastname, events.postersProfilePicture, events.rating FROM joined LEFT JOIN events ON events.member_id = joined.member_id)';
 
             
-            $statement = $this->_pdo->prepare($select);
-            $statement->bindValue(':id', $id, PDO::PARAM_INT);
-            $statement->execute();
+            $results = $this->_pdo->prepare($select);
+            $results->bindValue(':id', $id, PDO::PARAM_INT);
+            $results->execute();
              
-            return $statement->fetch(PDO::FETCH_ASSOC);
+            $resultsArray = array();
+             
+            //map each pet id to a row of data for that pet
+            while ($row = $results->fetch(PDO::FETCH_ASSOC)) {
+                $resultsArray[$row['event_id']] = $row;
+            }
+             
+            return $resultsArray;
         }
         
         /**
